@@ -1,5 +1,5 @@
 # BASE IMAGE
-FROM sswiston/phylo_docker:full_amd64
+FROM sswiston/phylo_docker:full_arm64
 
 # JAVA
 WORKDIR "/"
@@ -23,11 +23,11 @@ RUN cmake .. ; make ; make install ; cpack .
 
 # FINISHING
 WORKDIR "/"
-COPY dockerfile_heavy_amd64.txt /dockerfile_heavy_amd64.txt
+COPY dockerfile_heavy_arm64.txt /dockerfile_heavy_arm64.txt
 COPY test.sh /test.sh
 COPY start.sh /start.sh
 ENV HOME="/"
 CMD sleep infinity
 
 # Command for building Docker image:
-# cp Dockerfile dockerfile_heavy_amd64.txt; docker build -t sswiston/phylo_docker:heavy_amd64 . --progress=plain > heavy_amd64_build.log 2>&1
+# cp Dockerfile dockerfile_heavy_arm64.txt; docker buildx build --platform=linux/arm64 -t sswiston/phylo_docker:heavy_arm64 . --progress=plain > heavy_arm64_build.log 2>&1

@@ -1,5 +1,5 @@
 # BASE IMAGE
-FROM alpine:3.19.1
+FROM frolvlad/alpine-glibc
 
 # BASE SOFTWARE
 WORKDIR "/"
@@ -42,4 +42,4 @@ ENV HOME="/"
 CMD sleep infinity
 
 # Command for building Docker image:
-# cp Dockerfile dockerfile_basic_amd64.txt; docker build --no-cache -t sswiston/phylo_docker:basic_amd64 . --progress=plain > basic_amd64_build.log 2>&1
+# cp Dockerfile dockerfile_basic_amd64.txt; docker build -t sswiston/phylo_docker:basic_amd64 . --progress=plain > basic_amd64_build.log 2>&1

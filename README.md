@@ -11,13 +11,13 @@ Images are tagged based on the set of programs contained within the image ('basi
 The images build on one another, so each image contains all of the programs from the previous image, plus additional programs. This is done so you don't have to download large images if you only need basic programs.
 
 Basic Programs:
-- Python 3.11.11
+- Python 3.12.10
 - R 4.4.0
 - Julia 1.10.4
 
 Slim Programs:
 - All basic programs
-- RevBayes stochmap_tp_dirty_merge branch commit d86165c (20241218)
+- RevBayes stochmap_tp_dirty_merge branch commit ea86725 (20250501)
 - TensorPhylo tree-inference branch commit b326fbf (20250213)
 
 Full Programs:
@@ -29,8 +29,8 @@ Full Programs:
 
 Heavy Programs:
 - All full programs
-- Java openjdk17
-- BEAST2
+- Java openjdk8
+- BEAST
 - Beagle
 
 ## Directory Contents

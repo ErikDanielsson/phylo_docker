@@ -22,12 +22,12 @@ ENV PYTHONPATH="/PhyloJunction/src"
 
 # PYTHON PACKAGES
 WORKDIR "/"
-RUN apk add py3-biopython py3-scipy py3-seaborn py3-tabulate py3-matplotlib && \
+RUN apk add py3-scipy py3-seaborn py3-tabulate py3-matplotlib py3-biopython && \
     python -m pip install dendropy --break-system-packages --force-reinstall
 
 # R PACKAGES
 WORKDIR "/"
-RUN apk add linux-headers libgit2-dev freetype-dev libxml2-dev fontconfig-dev harfbuzz-dev fribidi-dev libpng-dev tiff-dev jpeg-dev imagemagick-dev udunits-dev gdal-dev font-terminus font-noto font-noto-extra font-arabic-misc gmp-dev mpfr-dev gsl-dev proj-dev geos-dev texlive libpq-dev openssl-dev unixodbc-dev
+RUN apk add linux-headers libgit2-dev freetype-dev libxml2-dev fontconfig-dev harfbuzz-dev fribidi-dev libpng-dev tiff-dev jpeg-dev imagemagick-dev udunits-dev gdal-dev font-terminus font-noto font-noto-extra font-arabic-misc gmp-dev mpfr-dev gsl-dev proj-dev geos-dev texlive libpq-dev openssl-dev unixodbc-dev fftw-dev m4 perl mysql mysql-client libtbb-dev netcdf mariadb mariadb-client mariadb-dev
 # CORE
 RUN mkdir /.R && \
     touch /.R/Makevars
@@ -35,10 +35,12 @@ RUN echo "PKG_CXXFLAGS += -D__MUSL__" >> /.R/Makevars
 RUN echo "CXXFLAGS += -D__MUSL__" >> /.R/Makevars
 RUN echo "CXX1XFLAGS += -D__MUSL__" >> /.R/Makevars
 RUN cat /.R/Makevars
+RUN apk add libtool m4 automake
 RUN R -e "install.packages('Rcpp',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('devtools',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 # BASICS
 RUN R -e "install.packages('rjson',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
+    R -e "install.packages('rlist',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('data.table',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('reshape2',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('dplyr',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
@@ -50,7 +52,7 @@ RUN R -e "install.packages('HDInterval',dependencies=TRUE,repos='http://cran.rst
     R -e "install.packages('ratematrix',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('diversitree',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('TreeSim',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
-    R -e "library(remotes); remotes::install_url(\"http://cran.nexr.com/src/contrib/TreePar_3.3.tar.gz\")" && \
+    R -e "library(remotes); remotes::install_github(\"tanja819/TreePar\")" && \
     R -e "install.packages('corHMM',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('hisse',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
     R -e "install.packages('OUwie',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
@@ -61,7 +63,12 @@ RUN R -e "install.packages('HDInterval',dependencies=TRUE,repos='http://cran.rst
     R -e "library(remotes); remotes::install_github(\"uyedaj/treeplyr\")" && \
     R -e "library(remotes); remotes::install_github(\"uyedaj/rphenoscate\")" && \
     R -e "install.packages('paleobuddy',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
-    R -e "install.packages('CRABS',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+    R -e "install.packages('CRABS',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
+    R -e "install.packages('mcmcse',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
+    R -e "library(devtools);install_github(\"ignacioq/rase\")" && \
+    R -e "install.packages('treebalance',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
+    R -e "install.packages('poweRbal',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
+    R -e "install.packages('treestats',dependencies=TRUE,repos='http://cran.rstudio.com/')"
 # PLOTTING
 RUN R -e "install.packages('cowplot',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \ 
     R -e "install.packages('tikzDevice',dependencies=TRUE,repos='http://cran.rstudio.com/')" && \
@@ -75,7 +82,6 @@ RUN apk add lzo
 RUN ln -s /usr/lib/libffi.so.8 /usr/lib/libffi.so.6 && \
     ln -s /usr/lib/libbz2.so.1.0.8 /usr/lib/libbz2.so.1.0
 RUN julia -e 'import Pkg; Pkg.update()' && \
-    julia -e 'import Pkg; Pkg.add("StatsBase"); using StatsBase' && \
     julia -e 'import Pkg; Pkg.add("Combinatorics"); using Combinatorics' && \
     julia -e 'import Pkg; Pkg.add("PProf"); using PProf' && \
     julia -e 'import Pkg; Pkg.add("Distributions"); using Distributions' && \
@@ -91,7 +97,8 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("KernelDensity"); using KernelDensity' && \
     julia -e 'import Pkg; Pkg.add("PDMats"); using PDMats' && \
     julia -e 'import Pkg; Pkg.add("SpecialFunctions"); using SpecialFunctions' && \
-    julia -e 'import Pkg; Pkg.add("ExponentialUtilities"); using ExponentialUtilities'
+    julia -e 'import Pkg; Pkg.add("ExponentialUtilities"); using ExponentialUtilities' && \
+    julia -e 'import Pkg; Pkg.add("StatsBase"); using StatsBase'
 
 # FINISHING
 WORKDIR "/"
@@ -102,4 +109,4 @@ ENV HOME="/"
 CMD sleep infinity
 
 # Command for building Docker image:
-# cp Dockerfile dockerfile_full_amd64.txt; docker build --no-cache -t sswiston/phylo_docker:full_amd64 . --progress=plain > full_amd64_build.log 2>&1
+# cp Dockerfile dockerfile_full_amd64.txt; docker build -t sswiston/phylo_docker:full_amd64 . --progress=plain > full_amd64_build.log 2>&1

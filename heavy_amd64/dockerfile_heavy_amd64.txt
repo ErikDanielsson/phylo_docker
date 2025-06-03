@@ -3,18 +3,15 @@ FROM sswiston/phylo_docker:full_amd64
 
 # JAVA
 WORKDIR "/"
-RUN apk add --no-cache openjdk17
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+RUN apk add --no-cache openjdk8
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+ENV JRE_HOME=/usr/lib/jvm/java-8-openjdk/jre
 
-# BEAST2
-RUN apk add gcompat
+# BEAST
 WORKDIR "/"
-RUN wget https://github.com/CompEvol/beast2/releases/download/v2.7.7/BEAST.v2.7.7.Linux.x86.tgz && \
-    tar zxvf BEAST.v2.7.7.Linux.x86.tgz ; rm BEAST.v2.7.7.Linux.x86.tgz
-ENV PATH /beast/bin:$PATH
-RUN ln -s /beast/bin/beast /usr/local/bin/beast && \
-    ln -s -f /usr/lib/jvm/java-17-openjdk/lib/libjimage.so /beast/jre/lib/libjimage.so
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/jvm/java-17-openjdk/jre/lib/server/
+RUN wget https://github.com/beast-dev/beast-mcmc/releases/download/v10.5.0-beta5/BEAST_X_v10.5.0-beta5.tgz && \
+    tar zxvf BEAST_X_v10.5.0-beta5.tgz ; rm BEAST_X_v10.5.0-beta5.tgz
+ENV PATH=/BEASTv10.5.0/bin:$PATH
 
 # BEAGLE
 WORKDIR "/"
@@ -33,4 +30,4 @@ ENV HOME="/"
 CMD sleep infinity
 
 # Command for building Docker image:
-# cp Dockerfile dockerfile_heavy_amd64.txt; docker build --no-cache -t sswiston/phylo_docker:heavy_amd64 . --progress=plain > heavy_amd64_build.log 2>&1
+# cp Dockerfile dockerfile_heavy_amd64.txt; docker build -t sswiston/phylo_docker:heavy_amd64 . --progress=plain > heavy_amd64_build.log 2>&1

@@ -1,5 +1,5 @@
 # BASE IMAGE
-FROM sswiston/phylo_docker:slim_amd64
+FROM sswiston/phylo_docker:slim_arm64
 
 # DM-TREE
 WORKDIR "/"
@@ -86,8 +86,8 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     julia -e 'import Pkg; Pkg.add("PProf"); using PProf' && \
     julia -e 'import Pkg; Pkg.add("Distributions"); using Distributions' && \
     julia -e 'import Pkg; Pkg.add("Phylo"); using Phylo' && \
-    julia -e 'import Pkg; Pkg.add("Optim"); using Optim' && \
-    julia -e 'import Pkg; Pkg.add("RCall"); using RCall' && \
+    julia -e 'import Pkg; Pkg.add("Optim"); using Optim'
+RUN julia -e 'import Pkg; Pkg.add("RCall"); using RCall' && \
     julia -e 'import Pkg; Pkg.add(Pkg.PackageSpec(;name="Tapestree",version="0.3.0")); using Tapestree' && \
     julia -e 'import Pkg; Pkg.add("Parameters"); using Parameters' && \
     julia -e 'import Pkg; Pkg.add("StaticArrays"); using StaticArrays' && \
@@ -102,11 +102,11 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
 
 # FINISHING
 WORKDIR "/"
-COPY dockerfile_full_amd64.txt /dockerfile_full_amd64.txt
+COPY dockerfile_full_arm64.txt /dockerfile_full_arm64.txt
 COPY test.sh /test.sh
 COPY start.sh /start.sh
 ENV HOME="/"
 CMD sleep infinity
 
 # Command for building Docker image:
-# cp Dockerfile dockerfile_full_amd64.txt; docker build -t sswiston/phylo_docker:full_amd64 . --progress=plain > full_amd64_build.log 2>&1
+# cp Dockerfile dockerfile_full_arm64.txt; docker buildx build --platform=linux/arm64 -t sswiston/phylo_docker:full_arm64 . --progress=plain > full_arm64_build.log 2>&1

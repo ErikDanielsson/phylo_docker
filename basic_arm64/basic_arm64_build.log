@@ -1,248 +1,1945 @@
 #0 building with "desktop-linux" instance using docker driver
 
 #1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 30B 0.0s
-#1 transferring dockerfile: 878B 0.0s done
-#1 DONE 0.1s
+#1 transferring dockerfile: 1.55kB done
+#1 DONE 0.0s
 
-#2 [internal] load metadata for docker.io/library/alpine:latest
-#2 ...
+#2 [internal] load metadata for docker.io/frolvlad/alpine-glibc:latest
+#2 DONE 0.8s
 
-#3 [auth] library/alpine:pull token for registry-1.docker.io
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
 #3 DONE 0.0s
 
-#2 [internal] load metadata for docker.io/library/alpine:latest
-#2 DONE 1.2s
+#4 [ 1/16] FROM docker.io/frolvlad/alpine-glibc:latest@sha256:fffd7f5dbd5e8d12f11925e49122943a2e5029a340e582b5c99597a9e16d1bd5
+#4 CACHED
 
-#4 [internal] load .dockerignore
-#4 transferring context: 2B done
-#4 DONE 0.0s
-
-#5 [ 1/20] FROM docker.io/library/alpine:latest@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+#5 [internal] load build context
+#5 transferring context: 1.59kB done
 #5 DONE 0.0s
 
-#6 [ 2/20] RUN apk update
-#6 CACHED
+#6 [ 2/16] RUN apk update &&     apk upgrade &&     apk add bash git unzip vim gcc g++ cmake protoc make automake autoconf curl curl-dev gfortran build-base
+#6 0.380 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
+#6 1.927 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
+#6 4.869 v3.21.3-574-g638d0989887 [https://dl-cdn.alpinelinux.org/alpine/v3.21/main]
+#6 4.869 v3.21.3-574-g638d0989887 [https://dl-cdn.alpinelinux.org/alpine/v3.21/community]
+#6 4.869 OK: 25252 distinct packages available
+#6 8.806 OK: 13 MiB in 17 packages
+#6 12.86 (1/120) Installing m4 (1.4.19-r3)
+#6 13.71 (2/120) Installing libbz2 (1.0.8-r6)
+#6 13.80 (3/120) Installing perl (5.40.1-r1)
+#6 16.53 (4/120) Installing autoconf (2.72-r0)
+#6 16.66 (5/120) Installing automake (1.17-r0)
+#6 16.79 (6/120) Installing ncurses-terminfo-base (6.5_p20241006-r3)
+#6 16.83 (7/120) Installing libncursesw (6.5_p20241006-r3)
+#6 16.87 (8/120) Installing readline (8.2.13-r0)
+#6 16.91 (9/120) Installing bash (5.2.37-r0)
+#6 17.10 Executing bash-5.2.37-r0.post-install
+#6 17.17 (10/120) Installing libgcc (14.2.0-r4)
+#6 17.21 (11/120) Installing jansson (2.14-r4)
+#6 17.24 (12/120) Installing libstdc++ (14.2.0-r4)
+#6 17.41 (13/120) Installing zstd-libs (1.5.6-r2)
+#6 17.48 (14/120) Installing binutils (2.43.1-r2)
+#6 18.22 (15/120) Installing libmagic (5.46-r2)
+#6 18.45 (16/120) Installing file (5.46-r2)
+#6 18.48 (17/120) Installing libgomp (14.2.0-r4)
+#6 18.53 (18/120) Installing libatomic (14.2.0-r4)
+#6 18.55 (19/120) Installing gmp (6.3.0-r2)
+#6 18.60 (20/120) Installing isl26 (0.26-r1)
+#6 18.77 (21/120) Installing mpfr4 (4.2.1-r0)
+#6 18.84 (22/120) Installing mpc1 (1.3.1-r1)
+#6 18.90 (23/120) Installing gcc (14.2.0-r4)
+#6 28.37 (24/120) Installing libstdc++-dev (14.2.0-r4)
+#6 30.03 (25/120) Installing musl-dev (1.2.5-r9)
+#6 30.67 (26/120) Installing g++ (14.2.0-r4)
+#6 34.20 (27/120) Installing make (4.4.1-r2)
+#6 34.25 (28/120) Installing fortify-headers (1.1-r5)
+#6 34.28 (29/120) Installing patch (2.7.6-r10)
+#6 34.32 (30/120) Installing build-base (0.5-r3)
+#6 34.32 (31/120) Installing acl-libs (2.3.2-r1)
+#6 34.35 (32/120) Installing libexpat (2.7.0-r0)
+#6 34.39 (33/120) Installing lz4-libs (1.10.0-r0)
+#6 34.43 (34/120) Installing xz-libs (5.6.3-r1)
+#6 34.47 (35/120) Installing libarchive (3.8.0-r0)
+#6 34.56 (36/120) Installing rhash-libs (1.4.5-r0)
+#6 34.61 (37/120) Installing libuv (1.49.2-r0)
+#6 34.65 (38/120) Installing cmake (3.31.1-r0)
+#6 40.31 (39/120) Installing brotli-libs (1.1.0-r2)
+#6 40.42 (40/120) Installing c-ares (1.34.5-r0)
+#6 40.46 (41/120) Installing libunistring (1.2-r0)
+#6 40.59 (42/120) Installing libidn2 (2.3.7-r0)
+#6 40.63 (43/120) Installing nghttp2-libs (1.64.0-r0)
+#6 40.66 (44/120) Installing libpsl (0.21.5-r3)
+#6 40.69 (45/120) Installing libcurl (8.12.1-r1)
+#6 40.77 (46/120) Installing curl (8.12.1-r1)
+#6 40.82 (47/120) Installing brotli (1.1.0-r2)
+#6 40.84 (48/120) Installing pkgconf (2.3.0-r0)
+#6 40.88 (49/120) Installing brotli-dev (1.1.0-r2)
+#6 40.91 (50/120) Installing c-ares-dev (1.34.5-r0)
+#6 41.13 (51/120) Installing libidn2-dev (2.3.7-r0)
+#6 41.15 (52/120) Installing libpsl-utils (0.21.5-r3)
+#6 41.18 (53/120) Installing libpsl-dev (0.21.5-r3)
+#6 41.19 (54/120) Installing nghttp2-dev (1.64.0-r0)
+#6 41.23 (55/120) Installing openssl-dev (3.3.3-r0)
+#6 41.37 (56/120) Installing zlib-dev (1.3.1-r2)
+#6 41.40 (57/120) Installing zstd (1.5.6-r2)
+#6 41.45 (58/120) Installing zstd-dev (1.5.6-r2)
+#6 41.48 (59/120) Installing curl-dev (8.12.1-r1)
+#6 41.52 (60/120) Installing libgfortran (14.2.0-r4)
+#6 41.64 (61/120) Installing gfortran (14.2.0-r4)
+#6 44.28 (62/120) Installing pcre2 (10.43-r0)
+#6 44.37 (63/120) Installing git (2.47.2-r0)
+#6 44.95 (64/120) Installing git-init-template (2.47.2-r0)
+#6 44.98 (65/120) Installing perl-error (0.17029-r2)
+#6 45.00 (66/120) Installing perl-git (2.47.2-r0)
+#6 45.03 (67/120) Installing git-perl (2.47.2-r0)
+#6 45.06 (68/120) Installing abseil-cpp-raw-logging-internal (20240722.0-r0)
+#6 45.08 (69/120) Installing abseil-cpp-log-internal-globals (20240722.0-r0)
+#6 45.11 (70/120) Installing abseil-cpp-time-zone (20240722.0-r0)
+#6 45.14 (71/120) Installing abseil-cpp-log-initialize (20240722.0-r0)
+#6 45.16 (72/120) Installing abseil-cpp-city (20240722.0-r0)
+#6 45.19 (73/120) Installing abseil-cpp-low-level-hash (20240722.0-r0)
+#6 45.21 (74/120) Installing abseil-cpp-hash (20240722.0-r0)
+#6 45.23 (75/120) Installing abseil-cpp-log-internal-nullguard (20240722.0-r0)
+#6 45.25 (76/120) Installing abseil-cpp-strings-internal (20240722.0-r0)
+#6 45.27 (77/120) Installing abseil-cpp-strings (20240722.0-r0)
+#6 45.31 (78/120) Installing abseil-cpp-log-internal-check-op (20240722.0-r0)
+#6 45.33 (79/120) Installing abseil-cpp-spinlock-wait (20240722.0-r0)
+#6 45.35 (80/120) Installing abseil-cpp-base (20240722.0-r0)
+#6 45.36 (81/120) Installing abseil-cpp-log-internal-conditions (20240722.0-r0)
+#6 45.39 (82/120) Installing abseil-cpp-debugging-internal (20240722.0-r0)
+#6 45.41 (83/120) Installing abseil-cpp-stacktrace (20240722.0-r0)
+#6 45.44 (84/120) Installing abseil-cpp-symbolize (20240722.0-r0)
+#6 45.46 (85/120) Installing abseil-cpp-examine-stack (20240722.0-r0)
+#6 45.48 (86/120) Installing abseil-cpp-log-globals (20240722.0-r0)
+#6 45.50 (87/120) Installing abseil-cpp-int128 (20240722.0-r0)
+#6 45.53 (88/120) Installing abseil-cpp-str-format-internal (20240722.0-r0)
+#6 45.57 (89/120) Installing abseil-cpp-time (20240722.0-r0)
+#6 45.60 (90/120) Installing abseil-cpp-log-internal-format (20240722.0-r0)
+#6 45.62 (91/120) Installing abseil-cpp-log-sink (20240722.0-r0)
+#6 45.64 (92/120) Installing abseil-cpp-kernel-timeout-internal (20240722.0-r0)
+#6 45.66 (93/120) Installing abseil-cpp-malloc-internal (20240722.0-r0)
+#6 45.69 (94/120) Installing abseil-cpp-synchronization (20240722.0-r0)
+#6 45.71 (95/120) Installing abseil-cpp-log-internal-log-sink-set (20240722.0-r0)
+#6 45.74 (96/120) Installing abseil-cpp-log-internal-proto (20240722.0-r0)
+#6 45.76 (97/120) Installing abseil-cpp-strerror (20240722.0-r0)
+#6 45.78 (98/120) Installing abseil-cpp-log-internal-message (20240722.0-r0)
+#6 45.80 (99/120) Installing abseil-cpp-raw-hash-set (20240722.0-r0)
+#6 45.84 (100/120) Installing abseil-cpp-crc-internal (20240722.0-r0)
+#6 45.86 (101/120) Installing abseil-cpp-crc32c (20240722.0-r0)
+#6 45.88 (102/120) Installing abseil-cpp-crc-cord-state (20240722.0-r0)
+#6 45.90 (103/120) Installing abseil-cpp-cord-internal (20240722.0-r0)
+#6 45.93 (104/120) Installing abseil-cpp-exponential-biased (20240722.0-r0)
+#6 45.96 (105/120) Installing abseil-cpp-cordz-functions (20240722.0-r0)
+#6 45.97 (106/120) Installing abseil-cpp-cordz-handle (20240722.0-r0)
+#6 45.99 (107/120) Installing abseil-cpp-cordz-info (20240722.0-r0)
+#6 46.02 (108/120) Installing abseil-cpp-cord (20240722.0-r0)
+#6 46.05 (109/120) Installing abseil-cpp-status (20240722.0-r0)
+#6 46.07 (110/120) Installing abseil-cpp-statusor (20240722.0-r0)
+#6 46.10 (111/120) Installing abseil-cpp-throw-delegate (20240722.0-r0)
+#6 46.13 (112/120) Installing abseil-cpp-die-if-null (20240722.0-r0)
+#6 46.16 (113/120) Installing libprotobuf (24.4-r4)
+#6 46.32 (114/120) Installing libprotoc (24.4-r4)
+#6 46.47 (115/120) Installing protoc (24.4-r4)
+#6 46.49 (116/120) Installing unzip (6.0-r15)
+#6 46.53 (117/120) Installing vim-common (9.1.1105-r0)
+#6 48.50 (118/120) Installing xxd (9.1.1105-r0)
+#6 48.53 (119/120) Installing vim (9.1.1105-r0)
+#6 48.77 (120/120) Installing cmake-vim (3.31.1-r0)
+#6 48.81 Executing busybox-1.37.0-r12.trigger
+#6 48.97 Executing glibc-bin-2.41-r1.trigger
+#6 49.22 OK: 424 MiB in 137 packages
+#6 DONE 50.3s
 
-#7 [ 3/20] RUN apk upgrade
-#7 CACHED
+#7 [ 3/16] RUN apk add python3 python3-dev &&     ln -s /usr/bin/python3 /usr/local/bin/python &&     apk add py3-pip
+#7 5.889 (1/10) Installing libffi (3.4.7-r0)
+#7 6.534 (2/10) Installing gdbm (1.24-r0)
+#7 6.611 (3/10) Installing mpdecimal (4.0.0-r0)
+#7 6.702 (4/10) Installing libpanelw (6.5_p20241006-r3)
+#7 6.767 (5/10) Installing sqlite-libs (3.48.0-r2)
+#7 6.955 (6/10) Installing python3 (3.12.10-r1)
+#7 9.055 (7/10) Installing python3-pycache-pyc0 (3.12.10-r1)
+#7 10.03 (8/10) Installing pyc (3.12.10-r1)
+#7 10.03 (9/10) Installing python3-pyc (3.12.10-r1)
+#7 10.03 (10/10) Installing python3-dev (3.12.10-r1)
+#7 17.87 Executing busybox-1.37.0-r12.trigger
+#7 18.06 Executing glibc-bin-2.41-r1.trigger
+#7 18.32 OK: 574 MiB in 147 packages
+#7 22.57 (1/8) Installing py3-setuptools-pyc (70.3.0-r0)
+#7 23.69 (2/8) Installing py3-pip-pyc (24.3.1-r0)
+#7 24.29 (3/8) Installing py3-parsing (3.1.4-r0)
+#7 24.34 (4/8) Installing py3-parsing-pyc (3.1.4-r0)
+#7 24.41 (5/8) Installing py3-packaging-pyc (24.2-r0)
+#7 24.47 (6/8) Installing py3-packaging (24.2-r0)
+#7 24.52 (7/8) Installing py3-setuptools (70.3.0-r0)
+#7 24.92 (8/8) Installing py3-pip (24.3.1-r0)
+#7 25.46 Executing busybox-1.37.0-r12.trigger
+#7 25.62 Executing glibc-bin-2.41-r1.trigger
+#7 25.81 OK: 592 MiB in 155 packages
+#7 DONE 26.6s
 
-#8 [internal] load build context
-#8 transferring context: 1.11kB done
-#8 DONE 0.0s
+#8 [ 4/16] RUN apk add --no-cache bzip2-dev ca-certificates pcre2-dev readline-dev xz-dev tzdata
+#8 0.699 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/aarch64/APKINDEX.tar.gz
+#8 2.237 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/aarch64/APKINDEX.tar.gz
+#8 6.177 (1/17) Installing bzip2-dev (1.0.8-r6)
+#8 6.219 (2/17) Installing ca-certificates (20241121-r1)
+#8 6.364 (3/17) Installing bsd-compat-headers (0.7.2-r6)
+#8 6.386 (4/17) Installing libformw (6.5_p20241006-r3)
+#8 6.405 (5/17) Installing libmenuw (6.5_p20241006-r3)
+#8 6.429 (6/17) Installing libncurses++ (6.5_p20241006-r3)
+#8 6.491 (7/17) Installing ncurses-dev (6.5_p20241006-r3)
+#8 6.581 (8/17) Installing libedit (20240808.3.1-r0)
+#8 6.616 (9/17) Installing libedit-dev (20240808.3.1-r0)
+#8 6.646 (10/17) Installing libpcre2-16 (10.43-r0)
+#8 6.710 (11/17) Installing libpcre2-32 (10.43-r0)
+#8 6.782 (12/17) Installing pcre2-dev (10.43-r0)
+#8 6.987 (13/17) Installing libhistory (8.2.13-r0)
+#8 7.010 (14/17) Installing readline-dev (8.2.13-r0)
+#8 7.048 (15/17) Installing tzdata (2025b-r0)
+#8 7.319 (16/17) Installing xz (5.6.3-r1)
+#8 7.375 (17/17) Installing xz-dev (5.6.3-r1)
+#8 7.428 Executing busybox-1.37.0-r12.trigger
+#8 7.525 Executing ca-certificates-20241121-r1.trigger
+#8 8.255 Executing glibc-bin-2.41-r1.trigger
+#8 8.549 OK: 597 MiB in 172 packages
+#8 DONE 9.0s
 
-#9 [ 4/20] RUN apk add bash
-#9 0.335 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/aarch64/APKINDEX.tar.gz
-#9 1.627 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/aarch64/APKINDEX.tar.gz
-#9 3.866 (1/4) Installing ncurses-terminfo-base (6.4_p20231125-r0)
-#9 3.910 (2/4) Installing libncursesw (6.4_p20231125-r0)
-#9 3.996 (3/4) Installing readline (8.2.1-r2)
-#9 4.056 (4/4) Installing bash (5.2.21-r0)
-#9 4.232 Executing bash-5.2.21-r0.post-install
-#9 4.286 Executing busybox-1.36.1-r15.trigger
-#9 4.348 OK: 12 MiB in 19 packages
-#9 DONE 4.6s
+#9 [ 5/16] RUN wget https://cran.r-project.org/src/base/R-4/R-4.4.0.tar.gz &&     tar xfz R-4.4.0.tar.gz; rm R-4.4.0.tar.gz
+#9 0.775 Connecting to cran.r-project.org (137.208.57.37:443)
+#9 1.722 saving to 'R-4.4.0.tar.gz'
+#9 2.540 R-4.4.0.tar.gz         2% |                                | 1015k  0:00:34 ETA
+#9 3.539 R-4.4.0.tar.gz        32% |**********                      | 11.6M  0:00:04 ETA
+#9 4.539 R-4.4.0.tar.gz        63% |********************            | 22.7M  0:00:01 ETA
+#9 5.539 R-4.4.0.tar.gz        96% |******************************  | 34.3M  0:00:00 ETA
+#9 5.645 R-4.4.0.tar.gz       100% |********************************| 35.6M  0:00:00 ETA
+#9 5.645 'R-4.4.0.tar.gz' saved
+#9 DONE 16.1s
 
-#10 [ 5/20] RUN apk add git
-#10 1.913 (1/10) Installing ca-certificates (20240226-r0)
-#10 3.596 (2/10) Installing brotli-libs (1.1.0-r1)
-#10 3.884 (3/10) Installing c-ares (1.27.0-r0)
-#10 3.969 (4/10) Installing libunistring (1.1-r2)
-#10 4.404 (5/10) Installing libidn2 (2.3.4-r4)
-#10 4.526 (6/10) Installing nghttp2-libs (1.58.0-r0)
-#10 4.595 (7/10) Installing libcurl (8.5.0-r0)
-#10 5.062 (8/10) Installing libexpat (2.6.2-r0)
-#10 5.132 (9/10) Installing pcre2 (10.42-r2)
-#10 5.461 (10/10) Installing git (2.43.4-r0)
-#10 10.05 Executing busybox-1.36.1-r15.trigger
-#10 10.10 Executing ca-certificates-20240226-r0.trigger
-#10 10.53 OK: 24 MiB in 29 packages
-#10 DONE 10.8s
+#10 [ 6/16] WORKDIR /R-4.4.0
+#10 DONE 0.0s
 
-#11 [ 6/20] RUN apk add unzip
-#11 2.186 (1/1) Installing unzip (6.0-r14)
-#11 3.351 Executing busybox-1.36.1-r15.trigger
-#11 3.401 OK: 24 MiB in 30 packages
-#11 DONE 3.7s
+#11 [ 7/16] RUN ./configure --with-x=no --enable-R-shlib --enable-memory-profiling &&     make -s ; make install
+#11 2.108 checking build system type... aarch64-unknown-linux-musl
+#11 3.614 checking host system type... aarch64-unknown-linux-musl
+#11 3.619 loading site script './config.site'
+#11 3.623 loading build-specific script './config.site'
+#11 3.644 checking for pwd... /bin/pwd
+#11 3.649 checking whether builddir is srcdir... yes
+#11 3.702 checking whether ln -s works... yes
+#11 3.717 checking for ar... ar
+#11 3.721 checking for a BSD-compatible install... /usr/bin/install -c
+#11 6.919 checking for sed... /bin/sed
+#11 6.922 checking for which... /usr/bin/which
+#11 6.927 checking for less... /usr/bin/less
+#11 6.929 checking for gtar... no
+#11 6.931 checking for gnutar... no
+#11 6.933 checking for tar... /bin/tar
+#11 6.936 checking for tex... no
+#11 6.941 checking for pdftex... no
+#11 6.943 configure: WARNING: you cannot build PDF versions of the R manuals
+#11 6.944 checking for pdflatex... no
+#11 6.947 configure: WARNING: you cannot build PDF versions of vignettes and help pages
+#11 6.948 checking for makeindex... no
+#11 6.950 checking for texi2any... no
+#11 6.955 configure: WARNING: you cannot build info or HTML versions of the R manuals
+#11 6.957 checking for texi2dvi... no
+#11 6.960 checking for kpsewhich... no
+#11 6.962 checking for latex inconsolata package... checking for unzip... /usr/bin/unzip
+#11 6.968 checking for zip... no
+#11 6.975 checking for gzip... /bin/gzip
+#11 6.978 checking for bzip2... /usr/bin/bzip2
+#11 6.981 checking for xdg-open... no
+#11 6.982 checking for firefox... no
+#11 6.984 checking for mozilla... no
+#11 6.986 checking for epiphany... no
+#11 6.988 checking for galeon... no
+#11 6.990 checking for opera... no
+#11 6.993 checking for kfmclient... no
+#11 6.995 checking for gnome-moz-remote... no
+#11 6.996 checking for open... no
+#11 6.998 checking for lynx... no
+#11 7.000 checking for links... no
+#11 7.002 configure: WARNING: I could not determine a browser
+#11 7.003 checking for xdg-open... no
+#11 7.006 checking for acroread... no
+#11 7.007 checking for acroread4... no
+#11 7.009 checking for evince... no
+#11 7.011 checking for atril... no
+#11 7.013 checking for xpdf... no
+#11 7.015 checking for gv... no
+#11 7.017 checking for gnome-gv... no
+#11 7.019 checking for ggv... no
+#11 7.020 checking for okular... no
+#11 7.022 checking for kpdf... no
+#11 7.025 checking for open... no
+#11 7.026 checking for gpdf... no
+#11 7.028 checking for kghostview... no
+#11 7.030 configure: WARNING: I could not determine a PDF viewer
+#11 7.031 checking for working aclocal... found
+#11 8.151 checking for working autoconf... found
+#11 9.167 checking for working autoheader... found
+#11 10.30 checking for bison... no
+#11 10.30 checking for byacc... no
+#11 10.31 checking for yacc... no
+#11 10.31 checking for notangle... false
+#11 10.31 checking for realpath... /usr/bin/realpath
+#11 10.32 checking for pkg-config... /usr/bin/pkg-config
+#11 10.32 checking for gcc... gcc
+#11 10.87 checking whether the C compiler works... yes
+#11 11.98 checking for C compiler default output file name... a.out
+#11 12.00 checking for suffix of executables... 
+#11 13.12 checking whether we are cross compiling... no
+#11 14.35 checking for suffix of object files... o
+#11 15.24 checking whether the compiler supports GNU C... yes
+#11 16.08 checking whether gcc accepts -g... yes
+#11 16.96 checking for gcc option to enable C11 features... none needed
+#11 21.13 checking for stdio.h... yes
+#11 22.13 checking for stdlib.h... yes
+#11 22.98 checking for string.h... yes
+#11 23.90 checking for inttypes.h... yes
+#11 24.85 checking for stdint.h... yes
+#11 25.77 checking for strings.h... yes
+#11 26.68 checking for sys/stat.h... yes
+#11 27.61 checking for sys/types.h... yes
+#11 28.59 checking for unistd.h... yes
+#11 29.63 checking for wchar.h... yes
+#11 30.80 checking for minix/config.h... no
+#11 31.85 checking for sys/time.h... yes
+#11 32.93 checking for sys/param.h... yes
+#11 34.09 checking whether it is safe to define __EXTENSIONS__... yes
+#11 35.71 checking whether _XOPEN_SOURCE should be defined... no
+#11 37.16 checking how to run the C preprocessor... gcc -E
+#11 39.58 looking for a modern Fortran compiler
+#11 39.58 checking for gfortran... gfortran
+#11 40.07 checking whether the compiler supports GNU Fortran... yes
+#11 41.14 checking whether gfortran accepts -g... yes
+#11 42.23 checking for g++... g++
+#11 42.72 checking whether the compiler supports GNU C++... yes
+#11 43.80 checking whether g++ accepts -g... yes
+#11 44.87 checking for g++ option to enable C++11 features... none needed
+#11 48.72 checking whether g++ -g -O2 can compile C++ code... yes
+#11 54.10 checking how to run the C++ preprocessor... g++ -E
+#11 56.51 checking whether __attribute__((visibility())) is supported... yes
+#11 57.19 checking whether gcc accepts -fvisibility... yes
+#11 58.58 checking whether g++ accepts -fvisibility... yes
+#11 60.14 checking whether gfortran accepts -fvisibility... yes
+#11 61.91 checking for gcc... gcc
+#11 62.73 checking whether the compiler supports GNU Objective C... no
+#11 63.03 checking whether gcc accepts -g... no
+#11 64.20 checking whether gcc -std=gnu17 is a C17 compiler... yes
+#11 65.97 checking whether gcc -std=gnu23 is a C23 compiler... yes
+#11 67.72 checking whether gcc -std=gnu90 is a C90 compiler... yes
+#11 69.66 checking whether gcc -std=gnu99 is a C99 compiler... yes
+#11 71.42 checking how to print strings... printf
+#11 71.43 checking for a sed that does not truncate output... (cached) /bin/sed
+#11 71.45 checking for grep that handles long lines and -e... /bin/grep
+#11 73.10 checking for egrep... /bin/grep -E
+#11 73.13 checking for fgrep... /bin/grep -F
+#11 73.17 checking for ld used by gcc... /usr/aarch64-alpine-linux-musl/bin/ld
+#11 73.61 checking if the linker (/usr/aarch64-alpine-linux-musl/bin/ld) is GNU ld... yes
+#11 73.66 checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+#11 73.74 checking the name lister (/usr/bin/nm -B) interface... BSD nm
+#11 74.57 checking the maximum length of command line arguments... 98304
+#11 74.67 checking how to convert aarch64-unknown-linux-musl file names to aarch64-unknown-linux-musl format... func_convert_file_noop
+#11 74.67 checking how to convert aarch64-unknown-linux-musl file names to toolchain format... func_convert_file_noop
+#11 74.67 checking for /usr/aarch64-alpine-linux-musl/bin/ld option to reload object files... -r
+#11 74.68 checking for objdump... objdump
+#11 74.68 checking how to recognize dependent libraries... pass_all
+#11 74.69 checking for dlltool... no
+#11 74.69 checking how to associate runtime and link libraries... printf %s\n
+#11 74.70 checking for archiver @FILE support... @
+#11 76.13 checking for strip... strip
+#11 76.13 checking for ranlib... ranlib
+#11 76.14 checking for gawk... no
+#11 76.14 checking for mawk... no
+#11 76.14 checking for nawk... no
+#11 76.15 checking for awk... awk
+#11 76.15 checking command to parse /usr/bin/nm -B output from gcc object... ok
+#11 78.96 checking for sysroot... no
+#11 78.96 checking for a working dd... /bin/dd
+#11 79.04 checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+#11 79.14 checking for mt... no
+#11 79.14 checking if : is a manifest tool... no
+#11 79.22 checking for dlfcn.h... yes
+#11 80.45 checking for objdir... .libs
+#11 82.94 checking if gcc supports -fno-rtti -fno-exceptions... no
+#11 83.78 checking for gcc option to produce PIC... -fPIC -DPIC
+#11 83.78 checking if gcc PIC flag -fPIC -DPIC works... yes
+#11 84.57 checking if gcc static flag -static works... yes
+#11 85.97 checking if gcc supports -c -o file.o... yes
+#11 86.83 checking if gcc supports -c -o file.o... (cached) yes
+#11 86.83 checking whether the gcc linker (/usr/aarch64-alpine-linux-musl/bin/ld) supports shared libraries... yes
+#11 87.08 checking whether -lc should be explicitly linked in... no
+#11 87.97 checking dynamic linker characteristics... GNU/Linux ld.so
+#11 89.79 checking how to hardcode library paths into programs... immediate
+#11 89.79 checking whether stripping libraries is possible... yes
+#11 89.83 checking if libtool supports shared libraries... yes
+#11 89.83 checking whether to build shared libraries... yes
+#11 89.83 checking whether to build static libraries... no
+#11 89.90 checking how to run the C++ preprocessor... g++ -E
+#11 93.83 checking for ld used by g++... /usr/aarch64-alpine-linux-musl/bin/ld
+#11 94.26 checking if the linker (/usr/aarch64-alpine-linux-musl/bin/ld) is GNU ld... yes
+#11 94.47 checking whether the g++ linker (/usr/aarch64-alpine-linux-musl/bin/ld) supports shared libraries... yes
+#11 96.35 checking for g++ option to produce PIC... -fPIC -DPIC
+#11 96.35 checking if g++ PIC flag -fPIC -DPIC works... yes
+#11 97.20 checking if g++ static flag -static works... yes
+#11 98.78 checking if g++ supports -c -o file.o... yes
+#11 99.76 checking if g++ supports -c -o file.o... (cached) yes
+#11 99.76 checking whether the g++ linker (/usr/aarch64-alpine-linux-musl/bin/ld) supports shared libraries... yes
+#11 99.76 checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+#11 99.76 checking how to hardcode library paths into programs... immediate
+#11 102.8 checking if libtool supports shared libraries... yes
+#11 102.8 checking whether to build shared libraries... yes
+#11 102.8 checking whether to build static libraries... no
+#11 104.9 checking for gfortran option to produce PIC... -fPIC
+#11 104.9 checking if gfortran PIC flag -fPIC works... yes
+#11 106.1 checking if gfortran static flag -static works... yes
+#11 108.1 checking if gfortran supports -c -o file.o... yes
+#11 109.5 checking if gfortran supports -c -o file.o... (cached) yes
+#11 109.5 checking whether the gfortran linker (/usr/aarch64-alpine-linux-musl/bin/ld) supports shared libraries... yes
+#11 109.7 checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+#11 109.7 checking how to hardcode library paths into programs... immediate
+#11 109.8 checking for cos in -lm... yes
+#11 111.5 checking for sin in -lm... yes
+#11 113.3 checking for dlopen in -ldl... yes
+#11 115.0 checking for readline/history.h... yes
+#11 116.0 checking for readline/readline.h... yes
+#11 116.9 checking for rl_callback_read_char in -lreadline... yes
+#11 118.5 checking for history_truncate_file... yes
+#11 120.2 checking for tilde_expand_word... yes
+#11 121.9 checking whether rl_completion_matches exists and is declared... yes
+#11 123.6 checking whether rl_resize_terminal exists and is declared... yes
+#11 125.4 checking whether rl_sort_completion_matches exists and is declared... yes
+#11 127.2 checking for dirent.h that defines DIR... yes
+#11 128.5 checking for library containing opendir... none required
+#11 130.3 checking for sys/wait.h that is POSIX.1 compatible... yes
+#11 132.3 checking for dlfcn.h... (cached) yes
+#11 132.3 checking for fcntl.h... yes
+#11 133.4 checking for glob.h... yes
+#11 134.5 checking for grp.h... yes
+#11 135.6 checking for pwd.h... yes
+#11 136.6 checking for sched.h... yes
+#11 137.7 checking for strings.h... (cached) yes
+#11 137.7 checking for sys/resource.h... yes
+#11 138.7 checking for sys/select.h... yes
+#11 139.8 checking for sys/socket.h... yes
+#11 141.0 checking for sys/stat.h... (cached) yes
+#11 141.0 checking for sys/time.h... (cached) yes
+#11 141.0 checking for sys/times.h... yes
+#11 142.5 checking for sys/utsname.h... yes
+#11 143.8 checking for unistd.h... (cached) yes
+#11 143.8 checking for utime.h... yes
+#11 145.1 checking for arpa/inet.h... yes
+#11 146.8 checking for elf.h... yes
+#11 148.2 checking for features.h... yes
+#11 149.5 checking for floatingpoint.h... no
+#11 151.6 checking for langinfo.h... yes
+#11 154.8 checking for netdb.h... yes
+#11 158.5 checking for netinet/in.h... yes
+#11 164.3 checking for sys/param.h... (cached) yes
+#11 164.3 checking for stdalign.h... yes
+#11 167.7 checking for errno.h... yes
+#11 169.5 checking for inttypes.h... (cached) yes
+#11 169.5 checking for limits.h... yes
+#11 172.1 checking for locale.h... yes
+#11 173.8 checking for stdarg.h... yes
+#11 175.2 checking for stdbool.h... yes
+#11 176.6 checking for stdint.h... (cached) yes
+#11 176.6 checking for string.h... (cached) yes
+#11 176.6 checking for gcc options needed to detect all undeclared functions... none needed
+#11 180.5 checking whether setjmp.h is POSIX.1 compatible... yes
+#11 182.6 checking whether sigsetjmp is declared... yes
+#11 184.7 checking whether siglongjmp is declared... yes
+#11 186.6 checking for egrep -e... (cached) /bin/grep -E
+#11 186.6 checking for GNU C library with version >= 2... no
+#11 187.6 checking for uint64_t... yes
+#11 189.6 checking for int64_t... yes
+#11 192.9 checking for int_fast64_t... yes
+#11 196.0 checking for pid_t... yes
+#11 198.7 checking for size_t... yes
+#11 201.2 checking whether SIZE_MAX is declared... yes
+#11 202.8 checking for blkcnt_t... yes
+#11 205.6 checking for type of socket length... socklen_t *
+#11 207.0 checking for stack_t... yes
+#11 209.1 checking for intptr_t... yes
+#11 211.1 checking for uintptr_t... yes
+#11 213.3 checking whether byte ordering is bigendian... no
+#11 215.8 checking for an ANSI C-conforming const... yes
+#11 217.4 checking for inline... inline
+#11 218.1 checking size of int... 4
+#11 220.7 checking size of long... 8
+#11 223.3 checking size of long long... 8
+#11 226.5 checking size of double... 8
+#11 229.0 checking size of size_t... 8
+#11 231.6 checking for C stack direction... down
+#11 234.6 checking size of long double... 16
+#11 237.4 checking whether we can compute C Make dependencies... yes, using $(CC) -MM
+#11 237.9 checking whether gcc supports -c -o FILE.lo... yes
+#11 239.4 checking for gcc option to support OpenMP... -fopenmp
+#11 242.7 checking how to get verbose linking output from gfortran... -v
+#11 246.4 checking for Fortran libraries of gfortran...  -L/usr/local/lib -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0 -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0/../../../../aarch64-alpine-linux-musl/lib/../lib -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0/../../../../aarch64-alpine-linux-musl/lib -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0/../../.. -lgfortran -lm -lssp_nonshared
+#11 248.3 checking how to get verbose linking output from gcc... -v
+#11 251.1 checking for C libraries of gcc...  -L/usr/local/lib -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0 -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0/../../../../aarch64-alpine-linux-musl/lib/../lib -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0/../../../../aarch64-alpine-linux-musl/lib -L/usr/lib/gcc/aarch64-alpine-linux-musl/14.2.0/../../.. -lssp_nonshared -lgcc_s
+#11 253.8 checking for dummy main to link with Fortran libraries... none
+#11 255.4 checking for Fortran name-mangling scheme... lower case, underscore, no extra underscore
+#11 262.3 checking whether gfortran appends underscores to external names... yes
+#11 262.3 checking whether gfortran appends extra underscores to external names... no
+#11 262.3 checking whether mixed C/Fortran code can be run... yes
+#11 266.5 checking whether gfortran and gcc agree on int and double... yes
+#11 272.0 checking whether gfortran and gcc agree on double complex... yes
+#11 276.4 checking for gfortran option to support OpenMP... -fopenmp
+#11 279.5 checking whether g++ accepts -M for generating dependencies... yes
+#11 280.4 checking whether we can compute ObjC Make dependencies... no
+#11 280.6 checking for type of 'hidden' Fortran character lengths... size_t
+#11 288.0 checking for xmkmf... no
+#11 288.1 checking whether g++  supports C++11 features with -std=gnu++11... yes
+#11 291.3 checking whether g++  supports C++14 features with -std=gnu++14... yes
+#11 295.0 checking whether g++  supports C++17 features with -std=gnu++17... yes
+#11 300.5 checking whether g++  supports C++20 features with -std=gnu++20... yes
+#11 306.4 checking whether g++  supports C++23 features with -std=gnu++23... yes
+#11 312.0 checking whether g++ -std=gnu++17 can compile ObjC++... no
+#11 312.1 checking whether  can compile ObjC++... no
+#11 312.1 checking for Objective C++ compiler... no working ObjC++ compiler found
+#11 312.1 checking for g++ -std=gnu++17 option to support OpenMP... -fopenmp
+#11 315.4 checking for option providing pthread_kill... none required
+#11 317.3 checking whether POSIX threads are supported... yes
+#11 317.3 checking for off_t... yes
+#11 320.0 checking for working alloca.h... yes
+#11 321.7 checking for alloca... yes
+#11 321.7 checking whether alloca is declared... yes
+#11 323.2 checking whether expm1 exists and is declared... yes
+#11 325.2 checking whether hypot exists and is declared... yes
+#11 327.6 checking whether log1p exists and is declared... yes
+#11 329.5 checking whether log1pl exists and is declared... yes
+#11 331.6 checking whether log2 exists and is declared... yes
+#11 333.6 checking whether log10 exists and is declared... yes
+#11 335.7 checking whether nearbyint exists and is declared... yes
+#11 337.7 checking whether nearbyintl exists and is declared... yes
+#11 339.6 checking whether powl exists and is declared... yes
+#11 341.4 checking whether rintl exists and is declared... yes
+#11 343.2 checking whether va_copy exists and is declared... yes
+#11 344.9 checking for isblank... yes
+#11 346.8 checking for sunmath.h... no
+#11 347.9 checking for cospi in -lsunmath... no
+#11 349.7 checking for atanpi... no
+#11 351.7 checking for atan2pi... no
+#11 353.8 checking for cospi... no
+#11 356.0 checking for exp10... yes
+#11 358.1 checking for pown... no
+#11 360.1 checking for sinpi... no
+#11 362.2 checking for tanpi... no
+#11 364.3 checking for __cospi... no
+#11 366.3 checking for __sinpi... no
+#11 368.4 checking for __tanpi... no
+#11 370.4 checking for fseeko... yes
+#11 372.3 checking for ftello... yes
+#11 374.3 checking whether fcntl exists and is declared... yes
+#11 376.1 checking whether getgrgid exists and is declared... yes
+#11 378.0 checking whether getpwnam exists and is declared... yes
+#11 379.8 checking whether getpwuid exists and is declared... yes
+#11 381.6 checking whether kill exists and is declared... yes
+#11 383.4 checking whether sigaction exists and is declared... yes
+#11 385.2 checking whether sigaltstack exists and is declared... yes
+#11 387.1 checking whether sigemptyset exists and is declared... yes
+#11 388.9 checking whether fdopen exists and is declared... yes
+#11 390.7 checking whether popen exists and is declared... yes
+#11 393.2 checking whether getline exists and is declared... yes
+#11 395.2 checking whether select exists and is declared... yes
+#11 397.1 checking whether setenv exists and is declared... yes
+#11 399.1 checking whether unsetenv exists and is declared... yes
+#11 401.0 checking whether getrlimit exists and is declared... yes
+#11 402.9 checking whether setrlimit exists and is declared... yes
+#11 404.8 checking whether getrusage exists and is declared... yes
+#11 406.8 checking whether getpriority exists and is declared... yes
+#11 408.7 checking whether chmod exists and is declared... yes
+#11 410.4 checking whether mkfifo exists and is declared... yes
+#11 412.1 checking whether stat exists and is declared... yes
+#11 413.8 checking whether umask exists and is declared... yes
+#11 415.6 checking whether gettimeofday exists and is declared... yes
+#11 417.5 checking whether utimes exists and is declared... yes
+#11 419.3 checking whether times exists and is declared... yes
+#11 421.0 checking whether gmtime_r exists and is declared... yes
+#11 422.7 checking whether localtime_r exists and is declared... yes
+#11 424.5 checking whether nl_langinfo exists and is declared... yes
+#11 426.3 checking whether access exists and is declared... yes
+#11 428.1 checking whether chdir exists and is declared... yes
+#11 430.0 checking whether execv exists and is declared... yes
+#11 431.9 checking whether ftruncate exists and is declared... yes
+#11 433.8 checking whether getcwd exists and is declared... yes
+#11 435.8 checking whether geteuid exists and is declared... yes
+#11 437.8 checking whether getuid exists and is declared... yes
+#11 439.7 checking whether link exists and is declared... yes
+#11 441.6 checking whether readlink exists and is declared... yes
+#11 443.6 checking whether symlink exists and is declared... yes
+#11 445.6 checking whether sysconf exists and is declared... yes
+#11 447.6 checking whether sched_setaffinity exists and is declared... yes
+#11 449.5 checking whether sched_getaffinity exists and is declared... yes
+#11 451.5 checking whether utime exists and is declared... yes
+#11 453.3 checking whether utimensat exists and is declared... yes
+#11 455.3 checking for clock_gettime in -lrt... yes
+#11 457.2 checking whether clock_gettime exists and is declared... yes
+#11 459.0 checking whether timespec_get exists and is declared... yes
+#11 460.7 checking for putenv... yes
+#11 462.7 checking whether putenv is declared... yes
+#11 464.2 checking for vasprintf... yes
+#11 466.1 checking whether vasprintf is declared... yes
+#11 467.6 checking for mempcpy... yes
+#11 469.5 checking for realpath... yes
+#11 471.4 checking whether realpath is declared... yes
+#11 473.0 checking whether glob exists and is declared... yes
+#11 474.9 checking for dladdr... yes
+#11 477.1 checking for dlsym... yes
+#11 479.2 checking whether dladdr is declared... yes
+#11 480.7 checking whether dlsym is declared... yes
+#11 482.2 checking whether RTLD_DEFAULT is declared... yes
+#11 483.7 checking whether RTLD_NEXT is declared... yes
+#11 485.2 checking for thread.h... no
+#11 486.4 checking whether thr_stksegment exists and is declared... no
+#11 487.1 checking for stpcpy... yes
+#11 489.1 checking for isnan... no
+#11 491.0 checking whether isfinite is declared... yes
+#11 492.5 checking whether isnan is declared... yes
+#11 493.9 checking whether you have IEEE 754 floating-point arithmetic... yes
+#11 493.9 checking whether putenv("FOO") can unset an environment variable... yes
+#11 496.1 checking whether putenv("FOO=") can unset an environment variable... no
+#11 498.4 checking for nl_langinfo and CODESET... yes
+#11 500.3 checking for mkdtemp... yes
+#11 502.1 checking for strdup... yes
+#11 504.0 checking for strncasecmp... yes
+#11 506.1 checking whether mkdtemp is declared... yes
+#11 507.9 checking whether strdup is declared... yes
+#11 509.7 checking whether strncasecmp is declared... yes
+#11 511.9 checking for library containing connect... none required
+#11 514.2 checking for library containing gethostbyname... none required
+#11 516.2 checking for working calloc... yes
+#11 518.4 checking for working isfinite... yes
+#11 520.9 checking for working log1p... yes
+#11 523.9 checking whether ftell works correctly on files opened for append... no
+#11 526.5 checking for working sigaction... yes
+#11 528.6 checking whether mktime, gmtime, localtime work correctly in 2020... yes
+#11 531.5 checking whether mktime sets errno... yes
+#11 533.9 checking whether mktime works correctly after 2037... yes
+#11 536.3 checking whether mktime works correctly before 1902... yes
+#11 539.2 checking whether mktime works correctly in 1969... yes
+#11 541.4 checking for complex.h... yes
+#11 542.5 checking for double complex... yes
+#11 544.6 checking whether C99 double complex is supported... yes
+#11 544.7 checking whether cabs exists and is declared... yes
+#11 546.5 checking whether carg exists and is declared... yes
+#11 548.4 checking whether cexp exists and is declared... yes
+#11 551.7 checking whether clog exists and is declared... yes
+#11 553.7 checking whether csqrt exists and is declared... yes
+#11 555.8 checking whether cpow exists and is declared... yes
+#11 557.6 checking whether ccos exists and is declared... yes
+#11 559.3 checking whether csin exists and is declared... yes
+#11 560.9 checking whether ctan exists and is declared... yes
+#11 562.5 checking whether cacos exists and is declared... yes
+#11 563.9 checking whether casin exists and is declared... yes
+#11 565.4 checking whether catan exists and is declared... yes
+#11 566.9 checking whether ccosh exists and is declared... yes
+#11 568.5 checking whether csinh exists and is declared... yes
+#11 570.0 checking whether ctanh exists and is declared... yes
+#11 571.4 checking for working ctanh... yes
+#11 573.4 checking whether 'struct tm' includes tm_zone... yes
+#11 574.7 checking whether 'struct tm' includes tm_gmtoff... yes
+#11 576.1 checking for dgemm_ in -llapack... no
+#11 577.8 checking for ATLAS routines in liblapack... yes
+#11 580.2 configure: using internal LAPACK sources
+#11 580.2 checking for iconv.h... yes
+#11 581.2 checking for iconv... yes
+#11 583.1 checking whether iconv accepts "UTF-8", "latin1", "ASCII" and "UCS-*"... yes
+#11 585.4 checking whether iconv accepts "CP1252"... yes
+#11 587.6 checking for iconvlist... no
+#11 588.4 checking for iconv... yes
+#11 590.3 checking for iconv declaration... 
+#11 591.6          extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+#11 591.6 checking for wchar.h... (cached) yes
+#11 591.6 checking for wctype.h... yes
+#11 592.7 checking whether mbrtowc exists and is declared... yes
+#11 594.4 checking whether wcrtomb exists and is declared... yes
+#11 596.3 checking whether wcscoll exists and is declared... yes
+#11 598.1 checking whether wcsftime exists and is declared... yes
+#11 599.8 checking whether wcstod exists and is declared... yes
+#11 601.5 checking whether mbstowcs exists and is declared... yes
+#11 603.1 checking whether wcstombs exists and is declared... yes
+#11 604.8 checking whether wctrans exists and is declared... yes
+#11 606.7 checking whether wctype exists and is declared... yes
+#11 608.6 checking whether iswctype exists and is declared... yes
+#11 610.6 checking whether wcwidth exists and is declared... yes
+#11 612.5 checking whether wcswidth exists and is declared... yes
+#11 614.3 checking for wctrans_t... yes
+#11 616.7 checking for mbstate_t... yes
+#11 619.0 checking for ICU... no
+#11 619.6 checking for X... disabled
+#11 619.6 using X11 ... no
+#11 619.6 checking whether pkg-config knows about cairo and pango... no
+#11 619.7 checking whether pkg-config knows about cairo... no
+#11 619.7 checking for tclConfig.sh... no
+#11 619.7 checking for tclConfig.sh in library (sub)directories... no
+#11 620.0 checking for tkConfig.sh... no
+#11 620.0 checking for tkConfig.sh in library (sub)directories... no
+#11 620.2 checking for tcl.h... no
+#11 620.7 checking for BSD networking... yes
+#11 620.7 checking for rpc/types.h... no
+#11 621.6 checking for tirpc/rpc/types.h... no
+#11 622.5 checking for XDR support... no
+#11 622.5 checking for inflateInit2_ in -lz... yes
+#11 624.0 checking for zlib.h... yes
+#11 625.0 checking if zlib version >= 1.2.5... yes
+#11 626.7 checking whether zlib support suffices... yes
+#11 626.7 checking for BZ2_bzlibVersion in -lbz2... yes
+#11 628.3 checking for bzlib.h... yes
+#11 629.3 checking if bzip2 version >= 1.0.6... yes
+#11 631.1 checking whether bzip2 support suffices... yes
+#11 631.1 checking for lzma_version_number in -llzma... yes
+#11 632.9 checking for lzma.h... yes
+#11 633.9 checking if lzma version >= 5.0.3... yes
+#11 635.8 checking for libdeflate.h... no
+#11 636.9 checking for pcre2.h... yes
+#11 638.2 checking for pcre2_compile_8 in -lpcre2-8... yes
+#11 640.0 checking if PCRE2 has Unicode support... yes
+#11 642.2 checking whether PCRE support suffices... yes
+#11 642.2 checking for curl-config... /usr/bin/curl-config
+#11 642.3 checking libcurl version ... 8.12.1
+#11 642.4 checking for curl/curl.h... yes
+#11 643.6 checking if libcurl is >= 7.28.0... yes
+#11 645.7 checking if libcurl supports https... yes
+#11 648.9 checking if pkg-config knows about libjpeg... no: run 'pkg-config --print-errors libjpeg' for further info
+#11 649.0 checking if jpeglib version >= 6b... no
+#11 649.5 checking if pkg-config knows about libpng... no: run 'pkg-config --print-errors libpng' for further info
+#11 649.5 checking if pkg-config knows about libtiff... no: run 'pkg-config --print-errors libtiff-4' for further info
+#11 649.6 checking whether leap seconds are treated according to POSIX... yes
+#11 651.9 checking for inline... inline
+#11 652.5 checking for struct stat.st_atim.tv_nsec... yes
+#11 653.9 checking whether struct stat.st_atim is of type struct timespec... yes
+#11 655.4 checking for setitimer... yes
+#11 657.1 checking for gcc option to enable large file support... none needed
+#11 659.7 checking for declarations of fseeko and ftello... yes
+#11 661.5 checking whether KERN_USRSTACK sysctl is supported... no
+#11 662.2 checking for visible __lib_stack_end... no
+#11 664.1 checking for lpr... no
+#11 664.1 checking for lp... no
+#11 664.1 checking for paperconf... false
+#11 664.1 checking for Fortran flag to compile .f90 files... none
+#11 665.4 checking for Fortran flag to compile .f95 files... none
+#11 666.9 checking for gfortran option to support OpenMP... (cached) -fopenmp
+#11 667.0 checking for recommended packages... yes
+#11 667.5 checking whether NLS is requested... yes
+#11 667.6 
+#11 667.6 Configuring src/extra/intl directory
+#11 667.6 checking for a race-free mkdir -p... /bin/mkdir -p
+#11 667.6 checking whether we are using the GNU C Library 2 or newer... no
+#11 668.1 checking for ranlib... (cached) ranlib
+#11 668.1 checking for simple visibility declarations... yes
+#11 669.3 checking for stdint.h... yes
+#11 670.7 checking for getpagesize... yes
+#11 672.5 checking for working mmap... yes
+#11 675.8 checking whether integer division by zero raises SIGFPE... no
+#11 676.6 checking for inttypes.h... yes
+#11 678.0 checking for unsigned long long int... yes
+#11 679.9 checking for inttypes.h... (cached) yes
+#11 679.9 checking whether the inttypes.h PRIxNN macros are broken... no
+#11 681.1 checking for ld used by gcc... /usr/aarch64-alpine-linux-musl/bin/ld
+#11 681.4 checking if the linker (/usr/aarch64-alpine-linux-musl/bin/ld) is GNU ld... yes
+#11 681.4 checking for shared library run path origin... done
+#11 682.0 checking whether imported symbols can be declared weak... yes
+#11 683.4 checking for multithread API to use... none
+#11 685.0 checking for argz.h... no
+#11 685.9 checking for inttypes.h... (cached) yes
+#11 685.9 checking for limits.h... (cached) yes
+#11 685.9 checking for unistd.h... (cached) yes
+#11 685.9 checking for sys/param.h... (cached) yes
+#11 685.9 checking for getcwd... yes
+#11 687.5 checking for getegid... yes
+#11 689.2 checking for geteuid... yes
+#11 690.9 checking for getgid... yes
+#11 692.7 checking for getuid... yes
+#11 694.4 checking for mempcpy... (cached) yes
+#11 694.4 checking for munmap... yes
+#11 696.1 checking for stpcpy... (cached) yes
+#11 696.1 checking for strcasecmp... yes
+#11 698.0 checking for strdup... (cached) yes
+#11 698.0 checking for strtoul... yes
+#11 699.8 checking for tsearch... yes
+#11 701.6 checking for argz_count... no
+#11 703.4 checking for argz_stringify... no
+#11 705.2 checking for argz_next... no
+#11 706.9 checking for __fsetlocking... yes
+#11 708.5 checking whether feof_unlocked is declared... yes
+#11 709.7 checking whether fgets_unlocked is declared... yes
+#11 711.0 checking for iconv... (cached) yes
+#11 711.0 checking for iconv declaration... (cached) 
+#11 711.0          extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+#11 711.0 checking for NL_LOCALE_NAME macro... yes
+#11 712.5 checking for bison... no
+#11 712.5 checking for long long int... yes
+#11 714.3 checking for long double... yes
+#11 714.3 checking for wchar_t... yes
+#11 715.5 checking for wint_t... yes
+#11 717.0 checking for intmax_t... yes
+#11 718.4 checking whether printf() supports POSIX/XSI format strings... yes
+#11 720.8 checking whether we are using the GNU C Library 2.1 or newer... no
+#11 721.3 checking for stdint.h... (cached) yes
+#11 721.3 checking for SIZE_MAX... yes
+#11 721.7 checking for stdint.h... (cached) yes
+#11 721.7 checking for CFPreferencesCopyAppValue... no
+#11 722.4 checking for CFLocaleCopyCurrent... no
+#11 723.0 checking for ptrdiff_t... yes
+#11 725.7 checking for stddef.h... yes
+#11 726.9 checking for stdlib.h... (cached) yes
+#11 726.9 checking for string.h... (cached) yes
+#11 726.9 checking for asprintf... yes
+#11 729.2 checking for fwprintf... yes
+#11 731.3 checking for putenv... (cached) yes
+#11 731.3 checking for setenv... yes
+#11 733.3 checking for setlocale... yes
+#11 735.8 checking for snprintf... yes
+#11 738.0 checking for wcslen... yes
+#11 740.1 checking whether _snprintf is declared... no
+#11 741.1 checking whether _snwprintf is declared... no
+#11 742.0 checking whether getc_unlocked is declared... yes
+#11 743.5 checking for nl_langinfo and CODESET... (cached) yes
+#11 743.5 checking for LC_MESSAGES... yes
+#11 745.3 checking for CFPreferencesCopyAppValue... (cached) no
+#11 745.3 checking for CFLocaleCopyCurrent... (cached) no
+#11 745.3 checking whether included gettext is requested... no
+#11 745.3 checking for GNU gettext in libc... no
+#11 746.0 checking for GNU gettext in libintl... no
+#11 746.8 checking whether to use NLS... yes
+#11 746.8 checking where the gettext function comes from... included intl directory
+#11 746.8 Finished configuring src/extra/intl directory
+#11 746.8 
+#11 746.8 checking whether OpenMP SIMD reduction is supported... yes
+#11 750.2 using as R_SHELL for scripts ... /bin/sh
+#11 750.9 configure: creating ./config.status
+#11 763.6 config.status: creating Makeconf
+#11 764.0 config.status: creating Makefile
+#11 764.3 config.status: creating doc/Makefile
+#11 764.7 config.status: creating doc/html/Makefile
+#11 765.1 config.status: creating doc/manual/Makefile
+#11 765.5 config.status: creating etc/Makefile
+#11 765.9 config.status: creating etc/Makeconf
+#11 766.3 config.status: creating etc/Renviron
+#11 766.8 config.status: creating etc/javaconf
+#11 767.1 config.status: creating etc/ldpaths
+#11 767.5 config.status: creating m4/Makefile
+#11 767.9 config.status: creating po/Makefile
+#11 768.3 config.status: creating share/Makefile
+#11 768.7 config.status: creating src/Makefile
+#11 769.1 config.status: creating src/appl/Makefile
+#11 769.5 config.status: creating src/extra/Makefile
+#11 769.9 config.status: creating src/extra/blas/Makefile
+#11 770.4 config.status: creating src/extra/intl/Makefile
+#11 770.7 config.status: creating src/extra/tre/Makefile
+#11 771.1 config.status: creating src/extra/tzone/Makefile
+#11 771.5 config.status: creating src/extra/xdr/Makefile
+#11 771.9 config.status: creating src/include/Makefile
+#11 772.3 config.status: creating src/include/Rmath.h0
+#11 772.8 config.status: creating src/include/R_ext/Makefile
+#11 773.1 config.status: creating src/library/Recommended/Makefile
+#11 773.5 config.status: creating src/library/Makefile
+#11 773.9 config.status: creating src/library/base/DESCRIPTION
+#11 774.3 config.status: creating src/library/base/Makefile
+#11 774.6 config.status: creating src/library/compiler/DESCRIPTION
+#11 775.0 config.status: creating src/library/compiler/Makefile
+#11 775.4 config.status: creating src/library/datasets/DESCRIPTION
+#11 775.7 config.status: creating src/library/datasets/Makefile
+#11 776.1 config.status: creating src/library/graphics/DESCRIPTION
+#11 776.5 config.status: creating src/library/graphics/Makefile
+#11 776.9 config.status: creating src/library/graphics/src/Makefile
+#11 777.3 config.status: creating src/library/grDevices/DESCRIPTION
+#11 777.7 config.status: creating src/library/grDevices/Makefile
+#11 778.1 config.status: creating src/library/grDevices/src/Makefile
+#11 778.5 config.status: creating src/library/grDevices/src/cairo/Makefile
+#11 778.8 config.status: creating src/library/grid/DESCRIPTION
+#11 779.2 config.status: creating src/library/grid/Makefile
+#11 779.6 config.status: creating src/library/grid/src/Makefile
+#11 780.0 config.status: creating src/library/methods/DESCRIPTION
+#11 780.4 config.status: creating src/library/methods/Makefile
+#11 780.8 config.status: creating src/library/methods/src/Makefile
+#11 781.2 config.status: creating src/library/parallel/DESCRIPTION
+#11 781.6 config.status: creating src/library/parallel/Makefile
+#11 782.0 config.status: creating src/library/parallel/src/Makefile
+#11 782.4 config.status: creating src/library/profile/Makefile
+#11 782.7 config.status: creating src/library/stats/DESCRIPTION
+#11 783.1 config.status: creating src/library/stats/Makefile
+#11 783.5 config.status: creating src/library/stats/src/Makefile
+#11 783.9 config.status: creating src/library/stats4/DESCRIPTION
+#11 784.3 config.status: creating src/library/stats4/Makefile
+#11 784.6 config.status: creating src/library/splines/DESCRIPTION
+#11 785.0 config.status: creating src/library/splines/Makefile
+#11 785.4 config.status: creating src/library/splines/src/Makefile
+#11 785.8 config.status: creating src/library/tcltk/DESCRIPTION
+#11 786.1 config.status: creating src/library/tcltk/Makefile
+#11 786.5 config.status: creating src/library/tcltk/src/Makefile
+#11 786.9 config.status: creating src/library/tools/DESCRIPTION
+#11 787.3 config.status: creating src/library/tools/Makefile
+#11 787.7 config.status: creating src/library/tools/src/Makefile
+#11 788.1 config.status: creating src/library/translations/DESCRIPTION
+#11 788.6 config.status: creating src/library/translations/Makefile
+#11 788.9 config.status: creating src/library/utils/DESCRIPTION
+#11 789.3 config.status: creating src/library/utils/Makefile
+#11 789.7 config.status: creating src/library/utils/src/Makefile
+#11 790.1 config.status: creating src/main/Makefile
+#11 790.6 config.status: creating src/modules/Makefile
+#11 791.0 config.status: creating src/modules/X11/Makefile
+#11 791.4 config.status: creating src/modules/internet/Makefile
+#11 791.7 config.status: creating src/modules/lapack/Makefile
+#11 792.1 config.status: creating src/nmath/Makefile
+#11 792.5 config.status: creating src/nmath/standalone/Makefile
+#11 792.9 config.status: creating src/scripts/Makefile
+#11 793.3 config.status: creating src/scripts/R.sh
+#11 793.6 config.status: creating src/scripts/Rcmd
+#11 794.0 config.status: creating src/scripts/javareconf
+#11 794.4 config.status: creating src/scripts/mkinstalldirs
+#11 794.8 config.status: creating src/scripts/pager
+#11 795.1 config.status: creating src/scripts/rtags
+#11 795.5 config.status: creating src/unix/Makefile
+#11 795.8 config.status: creating tests/Makefile
+#11 796.2 config.status: creating tests/Embedding/Makefile
+#11 796.5 config.status: creating tests/Examples/Makefile
+#11 796.9 config.status: creating tools/Makefile
+#11 797.3 config.status: creating src/include/config.h
+#11 797.7 config.status: executing libtool commands
+#11 798.0 config.status: executing stamp-h commands
+#11 798.1 configure: WARNING: --with-libdeflate-compression requires libdeflate
+#11 798.1 
+#11 798.1 R is now configured for aarch64-unknown-linux-musl
+#11 798.1 
+#11 798.1   Source directory:            .
+#11 798.1   Installation directory:      /usr/local
+#11 798.1 
+#11 798.1   C compiler:                  gcc  -g -O2
+#11 798.1   Fortran fixed-form compiler: gfortran  -g -O2
+#11 798.1 
+#11 798.1   Default C++ compiler:        g++ -std=gnu++17  -g -O2
+#11 798.1   C++11 compiler:              g++ -std=gnu++11  -g -O2
+#11 798.1   C++14 compiler:              g++ -std=gnu++14  -g -O2
+#11 798.1   C++17 compiler:              g++ -std=gnu++17  -g -O2
+#11 798.1   C++20 compiler:              g++ -std=gnu++20  -g -O2
+#11 798.1   C++23 compiler:              g++ -std=gnu++23  -g -O2
+#11 798.1   Fortran free-form compiler:  gfortran  -g -O2
+#11 798.1   Obj-C compiler:	        
+#11 798.1 
+#11 798.1   Interfaces supported:        
+#11 798.1   External libraries:          pcre2, readline, curl
+#11 798.1   Additional capabilities:     NLS
+#11 798.1   Options enabled:             shared R library, shared BLAS, R profiling, memory profiling
+#11 798.1 
+#11 798.1   Capabilities skipped:        PNG, JPEG, TIFF, cairo, ICU
+#11 798.1   Options not enabled:         
+#11 798.1 
+#11 798.1   Recommended packages:        yes
+#11 798.1 
+#11 798.1 configure: WARNING: you cannot build info or HTML versions of the R manuals
+#11 798.1 configure: WARNING: you cannot build PDF versions of the R manuals
+#11 798.1 configure: WARNING: you cannot build PDF versions of vignettes and help pages
+#11 798.1 configure: WARNING: I could not determine a browser
+#11 798.1 configure: WARNING: I could not determine a PDF viewer
+#11 800.1 creating src/scripts/R.fe
+#11 800.6 mkdir ../../bin
+#11 801.4 mkdir ../../include
+#11 803.6 mkdir ../../../include/R_ext
+#11 994.2 mkdir /R-4.4.0/lib
+#11 994.4 making xdr.d from xdr.c
+#11 995.0 making xdr_float.d from xdr_float.c
+#11 995.5 making xdr_mem.d from xdr_mem.c
+#11 996.1 making xdr_stdio.d from xdr_stdio.c
+#11 1010.6 making bindtextdom.d from bindtextdom.c
+#11 1011.2 making dcgettext.d from dcgettext.c
+#11 1011.8 making dgettext.d from dgettext.c
+#11 1012.4 making gettext.d from gettext.c
+#11 1013.0 making finddomain.d from finddomain.c
+#11 1013.7 making loadmsgcat.d from loadmsgcat.c
+#11 1014.4 making textdomain.d from textdomain.c
+#11 1014.9 making l10nflist.d from l10nflist.c
+#11 1015.5 making explodename.d from explodename.c
+#11 1016.1 making dcigettext.d from dcigettext.c
+#11 1016.7 making dcngettext.d from dcngettext.c
+#11 1017.3 making dngettext.d from dngettext.c
+#11 1017.8 making ngettext.d from ngettext.c
+#11 1018.4 making plural.d from plural.c
+#11 1018.9 making plural-exp.d from plural-exp.c
+#11 1019.5 making langprefs.d from langprefs.c
+#11 1020.1 making localcharset.d from localcharset.c
+#11 1020.7 making localename.d from localename.c
+#11 1021.3 making printf.d from printf.c
+#11 1021.9 making osdep.d from osdep.c
+#11 1022.4 making intl-compat.d from intl-compat.c
+#11 1022.9 making hash-string.d from hash-string.c
+#11 1023.4 making lock.d from lock.c
+#11 1089.7 making regcomp.d from regcomp.c
+#11 1090.3 making regerror.d from regerror.c
+#11 1090.9 making regexec.d from regexec.c
+#11 1091.5 making tre-ast.d from tre-ast.c
+#11 1092.1 making tre-compile.d from tre-compile.c
+#11 1092.7 making tre-match-approx.d from tre-match-approx.c
+#11 1093.3 making tre-match-backtrack.d from tre-match-backtrack.c
+#11 1093.9 making tre-match-parallel.d from tre-match-parallel.c
+#11 1094.4 making tre-mem.d from tre-mem.c
+#11 1095.0 making tre-parse.d from tre-parse.c
+#11 1095.6 making tre-stack.d from tre-stack.c
+#11 1184.7 making integrate.d from integrate.c
+#11 1185.2 making interv.d from interv.c
+#11 1185.7 making maxcol.d from maxcol.c
+#11 1186.2 making optim.d from optim.c
+#11 1186.8 making pretty.d from pretty.c
+#11 1187.3 making uncmin.d from uncmin.c
+#11 1325.8 making mlutils.d from mlutils.c
+#11 1326.3 making d1mach.d from d1mach.c
+#11 1326.8 making i1mach.d from i1mach.c
+#11 1327.2 making fmax2.d from fmax2.c
+#11 1327.7 making fmin2.d from fmin2.c
+#11 1328.1 making fprec.d from fprec.c
+#11 1328.6 making fround.d from fround.c
+#11 1329.1 making ftrunc.d from ftrunc.c
+#11 1329.5 making sign.d from sign.c
+#11 1330.0 making fsign.d from fsign.c
+#11 1330.5 making imax2.d from imax2.c
+#11 1331.0 making imin2.d from imin2.c
+#11 1331.5 making chebyshev.d from chebyshev.c
+#11 1331.9 making log1p.d from log1p.c
+#11 1332.4 making lgammacor.d from lgammacor.c
+#11 1332.9 making gammalims.d from gammalims.c
+#11 1333.3 making stirlerr.d from stirlerr.c
+#11 1333.8 making bd0.d from bd0.c
+#11 1334.3 making gamma.d from gamma.c
+#11 1334.8 making lgamma.d from lgamma.c
+#11 1335.3 making gamma_cody.d from gamma_cody.c
+#11 1335.8 making beta.d from beta.c
+#11 1336.3 making lbeta.d from lbeta.c
+#11 1336.8 making polygamma.d from polygamma.c
+#11 1337.3 making cospi.d from cospi.c
+#11 1337.8 making bessel_i.d from bessel_i.c
+#11 1338.3 making bessel_j.d from bessel_j.c
+#11 1338.8 making bessel_k.d from bessel_k.c
+#11 1339.3 making bessel_y.d from bessel_y.c
+#11 1339.7 making choose.d from choose.c
+#11 1340.2 making snorm.d from snorm.c
+#11 1340.7 making sexp.d from sexp.c
+#11 1341.2 making dgamma.d from dgamma.c
+#11 1341.7 making pgamma.d from pgamma.c
+#11 1342.2 making qgamma.d from qgamma.c
+#11 1342.7 making rgamma.d from rgamma.c
+#11 1343.2 making dbeta.d from dbeta.c
+#11 1343.7 making pbeta.d from pbeta.c
+#11 1344.2 making qbeta.d from qbeta.c
+#11 1344.7 making rbeta.d from rbeta.c
+#11 1345.2 making dunif.d from dunif.c
+#11 1345.8 making punif.d from punif.c
+#11 1346.6 making qunif.d from qunif.c
+#11 1347.2 making runif.d from runif.c
+#11 1347.8 making dnorm.d from dnorm.c
+#11 1348.4 making pnorm.d from pnorm.c
+#11 1348.9 making qnorm.d from qnorm.c
+#11 1349.4 making rnorm.d from rnorm.c
+#11 1350.1 making dlnorm.d from dlnorm.c
+#11 1350.6 making plnorm.d from plnorm.c
+#11 1351.4 making qlnorm.d from qlnorm.c
+#11 1352.0 making rlnorm.d from rlnorm.c
+#11 1352.6 making df.d from df.c
+#11 1353.3 making pf.d from pf.c
+#11 1354.0 making qf.d from qf.c
+#11 1354.7 making rf.d from rf.c
+#11 1355.3 making dnf.d from dnf.c
+#11 1355.9 making dt.d from dt.c
+#11 1356.6 making pt.d from pt.c
+#11 1357.2 making qt.d from qt.c
+#11 1357.8 making rt.d from rt.c
+#11 1358.4 making dnt.d from dnt.c
+#11 1359.0 making dchisq.d from dchisq.c
+#11 1359.6 making pchisq.d from pchisq.c
+#11 1360.1 making qchisq.d from qchisq.c
+#11 1360.7 making rchisq.d from rchisq.c
+#11 1361.3 making rnchisq.d from rnchisq.c
+#11 1361.8 making dbinom.d from dbinom.c
+#11 1362.4 making pbinom.d from pbinom.c
+#11 1363.0 making qbinom.d from qbinom.c
+#11 1363.5 making rbinom.d from rbinom.c
+#11 1364.1 making rmultinom.d from rmultinom.c
+#11 1364.6 making dcauchy.d from dcauchy.c
+#11 1365.2 making pcauchy.d from pcauchy.c
+#11 1365.7 making qcauchy.d from qcauchy.c
+#11 1366.2 making rcauchy.d from rcauchy.c
+#11 1366.7 making dexp.d from dexp.c
+#11 1367.3 making pexp.d from pexp.c
+#11 1367.8 making qexp.d from qexp.c
+#11 1368.3 making rexp.d from rexp.c
+#11 1368.7 making dgeom.d from dgeom.c
+#11 1369.2 making pgeom.d from pgeom.c
+#11 1369.7 making qgeom.d from qgeom.c
+#11 1370.2 making rgeom.d from rgeom.c
+#11 1370.7 making dhyper.d from dhyper.c
+#11 1371.2 making phyper.d from phyper.c
+#11 1371.7 making qhyper.d from qhyper.c
+#11 1372.2 making rhyper.d from rhyper.c
+#11 1372.7 making dnbinom.d from dnbinom.c
+#11 1373.3 making pnbinom.d from pnbinom.c
+#11 1373.8 making qnbinom.d from qnbinom.c
+#11 1374.3 making qnbinom_mu.d from qnbinom_mu.c
+#11 1374.8 making rnbinom.d from rnbinom.c
+#11 1375.3 making dpois.d from dpois.c
+#11 1375.8 making ppois.d from ppois.c
+#11 1376.3 making qpois.d from qpois.c
+#11 1376.8 making rpois.d from rpois.c
+#11 1377.3 making dweibull.d from dweibull.c
+#11 1377.9 making pweibull.d from pweibull.c
+#11 1378.4 making qweibull.d from qweibull.c
+#11 1378.9 making rweibull.d from rweibull.c
+#11 1379.4 making dlogis.d from dlogis.c
+#11 1379.9 making plogis.d from plogis.c
+#11 1380.4 making qlogis.d from qlogis.c
+#11 1381.0 making rlogis.d from rlogis.c
+#11 1381.5 making dnchisq.d from dnchisq.c
+#11 1382.0 making pnchisq.d from pnchisq.c
+#11 1382.5 making qnchisq.d from qnchisq.c
+#11 1383.0 making dnbeta.d from dnbeta.c
+#11 1383.6 making pnbeta.d from pnbeta.c
+#11 1384.1 making qnbeta.d from qnbeta.c
+#11 1384.6 making pnf.d from pnf.c
+#11 1385.2 making pnt.d from pnt.c
+#11 1385.7 making qnf.d from qnf.c
+#11 1386.3 making qnt.d from qnt.c
+#11 1386.8 making ptukey.d from ptukey.c
+#11 1387.4 making qtukey.d from qtukey.c
+#11 1387.9 making toms708.d from toms708.c
+#11 1388.4 making wilcox.d from wilcox.c
+#11 1389.0 making signrank.d from signrank.c
+#11 1776.1 config.status: creating src/unix/Makefile
+#11 1776.6 making Rembedded.d from Rembedded.c
+#11 1777.3 making dynload.d from dynload.c
+#11 1778.1 making system.d from system.c
+#11 1778.8 making sys-unix.d from sys-unix.c
+#11 1779.6 making sys-std.d from sys-std.c
+#11 1780.4 making X11.d from X11.c
+#11 1827.9 config.status: creating src/main/Makefile
+#11 1828.3 making CommandLineArgs.d from CommandLineArgs.c
+#11 1829.0 making Rdynload.d from Rdynload.c
+#11 1829.6 making Renviron.d from Renviron.c
+#11 1830.2 making RNG.d from RNG.c
+#11 1830.8 making agrep.d from agrep.c
+#11 1831.4 making altclasses.d from altclasses.c
+#11 1832.1 making altrep.d from altrep.c
+#11 1832.7 making apply.d from apply.c
+#11 1833.4 making arithmetic.d from arithmetic.c
+#11 1834.0 making array.d from array.c
+#11 1834.7 making attrib.d from attrib.c
+#11 1835.3 making bind.d from bind.c
+#11 1836.0 making builtin.d from builtin.c
+#11 1836.6 making character.d from character.c
+#11 1837.3 making clippath.d from clippath.c
+#11 1838.0 making coerce.d from coerce.c
+#11 1838.7 making colors.d from colors.c
+#11 1839.3 making complex.d from complex.c
+#11 1839.9 making connections.d from connections.c
+#11 1840.7 making context.d from context.c
+#11 1841.4 making cum.d from cum.c
+#11 1842.0 making dcf.d from dcf.c
+#11 1842.7 making datetime.d from datetime.c
+#11 1843.4 making debug.d from debug.c
+#11 1844.1 making deparse.d from deparse.c
+#11 1844.9 making devices.d from devices.c
+#11 1845.6 making dotcode.d from dotcode.c
+#11 1846.4 making dounzip.d from dounzip.c
+#11 1847.1 making dstruct.d from dstruct.c
+#11 1847.8 making duplicate.d from duplicate.c
+#11 1848.4 making edit.d from edit.c
+#11 1849.1 making engine.d from engine.c
+#11 1849.9 making envir.d from envir.c
+#11 1850.5 making errors.d from errors.c
+#11 1851.3 making eval.d from eval.c
+#11 1852.1 making flexiblas.d from flexiblas.c
+#11 1852.7 making format.d from format.c
+#11 1853.4 making gevents.d from gevents.c
+#11 1854.1 making gram.d from gram.c
+#11 1854.8 making gram-ex.d from gram-ex.c
+#11 1855.4 making graphics.d from graphics.c
+#11 1856.1 making grep.d from grep.c
+#11 1856.8 making identical.d from identical.c
+#11 1857.4 making inlined.d from inlined.c
+#11 1858.1 making inspect.d from inspect.c
+#11 1858.7 making internet.d from internet.c
+#11 1859.3 making iosupport.d from iosupport.c
+#11 1859.9 making lapack.d from lapack.c
+#11 1860.5 making list.d from list.c
+#11 1861.2 making localecharset.d from localecharset.c
+#11 1861.7 making logic.d from logic.c
+#11 1862.3 making machine.d from machine.c
+#11 1863.0 making main.d from main.c
+#11 1863.7 making mapply.d from mapply.c
+#11 1864.3 making mask.d from mask.c
+#11 1865.1 making match.d from match.c
+#11 1865.7 making memory.d from memory.c
+#11 1866.5 making names.d from names.c
+#11 1867.3 making objects.d from objects.c
+#11 1868.0 making options.d from options.c
+#11 1868.7 making paste.d from paste.c
+#11 1869.4 making patterns.d from patterns.c
+#11 1870.1 making platform.d from platform.c
+#11 1870.9 making plot.d from plot.c
+#11 1871.7 making plot3d.d from plot3d.c
+#11 1872.4 making plotmath.d from plotmath.c
+#11 1873.1 making print.d from print.c
+#11 1873.8 making printarray.d from printarray.c
+#11 1874.5 making printvector.d from printvector.c
+#11 1875.3 making printutils.d from printutils.c
+#11 1876.0 making qsort.d from qsort.c
+#11 1876.8 making radixsort.d from radixsort.c
+#11 1877.5 making random.d from random.c
+#11 1878.2 making raw.d from raw.c
+#11 1878.8 making registration.d from registration.c
+#11 1879.5 making relop.d from relop.c
+#11 1880.3 making rlocale.d from rlocale.c
+#11 1881.0 making saveload.d from saveload.c
+#11 1881.7 making scan.d from scan.c
+#11 1882.4 making seq.d from seq.c
+#11 1883.0 making serialize.d from serialize.c
+#11 1883.7 making sort.d from sort.c
+#11 1884.3 making source.d from source.c
+#11 1884.9 making split.d from split.c
+#11 1885.5 making sprintf.d from sprintf.c
+#11 1886.1 making startup.d from startup.c
+#11 1886.7 making subassign.d from subassign.c
+#11 1887.3 making subscript.d from subscript.c
+#11 1887.9 making subset.d from subset.c
+#11 1888.5 making summary.d from summary.c
+#11 1889.1 making sysutils.d from sysutils.c
+#11 1889.8 making times.d from times.c
+#11 1890.4 making unique.d from unique.c
+#11 1891.0 making util.d from util.c
+#11 1891.7 making version.d from version.c
+#11 1892.3 making g_alab_her.d from g_alab_her.c
+#11 1892.9 making g_cntrlify.d from g_cntrlify.c
+#11 1893.5 making g_fontdb.d from g_fontdb.c
+#11 1894.2 making g_her_glyph.d from g_her_glyph.c
+#11 1894.8 making Rmain.d from Rmain.c
+#11 1895.3 making alloca.d from alloca.c
+#11 1895.8 making mkdtemp.d from mkdtemp.c
+#11 1896.4 making strdup.d from strdup.c
+#11 1897.0 making strncasecmp.d from strncasecmp.c
+#11 4083.6 mkdir /R-4.4.0/bin/exec
+#11 4086.2 making Rhttpd.d from Rhttpd.c
+#11 4086.8 making Rsock.d from Rsock.c
+#11 4087.3 making internet.d from internet.c
+#11 4087.9 making libcurl.d from libcurl.c
+#11 4088.6 making sock.d from sock.c
+#11 4089.1 making sockconn.d from sockconn.c
+#11 4142.2 mkdir /R-4.4.0/modules
+#11 4142.4 making Lapack.d from Lapack.c
+#11 5459.7 /R-4.4.0/lib/libRlapack.so is unchanged
+#11 5459.8 mkdir ../../library
+#11 5459.9 building system startup profile
+#11 5460.0 mkdir ../../../library/base
+#11 5460.0 mkdir ../../../library/base/R
+#11 5460.2 building package 'translations'
+#11 5460.2 mkdir ../../../library/translations
+#11 5460.7 building package 'base'
+#11 5461.5 mkdir ../../../library/base/demo
+#11 5461.7 building package 'tools'
+#11 5461.8 mkdir ../../../library/tools
+#11 5461.9 mkdir ../../../library/tools/R
+#11 5462.3 making text.d from text.c
+#11 5462.8 making init.d from init.c
+#11 5463.2 making Rmd5.d from Rmd5.c
+#11 5463.7 making md5.d from md5.c
+#11 5464.1 making signals.d from signals.c
+#11 5464.5 making install.d from install.c
+#11 5465.0 making getfmts.d from getfmts.c
+#11 5465.4 making http.d from http.c
+#11 5465.9 making gramLatex.d from gramLatex.c
+#11 5466.4 making gramRd.d from gramRd.c
+#11 5466.9 making pdscan.d from pdscan.c
+#11 5537.6 gcc -shared -L../../../../lib -L/usr/local/lib -o tools.so text.o init.o Rmd5.o md5.o signals.o install.o getfmts.o http.o gramLatex.o gramRd.o pdscan.o -L../../../../lib -lR
+#11 5538.1 mkdir ../../../../library/tools/libs
+#11 5538.2 installing 'sysdata.rda'
+#11 5546.5 building package 'compiler'
+#11 5546.6 mkdir ../../../library/compiler
+#11 5546.7 mkdir ../../../library/compiler/R
+#11 5551.4 byte-compiling package 'compiler'
+#11 5616.2 byte-compiling package 'base'
+#11 5755.3 byte-compiling package 'tools'
+#11 6027.3 building package 'utils'
+#11 6027.4 mkdir ../../../library/utils
+#11 6027.5 mkdir ../../../library/utils/doc
+#11 6027.6 mkdir ../../../library/utils/R
+#11 6028.8 mkdir ../../../library/utils/Sweave
+#11 6029.1 mkdir ../../../library/utils/misc
+#11 6029.3 making init.d from init.c
+#11 6029.8 making io.d from io.c
+#11 6030.3 making size.d from size.c
+#11 6030.8 making sock.d from sock.c
+#11 6031.2 making stubs.d from stubs.c
+#11 6031.7 making utils.d from utils.c
+#11 6032.2 making hashtab.d from hashtab.c
+#11 6069.2 gcc -shared -L../../../../lib -L/usr/local/lib -o utils.so init.o io.o size.o sock.o stubs.o utils.o hashtab.o -L../../../../lib -lR
+#11 6069.7 mkdir ../../../../library/utils/libs
+#11 6069.8 installing 'sysdata.rda'
+#11 6070.7 byte-compiling package 'utils'
+#11 6196.3 building package 'grDevices'
+#11 6196.3 mkdir ../../../library/grDevices
+#11 6196.5 mkdir ../../../library/grDevices/R
+#11 6198.4 mkdir ../../../library/grDevices/afm
+#11 6200.6 mkdir ../../../library/grDevices/enc
+#11 6201.1 mkdir ../../../library/grDevices/fonts
+#11 6201.1 mkdir ../../../library/grDevices/fonts/Roboto
+#11 6201.3 mkdir ../../../library/grDevices/fonts/Montserrat
+#11 6201.3 mkdir ../../../library/grDevices/fonts/Montserrat/static
+#11 6201.4 mkdir ../../../library/grDevices/icc
+#11 6201.7 making axis_scales.d from axis_scales.c
+#11 6202.2 making chull.d from chull.c
+#11 6202.6 making devices.d from devices.c
+#11 6203.0 making init.d from init.c
+#11 6203.5 making stubs.d from stubs.c
+#11 6204.0 making colors.d from colors.c
+#11 6204.5 making clippath.d from clippath.c
+#11 6204.9 making patterns.d from patterns.c
+#11 6205.4 making mask.d from mask.c
+#11 6205.9 making group.d from group.c
+#11 6206.4 making devCairo.d from devCairo.c
+#11 6206.9 making devPicTeX.d from devPicTeX.c
+#11 6207.4 making devPS.d from devPS.c
+#11 6208.0 making devQuartz.d from devQuartz.c
+#11 6324.9 gcc -shared -L../../../../lib -L/usr/local/lib -o grDevices.so axis_scales.o chull.o devices.o init.o stubs.o colors.o clippath.o patterns.o mask.o group.o devCairo.o devPicTeX.o devPS.o devQuartz.o -lz -L../../../../lib -lR
+#11 6325.5 mkdir ../../../../library/grDevices/libs
+#11 6325.7 byte-compiling package 'grDevices'
+#11 6359.7 building package 'graphics'
+#11 6359.8 mkdir ../../../library/graphics
+#11 6360.0 mkdir ../../../library/graphics/R
+#11 6362.2 making init.d from init.c
+#11 6362.6 making base.d from base.c
+#11 6363.1 making graphics.d from graphics.c
+#11 6363.7 making par.d from par.c
+#11 6364.2 making plot.d from plot.c
+#11 6364.8 making plot3d.d from plot3d.c
+#11 6365.3 making stem.d from stem.c
+#11 6541.0 gcc -shared -L../../../../lib -L/usr/local/lib -o graphics.so init.o base.o graphics.o par.o plot.o plot3d.o stem.o -L../../../../lib -lR
+#11 6541.5 mkdir ../../../../library/graphics/libs
+#11 6541.7 byte-compiling package 'graphics'
+#11 6592.3 building package 'stats'
+#11 6592.4 mkdir ../../../library/stats
+#11 6592.5 mkdir ../../../library/stats/R
+#11 6594.6 making init.d from init.c
+#11 6595.1 making kmeans.d from kmeans.c
+#11 6595.5 making ansari.d from ansari.c
+#11 6595.9 making bandwidths.d from bandwidths.c
+#11 6596.4 making chisqsim.d from chisqsim.c
+#11 6596.8 making d2x2xk.d from d2x2xk.c
+#11 6597.2 making fexact.d from fexact.c
+#11 6597.7 making kendall.d from kendall.c
+#11 6598.1 making ks.d from ks.c
+#11 6598.6 making line.d from line.c
+#11 6599.0 making smooth.d from smooth.c
+#11 6599.4 making prho.d from prho.c
+#11 6599.8 making swilk.d from swilk.c
+#11 6600.2 making ksmooth.d from ksmooth.c
+#11 6600.6 making loessc.d from loessc.c
+#11 6601.1 making monoSpl.d from monoSpl.c
+#11 6601.5 making isoreg.d from isoreg.c
+#11 6601.9 making Srunmed.d from Srunmed.c
+#11 6602.3 making dblcen.d from dblcen.c
+#11 6602.7 making distance.d from distance.c
+#11 6603.2 making hclust-utils.d from hclust-utils.c
+#11 6603.6 making nls.d from nls.c
+#11 6604.0 making rWishart.d from rWishart.c
+#11 6604.5 making HoltWinters.d from HoltWinters.c
+#11 6604.9 making PPsum.d from PPsum.c
+#11 6605.4 making arima.d from arima.c
+#11 6605.8 making burg.d from burg.c
+#11 6606.2 making filter.d from filter.c
+#11 6606.7 making mAR.d from mAR.c
+#11 6607.1 making pacf.d from pacf.c
+#11 6607.6 making starma.d from starma.c
+#11 6608.0 making port.d from port.c
+#11 6608.4 making family.d from family.c
+#11 6608.9 making sbart.d from sbart.c
+#11 6609.3 making approx.d from approx.c
+#11 6609.7 making loglin.d from loglin.c
+#11 6610.1 making lowess.d from lowess.c
+#11 6610.6 making massdist.d from massdist.c
+#11 6611.0 making splines.d from splines.c
+#11 6611.5 making lm.d from lm.c
+#11 6611.9 making complete_cases.d from complete_cases.c
+#11 6612.4 making cov.d from cov.c
+#11 6612.9 making deriv.d from deriv.c
+#11 6613.4 making fft.d from fft.c
+#11 6613.8 making fourier.d from fourier.c
+#11 6614.2 making model.d from model.c
+#11 6614.7 making optim.d from optim.c
+#11 6615.2 making optimize.d from optimize.c
+#11 6615.7 making integrate.d from integrate.c
+#11 6616.1 making random.d from random.c
+#11 6616.6 making distn.d from distn.c
+#11 6617.0 making zeroin.d from zeroin.c
+#11 6617.4 making rcont.d from rcont.c
+#11 6617.8 making influence.d from influence.c
+#11 7142.9 gcc -shared -L../../../../lib -L/usr/local/lib -o stats.so init.o kmeans.o ansari.o bandwidths.o chisqsim.o d2x2xk.o fexact.o kendall.o ks.o line.o smooth.o prho.o swilk.o ksmooth.o loessc.o monoSpl.o isoreg.o Srunmed.o dblcen.o distance.o hclust-utils.o nls.o rWishart.o HoltWinters.o PPsum.o arima.o burg.o filter.o mAR.o pacf.o starma.o port.o family.o sbart.o approx.o loglin.o lowess.o massdist.o splines.o lm.o complete_cases.o cov.o deriv.o fft.o fourier.o model.o optim.o optimize.o integrate.o random.o distn.o zeroin.o rcont.o influence.o bsplvd.o bvalue.o bvalus.o loessf.o ppr.o qsbart.o sgram.o sinerp.o sslvrg.o stxwx.o hclust.o kmns.o eureka.o stl.o portsrc.o lminfl.o -fopenmp -L../../../../lib -lRlapack -L../../../../lib -lRblas -lgfortran -lm -lssp_nonshared -L../../../../lib -lR
+#11 7143.7 mkdir ../../../../library/stats/libs
+#11 7143.9 byte-compiling package 'stats'
+#11 7374.6 building package 'datasets'
+#11 7374.7 mkdir ../../../library/datasets
+#11 7375.7 mkdir ../../../library/datasets/data
+#11 7382.9 building package 'methods'
+#11 7382.9 mkdir ../../../library/methods
+#11 7383.1 mkdir ../../../library/methods/R
+#11 7384.3 making do_substitute_direct.d from do_substitute_direct.c
+#11 7384.8 making init.d from init.c
+#11 7385.2 making methods_list_dispatch.d from methods_list_dispatch.c
+#11 7385.7 making slot.d from slot.c
+#11 7386.1 making class_support.d from class_support.c
+#11 7386.5 making tests.d from tests.c
+#11 7387.0 making utils.d from utils.c
+#11 7409.8 gcc -shared -L../../../../lib -L/usr/local/lib -o methods.so do_substitute_direct.o init.o methods_list_dispatch.o slot.o class_support.o tests.o utils.o -L../../../../lib -lR
+#11 7410.2 mkdir ../../../../library/methods/libs
+#11 7410.4 byte-compiling package 'methods'
+#11 7412.7 initializing class and method definitions ... done
+#11 7613.2 building package 'grid'
+#11 7613.2 mkdir ../../../library/grid
+#11 7613.3 mkdir ../../../library/grid/doc
+#11 7613.5 mkdir ../../../library/grid/R
+#11 7615.1 making clippath.d from clippath.c
+#11 7615.6 making gpar.d from gpar.c
+#11 7616.0 making grid.d from grid.c
+#11 7616.5 making just.d from just.c
+#11 7616.9 making layout.d from layout.c
+#11 7617.4 making mask.d from mask.c
+#11 7617.8 making matrix.d from matrix.c
+#11 7618.3 making path.d from path.c
+#11 7618.7 making register.d from register.c
+#11 7619.1 making state.d from state.c
+#11 7619.6 making typeset.d from typeset.c
+#11 7620.0 making unit.d from unit.c
+#11 7620.4 making util.d from util.c
+#11 7620.9 making viewport.d from viewport.c
+#11 7708.1 gcc -shared -L../../../../lib -L/usr/local/lib -o grid.so clippath.o gpar.o grid.o just.o layout.o mask.o matrix.o path.o register.o state.o typeset.o unit.o util.o viewport.o -L../../../../lib -lR
+#11 7708.6 mkdir ../../../../library/grid/libs
+#11 7708.7 byte-compiling package 'grid'
+#11 7775.0 building package 'splines'
+#11 7775.1 mkdir ../../../library/splines
+#11 7775.2 mkdir ../../../library/splines/R
+#11 7776.4 making splines.d from splines.c
+#11 7781.1 gcc -shared -L../../../../lib -L/usr/local/lib -o splines.so splines.o -L../../../../lib -lR
+#11 7781.5 mkdir ../../../../library/splines/libs
+#11 7781.7 byte-compiling package 'splines'
+#11 7790.7 building package 'stats4'
+#11 7790.7 mkdir ../../../library/stats4
+#11 7790.9 mkdir ../../../library/stats4/R
+#11 7792.1 byte-compiling package 'stats4'
+#11 7803.9 building package 'tcltk'
+#11 7804.0 mkdir ../../../library/tcltk
+#11 7804.0 mkdir ../../../library/tcltk/R
+#11 7805.2 mkdir ../../../library/tcltk/exec
+#11 7806.4 building package 'parallel'
+#11 7806.5 mkdir ../../../library/parallel
+#11 7806.6 mkdir ../../../library/parallel/doc
+#11 7806.7 mkdir ../../../library/parallel/R
+#11 7808.1 making init.d from init.c
+#11 7808.5 making rngstream.d from rngstream.c
+#11 7809.0 making fork.d from fork.c
+#11 7823.3 gcc -shared -L../../../../lib -L/usr/local/lib -o parallel.so init.o rngstream.o fork.o -L../../../../lib -lR
+#11 7823.7 mkdir ../../../../library/parallel/libs
+#11 7823.9 byte-compiling package 'parallel'
+#11 7838.2 installing parsed NAMESPACE files
+#11 7839.8 you should 'make docs' now ...
+#11 7852.3 creating doc/NEWS
+#11 7903.8 'pdflatex' is needed to make NEWS.pdf but is missing on your system.
+#11 7935.1 'texi2any' v5.1 or later needed to make HTML docs but missing on your system.
+#11 7935.1 file R-FAQ.html will be missing and linked from CRAN
+#11 7935.1 creating doc/manual/version.texi
+#11 7937.6 'texi2any' v5.1 or later needed to make HTML docs but missing on your system.
+#11 7937.6 file R-admin.html will be missing and linked from CRAN
+#11 7937.6 'texi2any' v5.1 or later needed to make HTML docs but missing on your system.
+#11 7937.6 file R-data.html will be missing and linked from CRAN
+#11 7937.6 'texi2any' v5.1 or later needed to make HTML docs but missing on your system.
+#11 7937.6 file R-exts.html will be missing and linked from CRAN
+#11 7937.7 'texi2any' v5.1 or later needed to make HTML docs but missing on your system.
+#11 7937.7 file R-intro.html will be missing and linked from CRAN
+#11 7937.7 'texi2any' v5.1 or later needed to make HTML docs but missing on your system.
+#11 7937.7 file R-ints.html will be missing and linked from CRAN
+#11 7937.7 'texi2any' v5.1 or later needed to make HTML docs but missing on your system.
+#11 7937.7 file R-lang.html will be missing and linked from CRAN
+#11 7938.0 installing parsed Rd
+#11 7968.2   base
+#11 7992.1   stats
+#11 8002.3   utils
+#11 8009.2   methods
+#11 8016.2   graphics
+#11 8022.7   grDevices
+#11 8027.6   datasets
+#11 8033.1   grid
+#11 8037.6   tools
+#11 8039.6   tcltk
+#11 8041.2   splines
+#11 8042.9   stats4
+#11 8044.1   compiler
+#11 8046.3   parallel
+#11 8046.4 building/updating package metadata ...
+#11 8097.0 writing package indices
+#11 8114.3 begin installing recommended package MASS
+#11 8213.3 * installing *source* package ‘MASS’ ...
+#11 8213.3 ** using non-staged installation
+#11 8213.3 ** libs
+#11 8213.3 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 8213.3 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o MASS.so MASS.o lqs.o -L/R-4.4.0/lib -lR
+#11 8213.3 installing to /R-4.4.0/library/MASS/libs
+#11 8213.3 ** R
+#11 8213.3 ** data
+#11 8213.3 *** moving datasets to lazyload DB
+#11 8213.3 ** inst
+#11 8213.3 ** byte-compile and prepare package for lazy loading
+#11 8213.3 ** help
+#11 8213.3 *** installing help indices
+#11 8213.3 ** building package indices
+#11 8213.3 ** testing if installed package can be loaded
+#11 8213.3 * DONE (MASS)
+#11 8213.3 begin installing recommended package lattice
+#11 8341.7 * installing *source* package ‘lattice’ ...
+#11 8341.7 ** package ‘lattice’ successfully unpacked and MD5 sums checked
+#11 8341.7 ** using non-staged installation
+#11 8341.7 ** libs
+#11 8341.7 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 8341.7 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o lattice.so init.o threeDplot.o -L/R-4.4.0/lib -lR
+#11 8341.7 installing to /R-4.4.0/library/lattice/libs
+#11 8341.7 ** R
+#11 8341.7 ** data
+#11 8341.7 *** moving datasets to lazyload DB
+#11 8341.7 ** demo
+#11 8341.7 ** inst
+#11 8341.7 ** byte-compile and prepare package for lazy loading
+#11 8341.7 ** help
+#11 8341.7 *** installing help indices
+#11 8341.7 ** building package indices
+#11 8341.7 ** installing vignettes
+#11 8341.7 ** testing if installed package can be loaded
+#11 8341.7 * DONE (lattice)
+#11 8341.8 begin installing recommended package Matrix
+#11 12084.3 * installing *source* package ‘Matrix’ ...
+#11 12084.3 ** package ‘Matrix’ successfully unpacked and MD5 sums checked
+#11 12084.3 ** using non-staged installation
+#11 12084.3 ** libs
+#11 12084.3 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 12084.3 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o Matrix.so Csparse.o attrib.o bind.o cholmod-common.o cholmod-etc.o coerce.o cs-etc.o dense.o determinant.o expm.o factor.o idz.o init.o kappa.o matmult.o objects.o perm.o solve.o sparse.o subassign.o subscript.o utils-R.o utils.o validity.o vector.o SuiteSparse/CHOLMOD/CHOLMOD.a SuiteSparse/CCOLAMD/CCOLAMD.a SuiteSparse/CAMD/CAMD.a SuiteSparse/COLAMD/COLAMD.a SuiteSparse/AMD/AMD.a SuiteSparse/CXSparse/CXSparse.a SuiteSparse/SuiteSparse_config/SuiteSparse_config.a -L/R-4.4.0/lib -lRlapack -L/R-4.4.0/lib -lRblas -lgfortran -lm -lssp_nonshared -L/R-4.4.0/lib -lR
+#11 12084.3 installing to /R-4.4.0/library/Matrix/libs
+#11 12084.3 ** R
+#11 12084.3 ** data
+#11 12084.3 ** inst
+#11 12084.3 ** byte-compile and prepare package for lazy loading
+#11 12084.3 Creating a generic function for ‘chol2inv’ from ‘base’ in package ‘Matrix’
+#11 12084.3     (from the saved implicit definition)
+#11 12084.3 Creating a generic function for ‘chol2inv’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘diag’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘zapsmall’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘drop’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csc","dgCMatrix"’: no definition for class “matrix.csc”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csr","dgRMatrix"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.coo","dgTMatrix"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csr","dgCMatrix"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.coo","dgCMatrix"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csc","CsparseMatrix"’: no definition for class “matrix.csc”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csc","RsparseMatrix"’: no definition for class “matrix.csc”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csc","TsparseMatrix"’: no definition for class “matrix.csc”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csr","CsparseMatrix"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csr","RsparseMatrix"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csr","TsparseMatrix"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.coo","CsparseMatrix"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.coo","RsparseMatrix"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.coo","TsparseMatrix"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csc","sparseMatrix"’: no definition for class “matrix.csc”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csr","sparseMatrix"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.coo","sparseMatrix"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csc","Matrix"’: no definition for class “matrix.csc”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.csr","Matrix"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"matrix.coo","Matrix"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"dgCMatrix","matrix.csc"’: no definition for class “matrix.csc”
+#11 12084.3 in method for ‘coerce’ with signature ‘"dgRMatrix","matrix.csr"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"dgTMatrix","matrix.coo"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"Matrix","matrix.csc"’: no definition for class “matrix.csc”
+#11 12084.3 in method for ‘coerce’ with signature ‘"Matrix","matrix.csr"’: no definition for class “matrix.csr”
+#11 12084.3 in method for ‘coerce’ with signature ‘"Matrix","matrix.coo"’: no definition for class “matrix.coo”
+#11 12084.3 in method for ‘coerce’ with signature ‘"graphAM","TsparseMatrix"’: no definition for class “graphAM”
+#11 12084.3 in method for ‘coerce’ with signature ‘"graphNEL","TsparseMatrix"’: no definition for class “graphNEL”
+#11 12084.3 in method for ‘coerce’ with signature ‘"graph","CsparseMatrix"’: no definition for class “graph”
+#11 12084.3 in method for ‘coerce’ with signature ‘"graph","RsparseMatrix"’: no definition for class “graph”
+#11 12084.3 in method for ‘coerce’ with signature ‘"graph","TsparseMatrix"’: no definition for class “graph”
+#11 12084.3 in method for ‘coerce’ with signature ‘"graph","sparseMatrix"’: no definition for class “graph”
+#11 12084.3 in method for ‘coerce’ with signature ‘"graph","Matrix"’: no definition for class “graph”
+#11 12084.3 in method for ‘coerce’ with signature ‘"TsparseMatrix","graphNEL"’: no definition for class “graphNEL”
+#11 12084.3 in method for ‘coerce’ with signature ‘"Matrix","graphNEL"’: no definition for class “graphNEL”
+#11 12084.3 in method for ‘coerce’ with signature ‘"Matrix","graph"’: no definition for class “graph”
+#11 12084.3 Creating a generic function for ‘colSums’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘colMeans’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘rowSums’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘rowMeans’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘diag<-’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘unname’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘norm’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘rcond’ from ‘base’ in package ‘Matrix’
+#11 12084.3     (from the saved implicit definition)
+#11 12084.3 Creating a generic function for ‘rcond’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘cov2cor’ from package ‘stats’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘qr.Q’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘qr.R’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘qr.X’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘qr.coef’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘qr.fitted’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘qr.resid’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘qr.qty’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘qr.qy’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘toeplitz’ from ‘stats’ in package ‘Matrix’
+#11 12084.3     (from the saved implicit definition)
+#11 12084.3 Creating a generic function for ‘toeplitz’ from package ‘stats’ in package ‘Matrix’
+#11 12084.3 Creating a generic function for ‘which’ from package ‘base’ in package ‘Matrix’
+#11 12084.3 ** help
+#11 12084.3 *** installing help indices
+#11 12084.3 ** building package indices
+#11 12084.3 ** installing vignettes
+#11 12084.3 ** testing if installed package can be loaded
+#11 12084.3 * DONE (Matrix)
+#11 12084.4 begin installing recommended package nlme
+#11 12320.4 * installing *source* package ‘nlme’ ...
+#11 12320.4 ** package ‘nlme’ successfully unpacked and MD5 sums checked
+#11 12320.4 ** using non-staged installation
+#11 12320.4 ** libs
+#11 12320.4 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 12320.4 using Fortran compiler: ‘GNU Fortran (Alpine 14.2.0) 14.2.0’
+#11 12320.4 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o nlme.so chol.o corStruct.o gnls.o init.o matrix.o nlOptimizer.o nlme.o nlmefit.o pdMat.o pythag.o rs.o -lgfortran -lm -lssp_nonshared -L/R-4.4.0/lib -lR
+#11 12320.4 installing to /R-4.4.0/library/nlme/libs
+#11 12320.4 ** R
+#11 12320.4 ** data
+#11 12320.4 *** moving datasets to lazyload DB
+#11 12320.4 ** inst
+#11 12320.4 ** byte-compile and prepare package for lazy loading
+#11 12320.4 ** help
+#11 12320.4 *** installing help indices
+#11 12320.4 ** building package indices
+#11 12320.4 ** testing if installed package can be loaded
+#11 12320.4 * DONE (nlme)
+#11 12320.4 begin installing recommended package survival
+#11 12894.6 * installing *source* package ‘survival’ ...
+#11 12894.6 ** package ‘survival’ successfully unpacked and MD5 sums checked
+#11 12894.6 ** using non-staged installation
+#11 12894.6 ** libs
+#11 12894.6 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 12894.6 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o survival.so agexact.o agfit4.o agfit5.o agmart.o agmart3.o agscore2.o agscore3.o agsurv4.o agsurv5.o cdecomp.o chinv2.o chinv3.o cholesky2.o cholesky3.o cholesky5.o chsolve2.o chsolve3.o chsolve5.o collapse.o concordance1.o concordance3.o concordance5.o cox_Rcallback.o coxcount1.o coxdetail.o coxexact.o coxfit5.o coxfit6.o coxfit7.o coxmart.o coxmart2.o coxph_wtest.o coxsafe.o coxscho.o coxscore2.o coxsurv1.o coxsurv2.o coxsurv3.o coxsurv4.o dmatrix.o doloop.o fastkm.o finegray.o gchol.o init.o multicheck.o norisk.o pyears1.o pyears2.o pyears3b.o pystep.o residcsum.o survConcordance.o survdiff2.o survfit4.o survfitci.o survfitkm.o survfitresid.o survpenal.o survreg6.o survreg7.o survregc1.o survregc2.o survsplit.o tmerge.o zph1.o zph2.o -L/R-4.4.0/lib -lR
+#11 12894.6 installing to /R-4.4.0/library/survival/libs
+#11 12894.6 ** R
+#11 12894.6 ** data
+#11 12894.6 *** moving datasets to lazyload DB
+#11 12894.6 ** inst
+#11 12894.6 ** byte-compile and prepare package for lazy loading
+#11 12894.6 ** help
+#11 12894.6 *** installing help indices
+#11 12894.6 *** copying figures
+#11 12894.6 ** building package indices
+#11 12894.6 ** installing vignettes
+#11 12894.6 ** testing if installed package can be loaded
+#11 12894.6 * DONE (survival)
+#11 12894.7 begin installing recommended package boot
+#11 12950.7 * installing *source* package ‘boot’ ...
+#11 12950.7 ** package ‘boot’ successfully unpacked and MD5 sums checked
+#11 12950.7 ** using non-staged installation
+#11 12950.7 ** R
+#11 12950.7 ** data
+#11 12950.7 *** moving datasets to lazyload DB
+#11 12950.7 ** inst
+#11 12950.7 ** byte-compile and prepare package for lazy loading
+#11 12950.7 ** help
+#11 12950.7 *** installing help indices
+#11 12950.7 ** building package indices
+#11 12950.7 ** testing if installed package can be loaded
+#11 12950.7 * DONE (boot)
+#11 12950.8 begin installing recommended package cluster
+#11 13063.2 * installing *source* package ‘cluster’ ...
+#11 13063.2 ** package ‘cluster’ successfully unpacked and MD5 sums checked
+#11 13063.2 ** using non-staged installation
+#11 13063.2 ** libs
+#11 13063.2 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 13063.2 using Fortran compiler: ‘GNU Fortran (Alpine 14.2.0) 14.2.0’
+#11 13063.2 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o cluster.so clara.o daisy.o dysta.o fanny.o init.o mona.o pam.o sildist.o spannel.o twins.o -lgfortran -lm -lssp_nonshared -L/R-4.4.0/lib -lR
+#11 13063.2 installing to /R-4.4.0/library/cluster/libs
+#11 13063.2 ** R
+#11 13063.2 ** data
+#11 13063.2 *** moving datasets to lazyload DB
+#11 13063.2 ** inst
+#11 13063.2 ** byte-compile and prepare package for lazy loading
+#11 13063.2 ** help
+#11 13063.2 *** installing help indices
+#11 13063.2 ** building package indices
+#11 13063.2 ** testing if installed package can be loaded
+#11 13063.2 * DONE (cluster)
+#11 13063.3 begin installing recommended package codetools
+#11 13085.1 * installing *source* package ‘codetools’ ...
+#11 13085.1 ** package ‘codetools’ successfully unpacked and MD5 sums checked
+#11 13085.1 ** using non-staged installation
+#11 13085.1 ** R
+#11 13085.1 ** byte-compile and prepare package for lazy loading
+#11 13085.1 ** help
+#11 13085.1 *** installing help indices
+#11 13085.1 ** building package indices
+#11 13085.1 ** testing if installed package can be loaded
+#11 13085.1 * DONE (codetools)
+#11 13085.2 begin installing recommended package foreign
+#11 13195.2 * installing *source* package ‘foreign’ ...
+#11 13195.2 ** package ‘foreign’ successfully unpacked and MD5 sums checked
+#11 13195.2 ** using non-staged installation
+#11 13195.2 ** libs
+#11 13195.2 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 13195.2 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o foreign.so R_systat.o Rdbfread.o Rdbfwrite.o SASxport.o avl.o dbfopen.o file-handle.o format.o init.o minitab.o pfm-read.o sfm-read.o spss.o stataread.o -L/R-4.4.0/lib -lR
+#11 13195.2 installing to /R-4.4.0/library/foreign/libs
+#11 13195.2 ** R
+#11 13195.2 ** inst
+#11 13195.2 ** byte-compile and prepare package for lazy loading
+#11 13195.2 ** help
+#11 13195.2 *** installing help indices
+#11 13195.2 ** building package indices
+#11 13195.2 ** testing if installed package can be loaded
+#11 13195.2 * DONE (foreign)
+#11 13195.3 begin installing recommended package KernSmooth
+#11 13248.7 * installing *source* package ‘KernSmooth’ ...
+#11 13248.7 ** package ‘KernSmooth’ successfully unpacked and MD5 sums checked
+#11 13248.7 ** using non-staged installation
+#11 13248.7 ** libs
+#11 13248.7 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 13248.7 using Fortran compiler: ‘GNU Fortran (Alpine 14.2.0) 14.2.0’
+#11 13248.7 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o KernSmooth.so blkest.o cp.o dgedi.o dgefa.o dgesl.o init.o linbin.o linbin2D.o locpoly.o rlbin.o sdiag.o sstdiag.o -L/R-4.4.0/lib -lRblas -lgfortran -lm -lssp_nonshared -L/R-4.4.0/lib -lR
+#11 13248.7 installing to /R-4.4.0/library/KernSmooth/libs
+#11 13248.7 ** R
+#11 13248.7 ** inst
+#11 13248.7 ** byte-compile and prepare package for lazy loading
+#11 13248.7 ** help
+#11 13248.7 *** installing help indices
+#11 13248.7 ** building package indices
+#11 13248.7 ** testing if installed package can be loaded
+#11 13248.7 * DONE (KernSmooth)
+#11 13248.8 begin installing recommended package rpart
+#11 13370.9 * installing *source* package ‘rpart’ ...
+#11 13370.9 ** package ‘rpart’ successfully unpacked and MD5 sums checked
+#11 13370.9 ** using non-staged installation
+#11 13370.9 ** libs
+#11 13370.9 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 13370.9 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o rpart.so anova.o anovapred.o branch.o bsplit.o choose_surg.o fix_cp.o free_tree.o gini.o graycode.o init.o insert_split.o make_cp_list.o make_cp_table.o mysort.o nodesplit.o partition.o poisson.o pred_rpart.o print_tree.o rpart.o rpart_callback.o rpartexp.o rpartexp2.o rpcountup.o rpmatrix.o rundown.o rundown2.o surrogate.o usersplit.o xpred.o xval.o -L/R-4.4.0/lib -lR
+#11 13370.9 installing to /R-4.4.0/library/rpart/libs
+#11 13370.9 ** R
+#11 13370.9 ** data
+#11 13370.9 *** moving datasets to lazyload DB
+#11 13370.9 ** inst
+#11 13370.9 ** byte-compile and prepare package for lazy loading
+#11 13370.9 ** help
+#11 13370.9 *** installing help indices
+#11 13370.9 *** copying figures
+#11 13370.9 ** building package indices
+#11 13370.9 ** installing vignettes
+#11 13370.9 ** testing if installed package can be loaded
+#11 13370.9 * DONE (rpart)
+#11 13370.9 begin installing recommended package class
+#11 13395.0 * installing *source* package ‘class’ ...
+#11 13395.0 ** package ‘class’ successfully unpacked and MD5 sums checked
+#11 13395.0 ** using non-staged installation
+#11 13395.0 ** libs
+#11 13395.0 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 13395.0 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o class.so class.o -L/R-4.4.0/lib -lR
+#11 13395.0 installing to /R-4.4.0/library/class/libs
+#11 13395.0 ** R
+#11 13395.0 ** inst
+#11 13395.0 ** byte-compile and prepare package for lazy loading
+#11 13395.0 ** help
+#11 13395.0 *** installing help indices
+#11 13395.0 ** building package indices
+#11 13395.0 ** testing if installed package can be loaded
+#11 13395.0 * DONE (class)
+#11 13395.1 begin installing recommended package nnet
+#11 13427.4 * installing *source* package ‘nnet’ ...
+#11 13427.4 ** package ‘nnet’ successfully unpacked and MD5 sums checked
+#11 13427.4 ** using non-staged installation
+#11 13427.4 ** libs
+#11 13427.4 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 13427.4 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o nnet.so nnet.o -L/R-4.4.0/lib -lR
+#11 13427.4 installing to /R-4.4.0/library/nnet/libs
+#11 13427.4 ** R
+#11 13427.4 ** inst
+#11 13427.4 ** byte-compile and prepare package for lazy loading
+#11 13427.4 ** help
+#11 13427.4 *** installing help indices
+#11 13427.4 ** building package indices
+#11 13427.4 ** testing if installed package can be loaded
+#11 13427.4 * DONE (nnet)
+#11 13427.5 begin installing recommended package spatial
+#11 13462.6 * installing *source* package ‘spatial’ ...
+#11 13462.6 ** package ‘spatial’ successfully unpacked and MD5 sums checked
+#11 13462.6 ** using non-staged installation
+#11 13462.6 ** libs
+#11 13462.6 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 13462.6 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o spatial.so init.o krc.o pps.o -L/R-4.4.0/lib -lR
+#11 13462.6 installing to /R-4.4.0/library/spatial/libs
+#11 13462.6 ** R
+#11 13462.6 ** inst
+#11 13462.6 ** byte-compile and prepare package for lazy loading
+#11 13462.6 ** help
+#11 13462.6 *** installing help indices
+#11 13462.6 ** building package indices
+#11 13462.6 ** testing if installed package can be loaded
+#11 13462.6 * DONE (spatial)
+#11 13462.7 begin installing recommended package mgcv
+#11 14270.5 * installing *source* package ‘mgcv’ ...
+#11 14270.5 ** package ‘mgcv’ successfully unpacked and MD5 sums checked
+#11 14270.5 ** using non-staged installation
+#11 14270.5 ** libs
+#11 14270.5 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#11 14270.5 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o mgcv.so coxph.o davies.o discrete.o gdi.o init.o magic.o mat.o matrix.o mgcv.o misc.o mvn.o ncv.o qp.o soap.o sparse-smooth.o sparse.o tprs.o -L/R-4.4.0/lib -lRlapack -L/R-4.4.0/lib -lRblas -lgfortran -lm -lssp_nonshared -fopenmp -L/R-4.4.0/lib -lR
+#11 14270.5 installing to /R-4.4.0/library/mgcv/libs
+#11 14270.5 ** R
+#11 14270.5 ** data
+#11 14270.5 ** inst
+#11 14270.5 ** byte-compile and prepare package for lazy loading
+#11 14270.5 ** help
+#11 14270.5 *** installing help indices
+#11 14270.5 ** building package indices
+#11 14270.5 ** testing if installed package can be loaded
+#11 14270.5 * DONE (mgcv)
+#11 14270.6 'pdflatex' is needed to make vignettes but is missing on your system.
+#11 14270.7 configuring Java ...
+#11 14271.5 
+#11 14271.5 *** Cannot find any Java interpreter
+#11 14271.5 *** Please make sure 'java' is on your PATH or set JAVA_HOME correspondingly
+#11 14271.7 mkdir /usr/local/lib/R
+#11 14271.8 make[1]: Entering directory '/R-4.4.0/m4'
+#11 14271.8 make[1]: Nothing to be done for 'install'.
+#11 14271.8 make[1]: Leaving directory '/R-4.4.0/m4'
+#11 14271.9 make[1]: Entering directory '/R-4.4.0/tools'
+#11 14271.9 make[1]: Nothing to be done for 'install'.
+#11 14271.9 make[1]: Leaving directory '/R-4.4.0/tools'
+#11 14271.9 make[1]: Entering directory '/R-4.4.0/doc'
+#11 14272.0 installing doc ...
+#11 14272.0 mkdir /usr/local/lib/R/doc
+#11 14272.1 mkdir /usr/local/share/man
+#11 14272.1 mkdir /usr/local/share/man/man1
+#11 14272.8 make[2]: Entering directory '/R-4.4.0/doc/html'
+#11 14272.8 installing doc/html ...
+#11 14272.9 mkdir /usr/local/lib/R/doc/html
+#11 14273.6 make[2]: Leaving directory '/R-4.4.0/doc/html'
+#11 14273.7 make[2]: Entering directory '/R-4.4.0/doc/manual'
+#11 14273.7 installing doc/manual ...
+#11 14273.8 mkdir /usr/local/lib/R/doc/manual
+#11 14273.9 mkdir /usr/local/lib/R/doc/manual/images
+#11 14274.1 make[2]: Leaving directory '/R-4.4.0/doc/manual'
+#11 14274.1 make[1]: Leaving directory '/R-4.4.0/doc'
+#11 14274.1 make[1]: Entering directory '/R-4.4.0/etc'
+#11 14274.2 mkdir /usr/local/lib/R/etc
+#11 14274.2 installing etc ...
+#11 14274.4 make[1]: Leaving directory '/R-4.4.0/etc'
+#11 14274.4 make[1]: Entering directory '/R-4.4.0/share'
+#11 14274.5 installing share ...
+#11 14274.5 mkdir /usr/local/lib/R/share
+#11 14274.6 mkdir /usr/local/lib/R/share/R
+#11 14274.7 mkdir /usr/local/lib/R/share/dictionaries
+#11 14274.8 mkdir /usr/local/lib/R/share/encodings
+#11 14274.9 mkdir /usr/local/lib/R/share/java
+#11 14275.0 mkdir /usr/local/lib/R/share/licenses
+#11 14275.1 mkdir /usr/local/lib/R/share/make
+#11 14275.2 mkdir /usr/local/lib/R/share/Rd
+#11 14275.3 mkdir /usr/local/lib/R/share/Rd/macros
+#11 14275.4 mkdir /usr/local/lib/R/share/sh
+#11 14275.5 mkdir /usr/local/lib/R/share/texmf
+#11 14275.6 mkdir /usr/local/lib/R/share/texmf/bibtex
+#11 14275.7 mkdir /usr/local/lib/R/share/texmf/bibtex/bib
+#11 14275.8 mkdir /usr/local/lib/R/share/texmf/bibtex/bst
+#11 14275.9 mkdir /usr/local/lib/R/share/texmf/tex
+#11 14275.9 mkdir /usr/local/lib/R/share/texmf/tex/latex
+#11 14276.9 make[1]: Leaving directory '/R-4.4.0/share'
+#11 14276.9 make[1]: Entering directory '/R-4.4.0/src'
+#11 14277.0 make[2]: Entering directory '/R-4.4.0/src/scripts'
+#11 14277.1 mkdir /usr/local/lib/R/bin
+#11 14277.9 make[2]: Leaving directory '/R-4.4.0/src/scripts'
+#11 14277.9 make[2]: Entering directory '/R-4.4.0/src/include'
+#11 14278.0 mkdir /usr/local/lib/R/include
+#11 14278.2 make[3]: Entering directory '/R-4.4.0/src/include/R_ext'
+#11 14278.2 mkdir /usr/local/lib/R/include/R_ext
+#11 14278.9 make[3]: Leaving directory '/R-4.4.0/src/include/R_ext'
+#11 14279.1 make[2]: Leaving directory '/R-4.4.0/src/include'
+#11 14279.2 make[2]: Entering directory '/R-4.4.0/src/extra'
+#11 14279.3 make[3]: Entering directory '/R-4.4.0/src/extra/blas'
+#11 14279.4 mkdir /usr/local/lib/R/lib
+#11 14279.4 make[3]: Leaving directory '/R-4.4.0/src/extra/blas'
+#11 14279.5 make[3]: Entering directory '/R-4.4.0/src/extra/tre'
+#11 14279.5 make[3]: Nothing to be done for 'install'.
+#11 14279.5 make[3]: Leaving directory '/R-4.4.0/src/extra/tre'
+#11 14279.6 make[3]: Entering directory '/R-4.4.0/src/extra/tzone'
+#11 14279.6 make[3]: Nothing to be done for 'install'.
+#11 14279.6 make[3]: Leaving directory '/R-4.4.0/src/extra/tzone'
+#11 14279.6 make[3]: Entering directory '/R-4.4.0/src/extra/xdr'
+#11 14279.6 make[3]: Nothing to be done for 'install'.
+#11 14279.6 make[3]: Leaving directory '/R-4.4.0/src/extra/xdr'
+#11 14279.7 make[3]: Entering directory '/R-4.4.0/src/extra/intl'
+#11 14279.7 make[3]: Nothing to be done for 'install'.
+#11 14279.7 make[3]: Leaving directory '/R-4.4.0/src/extra/intl'
+#11 14279.7 make[2]: Leaving directory '/R-4.4.0/src/extra'
+#11 14279.7 make[2]: Entering directory '/R-4.4.0/src/appl'
+#11 14279.7 make[2]: Nothing to be done for 'install'.
+#11 14279.7 make[2]: Leaving directory '/R-4.4.0/src/appl'
+#11 14279.8 make[2]: Entering directory '/R-4.4.0/src/nmath'
+#11 14279.8 make[2]: Nothing to be done for 'install'.
+#11 14279.8 make[2]: Leaving directory '/R-4.4.0/src/nmath'
+#11 14279.9 make[2]: Entering directory '/R-4.4.0/src/unix'
+#11 14279.9 gcc -I. -I../../src/include -I../../src/include  -I/usr/local/include -DHAVE_CONFIG_H    -g -O2  -L/usr/local/lib -DR_HOME='"/usr/local/lib/R"' \
+#11 14279.9   -o Rscript ./Rscript.c
+#11 14284.3 mkdir /usr/local/lib/pkgconfig
+#11 14284.4 make[2]: Leaving directory '/R-4.4.0/src/unix'
+#11 14284.5 make[2]: Entering directory '/R-4.4.0/src/main'
+#11 14284.6 mkdir /usr/local/lib/R/bin/exec
+#11 14284.7 make[3]: Entering directory '/R-4.4.0/src/main'
+#11 14284.8 make[3]: Leaving directory '/R-4.4.0/src/main'
+#11 14284.9 make[3]: Entering directory '/R-4.4.0/src/main'
+#11 14285.1 make[3]: Leaving directory '/R-4.4.0/src/main'
+#11 14285.1 make[2]: Leaving directory '/R-4.4.0/src/main'
+#11 14285.2 make[2]: Entering directory '/R-4.4.0/src/modules'
+#11 14285.2 make[3]: Entering directory '/R-4.4.0/src/modules/internet'
+#11 14285.3 mkdir /usr/local/lib/R/modules
+#11 14285.4 make[3]: Leaving directory '/R-4.4.0/src/modules/internet'
+#11 14285.5 make[3]: Entering directory '/R-4.4.0/src/modules/lapack'
+#11 14285.7 make[3]: Leaving directory '/R-4.4.0/src/modules/lapack'
+#11 14285.7 make[2]: Leaving directory '/R-4.4.0/src/modules'
+#11 14285.7 make[2]: Entering directory '/R-4.4.0/src/library'
+#11 14285.8 mkdir /usr/local/lib/R/library
+#11 14285.9 installing packages ...
+#11 14286.3   building HTML index ...
+#11 14287.2 make[2]: Leaving directory '/R-4.4.0/src/library'
+#11 14287.2 make[1]: Leaving directory '/R-4.4.0/src'
+#11 14287.3 make[1]: Entering directory '/R-4.4.0/tests'
+#11 14287.3 make[1]: Nothing to be done for 'install'.
+#11 14287.3 make[1]: Leaving directory '/R-4.4.0/tests'
+#11 DONE 14287.6s
 
-#12 [ 7/20] RUN apk add vim
-#12 1.848 (1/3) Installing vim-common (9.0.2127-r0)
-#12 5.881 (2/3) Installing xxd (9.0.2127-r0)
-#12 6.047 (3/3) Installing vim (9.0.2127-r0)
-#12 7.978 Executing busybox-1.36.1-r15.trigger
-#12 8.037 OK: 56 MiB in 33 packages
-#12 DONE 8.4s
+#12 [ 8/16] RUN wget https://julialang-s3.julialang.org/bin/linux/aarch64/1.10/julia-1.10.4-linux-aarch64.tar.gz &&     tar xfz julia-1.10.4-linux-aarch64.tar.gz ; rm julia-1.10.4-linux-aarch64.tar.gz
+#12 0.425 Connecting to julialang-s3.julialang.org (199.232.70.49:443)
+#12 0.928 saving to 'julia-1.10.4-linux-aarch64.tar.gz'
+#12 1.213 julia-1.10.4-linux-a   3% |*                               | 6228k  0:00:26 ETA
+#12 2.213 julia-1.10.4-linux-a  33% |**********                      | 55.4M  0:00:03 ETA
+#12 3.212 julia-1.10.4-linux-a  69% |**********************          |  115M  0:00:01 ETA
+#12 4.129 julia-1.10.4-linux-a 100% |********************************|  166M  0:00:00 ETA
+#12 4.129 'julia-1.10.4-linux-aarch64.tar.gz' saved
+#12 DONE 46.8s
 
-#13 [ 8/20] RUN apk add gcc
-#13 2.005 (1/12) Installing libgcc (13.2.1_git20231014-r0)
-#13 5.266 (2/12) Installing jansson (2.14-r4)
-#13 5.359 (3/12) Installing libstdc++ (13.2.1_git20231014-r0)
-#13 6.332 (4/12) Installing zstd-libs (1.5.5-r8)
-#13 6.531 (5/12) Installing binutils (2.41-r0)
-#13 9.646 (6/12) Installing libgomp (13.2.1_git20231014-r0)
-#13 9.810 (7/12) Installing libatomic (13.2.1_git20231014-r0)
-#13 9.836 (8/12) Installing gmp (6.3.0-r0)
-#13 10.10 (9/12) Installing isl26 (0.26-r1)
-#13 11.34 (10/12) Installing mpfr4 (4.2.1-r0)
-#13 11.57 (11/12) Installing mpc1 (1.3.1-r1)
-#13 11.65 (12/12) Installing gcc (13.2.1_git20231014-r0)
-#13 51.78 Executing busybox-1.36.1-r15.trigger
-#13 51.85 OK: 185 MiB in 45 packages
-#13 DONE 52.1s
+#13 [ 9/16] RUN ln -s /julia-1.10.4/bin/julia /usr/local/bin/julia
+#13 DONE 0.5s
 
-#14 [ 9/20] RUN apk add g++
-#14 1.825 (1/4) Installing libstdc++-dev (13.2.1_git20231014-r0)
-#14 4.101 (2/4) Installing musl-dev (1.2.4_git20230717-r4)
-#14 4.491 (3/4) Installing libc-dev (0.7.2-r5)
-#14 4.510 (4/4) Installing g++ (13.2.1_git20231014-r0)
-#14 18.52 Executing busybox-1.36.1-r15.trigger
-#14 18.60 OK: 251 MiB in 49 packages
-#14 DONE 18.9s
+#14 [10/16] COPY dockerfile_basic_arm64.txt /dockerfile_basic_arm64.txt
+#14 DONE 0.0s
 
-#15 [10/20] RUN apk add 'python3=3.11.9-r0' 'python3-dev=3.11.9-r0'
-#15 1.908 (1/13) Installing libbz2 (1.0.8-r6)
-#15 2.388 (2/13) Installing libffi (3.4.4-r3)
-#15 2.418 (3/13) Installing gdbm (1.23-r1)
-#15 2.457 (4/13) Installing xz-libs (5.4.5-r0)
-#15 2.518 (5/13) Installing mpdecimal (2.5.1-r2)
-#15 2.565 (6/13) Installing libpanelw (6.4_p20231125-r0)
-#15 2.596 (7/13) Installing sqlite-libs (3.44.2-r0)
-#15 2.712 (8/13) Installing python3 (3.11.9-r0)
-#15 3.986 (9/13) Installing python3-pycache-pyc0 (3.11.9-r0)
-#15 4.671 (10/13) Installing pyc (3.11.9-r0)
-#15 4.695 (11/13) Installing python3-pyc (3.11.9-r0)
-#15 4.721 (12/13) Installing pkgconf (2.1.0-r0)
-#15 4.762 (13/13) Installing python3-dev (3.11.9-r0)
-#15 33.09 Executing busybox-1.36.1-r15.trigger
-#15 33.18 OK: 375 MiB in 62 packages
-#15 DONE 33.4s
+#15 [11/16] COPY test.sh /test.sh
+#15 DONE 0.0s
 
-#16 [11/20] RUN ln -s /usr/bin/python3 /usr/local/bin/python
-#16 DONE 0.2s
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 5.1s done
+#16 writing image sha256:28ec740045a6bc7ff27062136fc5c28c80fceea3fd94aad17acbf7740e13fca8 done
+#16 naming to docker.io/sswiston/phylo_docker:basic_arm64 done
+#16 DONE 5.2s
 
-#17 [12/20] RUN apk add py3-pip
-#17 1.845 (1/8) Installing py3-setuptools-pyc (68.2.2-r0)
-#17 3.391 (2/8) Installing py3-pip-pyc (23.3.1-r0)
-#17 6.777 (3/8) Installing py3-parsing (3.1.1-r0)
-#17 7.046 (4/8) Installing py3-parsing-pyc (3.1.1-r0)
-#17 7.464 (5/8) Installing py3-packaging-pyc (23.2-r0)
-#17 7.581 (6/8) Installing py3-packaging (23.2-r0)
-#17 7.647 (7/8) Installing py3-setuptools (68.2.2-r0)
-#17 8.333 (8/8) Installing py3-pip (23.3.1-r0)
-#17 10.58 Executing busybox-1.36.1-r15.trigger
-#17 10.71 OK: 400 MiB in 70 packages
-#17 DONE 11.1s
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/lqeltx21f5sv7w7bqd0jed6f3
 
-#18 [13/20] RUN echo "@community https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-#18 DONE 0.2s
-
-#19 [14/20] RUN apk add 'R@community=4.4.0-r0' 'R-dev@community=4.4.0-r0'
-#19 1.641 fetch https://dl-cdn.alpinelinux.org/alpine/edge/community/aarch64/APKINDEX.tar.gz
-#19 5.941 (1/74) Installing R-mathlib (4.3.1-r1)
-#19 6.713 (2/74) Installing libgfortran (13.2.1_git20231014-r0)
-#19 8.213 (3/74) Installing openblas (0.3.25-r0)
-#19 15.32 (4/74) Installing libxau (1.0.11-r3)
-#19 15.48 (5/74) Installing libmd (1.1.0-r0)
-#19 15.51 (6/74) Installing libbsd (0.11.7-r3)
-#19 16.18 (7/74) Installing libxdmcp (1.1.4-r3)
-#19 16.22 (8/74) Installing libxcb (1.16-r0)
-#19 16.47 (9/74) Installing libx11 (1.8.7-r0)
-#19 16.96 (10/74) Installing libxext (1.3.5-r3)
-#19 16.99 (11/74) Installing libice (1.1.1-r5)
-#19 17.26 (12/74) Installing libuuid (2.39.3-r0)
-#19 17.28 (13/74) Installing libsm (1.2.4-r3)
-#19 17.30 (14/74) Installing libxt (1.3.0-r4)
-#19 17.95 (15/74) Installing libxmu (1.1.4-r2)
-#19 18.11 (16/74) Installing libxrender (0.9.11-r4)
-#19 18.16 (17/74) Installing libpng (1.6.40-r0)
-#19 18.28 (18/74) Installing freetype (2.13.2-r0)
-#19 18.72 (19/74) Installing fontconfig (2.14.2-r4)
-#19 19.13 (20/74) Installing pixman (0.42.2-r2)
-#19 19.53 (21/74) Installing cairo (1.18.0-r0)
-#19 21.94 (22/74) Installing libdeflate (1.19-r0)
-#19 22.43 (23/74) Installing libintl (0.22.3-r0)
-#19 22.46 (24/74) Installing libblkid (2.39.3-r0)
-#19 22.55 (25/74) Installing libmount (2.39.3-r0)
-#19 22.84 (26/74) Installing glib (2.78.6-r0)
-#19 26.82 (27/74) Installing icu-data-en (74.1-r0)
-#19 28.20 Executing icu-data-en-74.1-r0.post-install
-#19 28.25 *
-#19 28.25 * If you need ICU with non-English locales and legacy charset support, install
-#19 28.25 * package icu-data-full.
-#19 28.25 *
-#19 28.25 (28/74) Installing icu-libs (74.1-r0)
-#19 30.55 (29/74) Installing libjpeg-turbo (3.0.1-r0)
-#19 30.77 (30/74) Installing libxft (2.3.8-r2)
-#19 30.95 (31/74) Installing fribidi (1.0.13-r0)
-#19 30.99 (32/74) Installing graphite2 (1.3.14-r6)
-#19 31.19 (33/74) Installing harfbuzz (8.3.0-r0)
-#19 32.80 (34/74) Installing pango (1.51.0-r0)
-#19 33.04 (35/74) Installing tzdata (2024a-r0)
-#19 33.78 (36/74) Installing tcl (8.6.13-r1)
-#19 43.00 (37/74) Installing libsharpyuv (1.3.2-r0)
-#19 43.03 (38/74) Installing libwebp (1.3.2-r0)
-#19 43.20 (39/74) Installing tiff (4.6.0-r0)
-#19 43.29 (40/74) Installing tk (8.6.13-r2)
-#19 45.14 (41/74) Installing R@community (4.4.0-r0)
-#19 71.21 Executing R-4.4.0-r0.post-install
-#19 71.26 *
-#19 71.26 * If you want to install R packages from CRAN that contains native extensions,
-#19 71.26 * then you must also install R-dev.
-#19 71.26 *
-#19 71.26 * To avoid warnings about R.css when installing R extensions also install R-doc.
-#19 71.26 *
-#19 71.26 (42/74) Installing bzip2-dev (1.0.8-r6)
-#19 71.28 (43/74) Installing brotli (1.1.0-r1)
-#19 71.41 (44/74) Installing brotli-dev (1.1.0-r1)
-#19 71.76 (45/74) Installing c-ares-dev (1.27.0-r0)
-#19 71.93 (46/74) Installing libidn2-dev (2.3.4-r4)
-#19 72.27 (47/74) Installing nghttp2-dev (1.58.0-r0)
-#19 72.66 (48/74) Installing openssl-dev (3.1.4-r6)
-#19 73.14 (49/74) Installing zlib-dev (1.3.1-r0)
-#19 73.31 (50/74) Installing curl-dev (8.5.0-r0)
-#19 73.53 (51/74) Installing gfortran (13.2.1_git20231014-r0)
-#19 81.19 (52/74) Installing icu (74.1-r0)
-#19 81.35 (53/74) Installing icu-dev (74.1-r0)
-#19 82.32 (54/74) Installing libdeflate-dev (1.19-r0)
-#19 82.34 (55/74) Installing libpng-dev (1.6.40-r0)
-#19 82.73 (56/74) Installing make (4.4.1-r2)
-#19 82.87 (57/74) Installing liblapack (0.3.25-r0)
-#19 85.86 (58/74) Installing liblapacke (0.3.25-r0)
-#19 86.37 (59/74) Installing openblas-dev (0.3.25-r0)
-#19 87.28 (60/74) Installing bsd-compat-headers (0.7.2-r5)
-#19 87.32 (61/74) Installing libformw (6.4_p20231125-r0)
-#19 87.36 (62/74) Installing libmenuw (6.4_p20231125-r0)
-#19 87.39 (63/74) Installing libncurses++ (6.4_p20231125-r0)
-#19 87.42 (64/74) Installing ncurses-dev (6.4_p20231125-r0)
-#19 87.51 (65/74) Installing libedit (20230828.3.1-r3)
-#19 87.62 (66/74) Installing libedit-dev (20230828.3.1-r3)
-#19 87.65 (67/74) Installing libpcre2-16 (10.42-r2)
-#19 88.01 (68/74) Installing libpcre2-32 (10.42-r2)
-#19 88.18 (69/74) Installing pcre2-dev (10.42-r2)
-#19 89.04 (70/74) Installing libhistory (8.2.1-r2)
-#19 89.08 (71/74) Installing readline-dev (8.2.1-r2)
-#19 89.77 (72/74) Installing xz (5.4.5-r0)
-#19 89.92 (73/74) Installing xz-dev (5.4.5-r0)
-#19 90.03 (74/74) Installing R-dev@community (4.4.0-r0)
-#19 90.80 Executing busybox-1.36.1-r15.trigger
-#19 90.85 Executing glib-2.78.6-r0.trigger
-#19 90.96 OK: 549 MiB in 144 packages
-#19 DONE 91.4s
-
-#20 [15/20] COPY dockerfile_basic_arm64.txt /dockerfile_basic_arm64.txt
-#20 DONE 0.0s
-
-#21 [16/20] COPY test.sh /test.sh
-#21 DONE 0.0s
-
-#22 exporting to image
-#22 exporting layers
-#22 exporting layers 0.9s done
-#22 writing image sha256:f93e8434af4ff16542b6991bf6d2dacc0fcb93d1a704315f6ed91c0210296940
-#22 writing image sha256:f93e8434af4ff16542b6991bf6d2dacc0fcb93d1a704315f6ed91c0210296940 done
-#22 naming to docker.io/sswiston/phylo_docker:basic_arm64 done
-#22 DONE 0.9s
-
-View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/vgq4eczrnoonu7d99e4b2nqpv
-
-Build multi-platform images faster with Docker Build Cloud: https://docs.docker.com/go/docker-build-cloud
+ [33m6 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 24)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 25)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 26)
+ - UndefinedVar: Usage of undefined variable '$LD_LIBRARY_PATH' (line 27)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 27)
+ - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 42)

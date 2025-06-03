@@ -1,0 +1,323 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 6.89kB done
+#1 WARN: JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 109)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/sswiston/phylo_docker:slim_arm64
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/34] FROM docker.io/sswiston/phylo_docker:slim_arm64
+#4 DONE 0.0s
+
+#5 [ 9/34] RUN python -m pip install --prefix /.local -e .
+#5 CACHED
+
+#6 [14/34] RUN echo "CXXFLAGS += -D__MUSL__" >> /.R/Makevars
+#6 CACHED
+
+#7 [17/34] RUN apk add libtool m4 automake
+#7 CACHED
+
+#8 [12/34] RUN mkdir /.R &&     touch /.R/Makevars
+#8 CACHED
+
+#9 [ 3/34] WORKDIR /tree
+#9 CACHED
+
+#10 [15/34] RUN echo "CXX1XFLAGS += -D__MUSL__" >> /.R/Makevars
+#10 CACHED
+
+#11 [16/34] RUN cat /.R/Makevars
+#11 CACHED
+
+#12 [ 4/34] RUN sed -i 's/20220623.2/20240722.rc2/g' tree/CMakeLists.txt &&     sed -i 's/773652c0fc276bcd5c461668dc112d0e3b6cde499600bfe3499c5fdda4ed4a5b/30c36fd3f54a1a2650b7e9a006139d6da24058e54a88bda21a221fba7ebf8838/g' tree/CMakeLists.txt
+#12 CACHED
+
+#13 [11/34] RUN apk add linux-headers libgit2-dev freetype-dev libxml2-dev fontconfig-dev harfbuzz-dev fribidi-dev libpng-dev tiff-dev jpeg-dev imagemagick-dev udunits-dev gdal-dev font-terminus font-noto font-noto-extra font-arabic-misc gmp-dev mpfr-dev gsl-dev proj-dev geos-dev texlive libpq-dev openssl-dev unixodbc-dev fftw-dev m4 perl mysql mysql-client libtbb-dev netcdf mariadb mariadb-client mariadb-dev
+#13 CACHED
+
+#14 [13/34] RUN echo "PKG_CXXFLAGS += -D__MUSL__" >> /.R/Makevars
+#14 CACHED
+
+#15 [ 2/34] RUN git clone https://github.com/google-deepmind/tree.git
+#15 CACHED
+
+#16 [ 5/34] RUN python3 setup.py install
+#16 CACHED
+
+#17 [10/34] RUN apk add py3-scipy py3-seaborn py3-tabulate py3-matplotlib py3-biopython &&     python -m pip install dendropy --break-system-packages --force-reinstall
+#17 CACHED
+
+#18 [ 6/34] RUN apk add mesa-gl hdf5-dev py3-pyside6 &&     python -m pip install pysimplegui --break-system-packages
+#18 CACHED
+
+#19 [ 7/34] RUN git clone https://github.com/fkmendes/PhyloJunction.git
+#19 CACHED
+
+#20 [ 8/34] WORKDIR /PhyloJunction/
+#20 CACHED
+
+#21 [18/34] RUN R -e "install.packages('Rcpp',dependencies=TRUE,repos='http://cran.rstudio.com/')" &&     R -e "install.packages('devtools',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#21 CACHED
+
+#22 [internal] load build context
+#22 transferring context: 9.86kB done
+#22 DONE 0.0s
+
+#23 [19/34] RUN R -e "install.packages('rjson',dependencies=TRUE,repos='http://cran.rstudio.com/')" &&     R -e "install.packages('rlist',dependencies=TRUE,repos='http://cran.rstudio.com/')" &&     R -e "install.packages('data.table',dependencies=TRUE,repos='http://cran.rstudio.com/')" &&     R -e "install.packages('reshape2',dependencies=TRUE,repos='http://cran.rstudio.com/')" &&     R -e "install.packages('dplyr',dependencies=TRUE,repos='http://cran.rstudio.com/')" &&     R -e "install.packages('Rmpfr',dependencies=TRUE,repos='http://cran.rstudio.com/')" &&     R -e "install.packages('sf',dependencies=TRUE,repos='http://cran.rstudio.com/')" &&     R -e "install.packages('distributions3',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#23 1.336 
+#23 1.336 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+#23 1.336 Copyright (C) 2024 The R Foundation for Statistical Computing
+#23 1.336 Platform: aarch64-unknown-linux-musl
+#23 1.336 
+#23 1.336 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#23 1.336 You are welcome to redistribute it under certain conditions.
+#23 1.336 Type 'license()' or 'licence()' for distribution details.
+#23 1.336 
+#23 1.336 R is a collaborative project with many contributors.
+#23 1.336 Type 'contributors()' for more information and
+#23 1.336 'citation()' on how to cite R or R packages in publications.
+#23 1.336 
+#23 1.336 Type 'demo()' for some demos, 'help()' for on-line help, or
+#23 1.336 'help.start()' for an HTML browser interface to help.
+#23 1.336 Type 'q()' to quit R.
+#23 1.336 
+#23 2.556 > install.packages('rjson',dependencies=TRUE,repos='http://cran.rstudio.com/')
+#23 8.497 trying URL 'http://cran.rstudio.com/src/contrib/rjson_0.2.23.tar.gz'
+#23 8.913 Content type 'application/x-gzip' length 79159 bytes (77 KB)
+#23 8.913 ==================================================
+#23 8.915 downloaded 77 KB
+#23 8.915 
+#23 11.89 * installing *source* package ‘rjson’ ...
+#23 11.90 ** package ‘rjson’ successfully unpacked and MD5 sums checked
+#23 11.90 ** using staged installation
+#23 12.05 ** libs
+#23 12.31 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#23 12.37 using C++ compiler: ‘g++ (Alpine 14.2.0) 14.2.0’
+#23 12.44 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include   -D__MUSL__ -fPIC  -g -O2  -D__MUSL__  -c dump.cpp -o dump.o
+#23 26.69 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fPIC  -g -O2  -c parser.c -o parser.o
+#23 32.72 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fPIC  -g -O2  -c register.c -o register.o
+#23 33.87 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o rjson.so dump.o parser.o register.o -L/R-4.4.0/lib -lR
+#23 34.18 installing to /R-4.4.0/library/00LOCK-rjson/00new/rjson/libs
+#23 34.19 ** R
+#23 34.22 ** inst
+#23 34.24 ** byte-compile and prepare package for lazy loading
+#23 39.58 ** help
+#23 39.77 *** installing help indices
+#23 39.95 ** building package indices
+#23 42.13 ** installing vignettes
+#23 42.18 ** testing if installed package can be loaded from temporary location
+#23 44.26 ** checking absolute paths in shared objects and dynamic libraries
+#23 44.47 ** testing if installed package can be loaded from final location
+#23 46.48 ** testing if installed package keeps a record of temporary installation path
+#23 46.48 * DONE (rjson)
+#23 46.53 
+#23 46.53 The downloaded source packages are in
+#23 46.53 	‘/tmp/RtmpgPCgiG/downloaded_packages’
+#23 46.54 Updating HTML index of packages in '.Library'
+#23 46.55 Making 'packages.html' ... done
+#23 46.91 > 
+#23 46.91 > 
+#23 47.76 
+#23 47.76 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+#23 47.76 Copyright (C) 2024 The R Foundation for Statistical Computing
+#23 47.76 Platform: aarch64-unknown-linux-musl
+#23 47.76 
+#23 47.76 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#23 47.76 You are welcome to redistribute it under certain conditions.
+#23 47.76 Type 'license()' or 'licence()' for distribution details.
+#23 47.76 
+#23 47.76 R is a collaborative project with many contributors.
+#23 47.76 Type 'contributors()' for more information and
+#23 47.76 'citation()' on how to cite R or R packages in publications.
+#23 47.76 
+#23 47.76 Type 'demo()' for some demos, 'help()' for on-line help, or
+#23 47.76 'help.start()' for an HTML browser interface to help.
+#23 47.76 Type 'q()' to quit R.
+#23 47.76 
+#23 48.82 > install.packages('rlist',dependencies=TRUE,repos='http://cran.rstudio.com/')
+#23 54.45 also installing the dependencies ‘XML’, ‘data.table’, ‘stringdist’
+#23 54.45 
+#23 54.47 trying URL 'http://cran.rstudio.com/src/contrib/XML_3.99-0.18.tar.gz'
+#23 54.88 Content type 'application/x-gzip' length 966667 bytes (944 KB)
+#23 54.88 ==================================================
+#23 54.94 downloaded 944 KB
+#23 54.94 
+#23 54.96 trying URL 'http://cran.rstudio.com/src/contrib/data.table_1.17.4.tar.gz'
+#23 55.37 Content type 'application/x-gzip' length 5839682 bytes (5.6 MB)
+#23 55.37 ==================================================
+#23 55.52 downloaded 5.6 MB
+#23 55.52 
+#23 55.53 trying URL 'http://cran.rstudio.com/src/contrib/stringdist_0.9.15.tar.gz'
+#23 55.94 Content type 'application/x-gzip' length 862730 bytes (842 KB)
+#23 55.94 ==================================================
+#23 55.99 downloaded 842 KB
+#23 55.99 
+#23 56.00 trying URL 'http://cran.rstudio.com/src/contrib/rlist_0.4.6.2.tar.gz'
+#23 56.42 Content type 'application/x-gzip' length 72870 bytes (71 KB)
+#23 56.42 ==================================================
+#23 56.42 downloaded 71 KB
+#23 56.42 
+#23 61.74 * installing *source* package ‘XML’ ...
+#23 61.80 ** package ‘XML’ successfully unpacked and MD5 sums checked
+#23 61.81 ** using staged installation
+#23 66.62 checking for gcc... gcc
+#23 67.03 checking whether the C compiler works... yes
+#23 67.97 checking for C compiler default output file name... a.out
+#23 67.98 checking for suffix of executables... 
+#23 68.92 checking whether we are cross compiling... no
+#23 70.23 checking for suffix of object files... o
+#23 71.06 checking whether the compiler supports GNU C... yes
+#23 71.86 checking whether gcc accepts -g... yes
+#23 72.51 checking for gcc option to enable C11 features... none needed
+#23 74.71 checking how to run the C preprocessor... gcc -E
+#23 76.02 checking for sed... /bin/sed
+#23 76.02 checking for pkg-config... /usr/bin/pkg-config
+#23 76.03 checking for xml2-config... /usr/bin/xml2-config
+#23 76.03 USE_XML2 = yes
+#23 76.05 SED_EXTENDED_ARG: -E
+#23 76.14 Minor 13, Patch 4 for 2.13.4
+#23 76.19 Located parser file -I/usr/include/libxml2/parser.h
+#23 76.19 Checking for 1.8:  -I/usr/include/libxml2
+#23 76.89 Using libxml2.*
+#23 76.90 checking for gzopen in -lz... yes
+#23 78.01 checking for xmlParseFile in -lxml2... yes
+#23 80.51 checking for xmlHashSize in -lxml2... yes
+#23 81.65 Using built-in xmlHashSize
+#23 81.65 Checking DTD parsing (presence of externalSubset)...
+#23 83.91 checking for xmlHashSize in -lxml2... (cached) yes
+#23 83.91 Found xmlHashSize
+#23 84.61 checking for xmlOutputBufferCreateBuffer in -lxml2... yes
+#23 85.77 have xmlOutputBufferCreateBuffer()
+#23 85.79 checking for xmlDocDumpFormatMemoryEnc in -lxml2... yes
+#23 86.94 checking for libxml/xmlversion.h... yes
+#23 89.52 Expat:  FALSE
+#23 89.94 Checking for return type of xmlHashScan element routine.
+#23 90.62 No return value for xmlHashScan
+#23 91.65 xmlNs has a context field
+#23 91.66 Checking for cetype_t enumeration
+#23 92.61 Using recent version of R with cetype_t enumeration type for encoding
+#23 92.63 checking for xmlsec1-config... no
+#23 92.63 nodegc default 
+#23 92.63 xml-debug default 
+#23 93.64 Version has XML_WITH_ZLIB
+#23 94.73 Version has xmlHasFeature()
+#23 94.74 
+#23 94.74 ****************************************
+#23 94.74 Configuration information:
+#23 94.74 
+#23 94.74 Libxml settings
+#23 94.74 
+#23 94.74 libxml include directory: -I/usr/include/libxml2
+#23 94.74 libxml library directory: -lxml2 -lz -llzma -lm -lz  -lxml2
+#23 94.74 libxml 2:                 -DLIBXML2=1
+#23 94.74 
+#23 94.74 Compilation flags:         -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1 
+#23 94.74 Link flags:               -lxml2 -lz -llzma -lm -lz  -lxml2
+#23 94.74 
+#23 94.74 ****************************************
+#23 94.94 configure: creating ./config.status
+#23 95.86 config.status: creating src/Makevars
+#23 96.05 config.status: creating R/supports.R
+#23 96.26 config.status: creating inst/scripts/RSXML.csh
+#23 96.46 config.status: creating inst/scripts/RSXML.bsh
+#23 97.01 ** libs
+#23 97.22 using C compiler: ‘gcc (Alpine 14.2.0) 14.2.0’
+#23 97.29 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c DocParse.c -o DocParse.o
+#23 98.09 DocParse.c: In function 'RS_XML_getDefaultValiditySetting':
+#23 98.10 DocParse.c:67:2: warning: '__xmlDoValidityCheckingDefaultValue' is deprecated [-Wdeprecated-declarations]
+#23 98.10    67 |  INTEGER_DATA(ans)[0] = xmlDoValidityCheckingDefaultValue;
+#23 98.10       |  ^~~~~~~~~~~~
+#23 98.10 In file included from /usr/include/libxml2/libxml/xmlversion.h:343,
+#23 98.10                  from /usr/include/libxml2/libxml/parser.h:14,
+#23 98.10                  from DocParse.h:18,
+#23 98.10                  from DocParse.c:10:
+#23 98.10 /usr/include/libxml2/libxml/xmlexports.h:123:27: note: declared here
+#23 98.10   123 |     attrs XMLPUBFUN type *__##name(void);
+#23 98.10       |                           ^~
+#23 98.10 /usr/include/libxml2/libxml/parser.h:884:16: note: in expansion of macro 'XML_DECLARE_GLOBAL'
+#23 98.10   884 | #define XML_OP XML_DECLARE_GLOBAL
+#23 98.10       |                ^~~~~~~~~~~~~~~~~~
+#23 98.10 /usr/include/libxml2/libxml/parser.h:863:3: note: in expansion of macro 'XML_OP'
+#23 98.10   863 |   XML_OP(xmlDoValidityCheckingDefaultValue, int, XML_DEPRECATED) \
+#23 98.10       |   ^~~~~~
+#23 98.10 /usr/include/libxml2/libxml/parser.h:881:3: note: in expansion of macro 'XML_GLOBALS_PARSER_CORE'
+#23 98.10   881 |   XML_GLOBALS_PARSER_CORE \
+#23 98.10       |   ^~~~~~~~~~~~~~~~~~~~~~~
+#23 98.10 /usr/include/libxml2/libxml/parser.h:885:1: note: in expansion of macro 'XML_GLOBALS_PARSER'
+#23 98.10   885 | XML_GLOBALS_PARSER
+#23 98.10       | ^~~~~~~~~~~~~~~~~~
+#23 98.10 DocParse.c:70:6: warning: '__xmlDoValidityCheckingDefaultValue' is deprecated [-Wdeprecated-declarations]
+#23 98.10    70 |      xmlDoValidityCheckingDefaultValue = INTEGER_DATA(val)[0];
+#23 98.10       |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#23 98.10 /usr/include/libxml2/libxml/xmlexports.h:123:27: note: declared here
+#23 98.10   123 |     attrs XMLPUBFUN type *__##name(void);
+#23 98.10       |                           ^~
+#23 98.10 /usr/include/libxml2/libxml/parser.h:884:16: note: in expansion of macro 'XML_DECLARE_GLOBAL'
+#23 98.10   884 | #define XML_OP XML_DECLARE_GLOBAL
+#23 98.10       |                ^~~~~~~~~~~~~~~~~~
+#23 98.10 /usr/include/libxml2/libxml/parser.h:863:3: note: in expansion of macro 'XML_OP'
+#23 98.10   863 |   XML_OP(xmlDoValidityCheckingDefaultValue, int, XML_DEPRECATED) \
+#23 98.10       |   ^~~~~~
+#23 98.10 /usr/include/libxml2/libxml/parser.h:881:3: note: in expansion of macro 'XML_GLOBALS_PARSER_CORE'
+#23 98.10   881 |   XML_GLOBALS_PARSER_CORE \
+#23 98.10       |   ^~~~~~~~~~~~~~~~~~~~~~~
+#23 98.10 /usr/include/libxml2/libxml/parser.h:885:1: note: in expansion of macro 'XML_GLOBALS_PARSER'
+#23 98.10   885 | XML_GLOBALS_PARSER
+#23 98.10       | ^~~~~~~~~~~~~~~~~~
+#23 105.3 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c EventParse.c -o EventParse.o
+#23 109.3 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c ExpatParse.c -o ExpatParse.o
+#23 110.2 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c HTMLParse.c -o HTMLParse.o
+#23 112.4 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c NodeGC.c -o NodeGC.o
+#23 115.5 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c RSDTD.c -o RSDTD.o
+#23 116.2 RSDTD.c: In function 'RS_XML_getDTD':
+#23 116.2 RSDTD.c:134:7: warning: 'xmlSkipBlankChars' is deprecated [-Wdeprecated-declarations]
+#23 116.2   134 |       SKIP_BLANKS;
+#23 116.2       |       ^~~~~~~~~~~
+#23 116.2 In file included from RSDTD.h:26,
+#23 116.2                  from RSDTD.c:13:
+#23 116.2 /usr/include/libxml2/libxml/parserInternals.h:582:33: note: declared here
+#23 116.2   582 | XMLPUBFUN int                   xmlSkipBlankChars       (xmlParserCtxtPtr ctxt);
+#23 116.2       |                                 ^~~~~~~~~~~~~~~~~
+#23 116.2 RSDTD.c:135:7: warning: 'xmlParseMarkupDecl' is deprecated [-Wdeprecated-declarations]
+#23 116.2   135 |       xmlParseMarkupDecl(ctxt);
+#23 116.2       |       ^~~~~~~~~~~~~~~~~~
+#23 116.2 /usr/include/libxml2/libxml/parserInternals.h:454:25: note: declared here
+#23 116.2   454 |                         xmlParseMarkupDecl      (xmlParserCtxtPtr ctxt);
+#23 116.2       |                         ^~~~~~~~~~~~~~~~~~
+#23 119.5 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c RUtils.c -o RUtils.o
+#23 120.2 RUtils.c: In function 'RS_XML_SubstituteEntitiesDefault':
+#23 120.2 RUtils.c:142:5: warning: 'xmlSubstituteEntitiesDefault' is deprecated [-Wdeprecated-declarations]
+#23 120.2   142 |     value = xmlSubstituteEntitiesDefault(LOGICAL_DATA(replaceEntities)[0]);
+#23 120.2       |     ^~~~~
+#23 120.2 In file included from Utils.h:17,
+#23 120.2                  from RUtils.c:1:
+#23 120.2 /usr/include/libxml2/libxml/parser.h:948:17: note: declared here
+#23 120.2   948 |                 xmlSubstituteEntitiesDefault(int val);
+#23 120.2       |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#23 122.2 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c Rcatalog.c -o Rcatalog.o
+#23 124.3 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c Utils.c -o Utils.o
+#23 127.4 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c XMLEventParse.c -o XMLEventParse.o
+#23 132.5 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c XMLHashTree.c -o XMLHashTree.o
+#23 135.7 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c XMLTree.c -o XMLTree.o
+#23 144.1 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c fixNS.c -o fixNS.o
+#23 146.2 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c libxmlFeatures.c -o libxmlFeatures.o
+#23 148.1 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c schema.c -o schema.o
+#23 150.7 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c xmlsecurity.c -o xmlsecurity.o
+#23 151.6 gcc -I"/R-4.4.0/include" -DNDEBUG -DLIBXML -I/usr/include/libxml2 -DUSE_EXTERNAL_SUBSET=1 -DROOT_HAS_DTD_NODE=1 -DNO_CHECKED_ENTITY_FIELD=1 -DDUMP_WITH_ENCODING=1 -DUSE_XML_VERSION_H=1 -DXML_ELEMENT_ETYPE=1 -DXML_ATTRIBUTE_ATYPE=1 -DNO_XML_HASH_SCANNER_RETURN=1 -DLIBXML_NAMESPACE_HAS_CONTEXT=1 -DHAVE_R_CETYPE_T=1 -DHAVE_XML_WITH_ZLIB=1 -DHAVE_XML_HAS_FEATURE=1 -DUSE_R=1 -D_R_=1  -DHAVE_VALIDITY=1 -DXML_REF_COUNT_NODES=1  -I. -DLIBXML2=1  -I/usr/local/include    -fPIC  -g -O2  -c xpath.c -o xpath.o
+#23 159.1 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o XML.so DocParse.o EventParse.o ExpatParse.o HTMLParse.o NodeGC.o RSDTD.o RUtils.o Rcatalog.o Utils.o XMLEventParse.o XMLHashTree.o XMLTree.o fixNS.o libxmlFeatures.o schema.o xmlsecurity.o xpath.o -lxml2 -lz -llzma -lm -lz -lxml2 -L/R-4.4.0/lib -lR
+#23 159.7 installing to /R-4.4.0/library/00LOCK-XML/00new/XML/libs
+#23 159.8 ** R
+#23 160.8 ** inst
+#23 160.9 ** byte-compile and prepare package for lazy loading
+#23 CANCELED
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 109)
+ERROR: failed to solve: Canceled: context canceled

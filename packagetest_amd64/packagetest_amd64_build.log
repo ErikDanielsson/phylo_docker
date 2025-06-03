@@ -1,0 +1,2099 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.36kB 0.0s done
+#1 WARN: JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 30)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/sswiston/phylo_docker:full_amd64
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/15] FROM docker.io/sswiston/phylo_docker:full_amd64
+#4 CACHED
+
+#5 [internal] load build context
+#5 transferring context: 3.09kB done
+#5 DONE 0.0s
+
+#6 [ 2/15] RUN apk add fftw-dev
+#6 0.288 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+#6 1.141 fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+#6 2.100 (1/3) Installing fftw-long-double-libs (3.3.10-r5)
+#6 2.660 (2/3) Installing fftw-single-libs (3.3.10-r5)
+#6 3.179 (3/3) Installing fftw-dev (3.3.10-r5)
+#6 4.772 OK: 2568 MiB in 556 packages
+#6 DONE 4.9s
+
+#7 [ 3/15] RUN R -e "install.packages('mcmcse',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#7 0.540 
+#7 0.540 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+#7 0.540 Copyright (C) 2024 The R Foundation for Statistical Computing
+#7 0.540 Platform: x86_64-pc-linux-musl
+#7 0.540 
+#7 0.540 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#7 0.540 You are welcome to redistribute it under certain conditions.
+#7 0.540 Type 'license()' or 'licence()' for distribution details.
+#7 0.540 
+#7 0.540 R is a collaborative project with many contributors.
+#7 0.540 Type 'contributors()' for more information and
+#7 0.540 'citation()' on how to cite R or R packages in publications.
+#7 0.540 
+#7 0.540 Type 'demo()' for some demos, 'help()' for on-line help, or
+#7 0.540 'help.start()' for an HTML browser interface to help.
+#7 0.540 Type 'q()' to quit R.
+#7 0.540 
+#7 0.766 > install.packages('mcmcse',dependencies=TRUE,repos='http://cran.rstudio.com/')
+#7 2.624 also installing the dependency ‘fftwtools’
+#7 2.624 
+#7 2.627 trying URL 'http://cran.rstudio.com/src/contrib/fftwtools_0.9-11.tar.gz'
+#7 3.036 Content type 'application/x-gzip' length 174321 bytes (170 KB)
+#7 3.036 ==================================================
+#7 3.098 downloaded 170 KB
+#7 3.098 
+#7 3.101 trying URL 'http://cran.rstudio.com/src/contrib/mcmcse_1.5-0.tar.gz'
+#7 3.511 Content type 'application/x-gzip' length 257823 bytes (251 KB)
+#7 3.511 ==================================================
+#7 3.621 downloaded 251 KB
+#7 3.621 
+#7 3.898 * installing *source* package ‘fftwtools’ ...
+#7 3.900 ** package ‘fftwtools’ successfully unpacked and MD5 sums checked
+#7 3.900 ** using staged installation
+#7 4.209 checking for gcc... gcc
+#7 4.255 checking whether the C compiler works... yes
+#7 4.342 checking for C compiler default output file name... a.out
+#7 4.344 checking for suffix of executables... 
+#7 4.381 checking whether we are cross compiling... no
+#7 4.428 checking for suffix of object files... o
+#7 4.454 checking whether we are using the GNU C compiler... yes
+#7 4.480 checking whether gcc accepts -g... yes
+#7 4.503 checking for gcc option to accept ISO C89... none needed
+#7 4.554 checking how to run the C preprocessor... gcc -E
+#7 4.612 checking for gcc... (cached) gcc
+#7 4.631 checking whether we are using the GNU C compiler... (cached) yes
+#7 4.631 checking whether gcc accepts -g... (cached) yes
+#7 4.631 checking for gcc option to accept ISO C89... (cached) none needed
+#7 4.632 checking for pkg-config... yes
+#7 4.653 configure: creating ./config.status
+#7 4.696 config.status: creating src/Makevars
+#7 4.705 
+#7 4.705 fftwtools 0.9-10
+#7 4.705 ================
+#7 4.705 
+#7 4.705 compiler flags:  
+#7 4.705 link argument:  -lfftw3 
+#7 4.705 
+#7 4.732 ** libs
+#7 4.741 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#7 4.745 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c fftwtools.c -o fftwtools.o
+#7 4.877 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c fftwtools_init.c -o fftwtools_init.o
+#7 4.909 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o fftwtools.so fftwtools.o fftwtools_init.o -lfftw3 -L/R-4.4.0/lib -lR
+#7 4.935 installing to /R-4.4.0/library/00LOCK-fftwtools/00new/fftwtools/libs
+#7 4.936 ** R
+#7 4.940 ** inst
+#7 4.942 ** byte-compile and prepare package for lazy loading
+#7 5.316 ** help
+#7 5.339 *** installing help indices
+#7 5.362 ** building package indices
+#7 5.586 ** installing vignettes
+#7 5.594 ** testing if installed package can be loaded from temporary location
+#7 5.853 ** checking absolute paths in shared objects and dynamic libraries
+#7 5.864 ** testing if installed package can be loaded from final location
+#7 6.064 ** testing if installed package keeps a record of temporary installation path
+#7 6.066 * DONE (fftwtools)
+#7 6.352 * installing *source* package ‘mcmcse’ ...
+#7 6.355 ** package ‘mcmcse’ successfully unpacked and MD5 sums checked
+#7 6.355 ** using staged installation
+#7 6.375 ** libs
+#7 6.387 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#7 6.389 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#7 6.389 using C++11
+#7 6.392 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c RcppExports.cpp -o RcppExports.o
+#7 14.87 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c batchsize.cpp -o batchsize.o
+#7 23.66 gcc -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#7 23.72 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c inseq.cpp -o inseq.o
+#7 33.12 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c lag.cpp -o lag.o
+#7 38.70 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c mbmc.cpp -o mbmc.o
+#7 45.70 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c mcseqbm.cpp -o mcseqbm.o
+#7 50.77 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c mcseqobm.cpp -o mcseqobm.o
+#7 56.42 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c mcseqsub.cpp -o mcseqsub.o
+#7 61.49 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c mobmc.cpp -o mobmc.o
+#7 67.82 g++ -std=gnu++11 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -DSTRICT_R_HEADERS -D__MUSL__ -fpic  -g -O2   -c msvec.cpp -o msvec.o
+#7 73.75 g++ -std=gnu++11 -shared -L/R-4.4.0/lib -L/usr/local/lib -o mcmcse.so RcppExports.o batchsize.o init.o inseq.o lag.o mbmc.o mcseqbm.o mcseqobm.o mcseqsub.o mobmc.o msvec.o -L/R-4.4.0/lib -lRlapack -L/R-4.4.0/lib -lRblas -lgfortran -lm -lssp_nonshared -lquadmath -L/R-4.4.0/lib -lR
+#7 73.92 installing to /R-4.4.0/library/00LOCK-mcmcse/00new/mcmcse/libs
+#7 73.93 ** R
+#7 73.94 ** inst
+#7 73.94 ** byte-compile and prepare package for lazy loading
+#7 75.04 ** help
+#7 75.10 *** installing help indices
+#7 75.15 ** building package indices
+#7 75.38 ** installing vignettes
+#7 75.39 ** testing if installed package can be loaded from temporary location
+#7 75.83 ** checking absolute paths in shared objects and dynamic libraries
+#7 75.84 ** testing if installed package can be loaded from final location
+#7 76.29 ** testing if installed package keeps a record of temporary installation path
+#7 76.29 * DONE (mcmcse)
+#7 76.30 
+#7 76.30 The downloaded source packages are in
+#7 76.30 	‘/tmp/RtmpnipPmk/downloaded_packages’
+#7 76.30 Updating HTML index of packages in '.Library'
+#7 76.31 Making 'packages.html' ...> 
+#7 76.45 > 
+#7 76.45  done
+#7 DONE 76.5s
+
+#8 [ 4/15] RUN R -e "library(devtools);install_github("ignacioq/rase")"
+#8 0.288 
+#8 0.288 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+#8 0.288 Copyright (C) 2024 The R Foundation for Statistical Computing
+#8 0.288 Platform: x86_64-pc-linux-musl
+#8 0.288 
+#8 0.288 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#8 0.288 You are welcome to redistribute it under certain conditions.
+#8 0.288 Type 'license()' or 'licence()' for distribution details.
+#8 0.288 
+#8 0.288 R is a collaborative project with many contributors.
+#8 0.288 Type 'contributors()' for more information and
+#8 0.288 'citation()' on how to cite R or R packages in publications.
+#8 0.288 
+#8 0.288 Type 'demo()' for some demos, 'help()' for on-line help, or
+#8 0.288 'help.start()' for an HTML browser interface to help.
+#8 0.288 Type 'q()' to quit R.
+#8 0.288 
+#8 0.403 > library(devtools);install_github("ignacioq/rase")
+#8 0.411 Loading required package: usethis
+#8 1.986 Downloading GitHub repo ignacioq/rase@HEAD
+#8 5.761 jsonlite     (1.9.0 -> 1.9.1  ) [CRAN]
+#8 5.761 spatstat.... (3.1-1 -> 3.1-2  ) [CRAN]
+#8 5.761 sm           (NA    -> 2.2-6.0) [CRAN]
+#8 5.761 rgl          (NA    -> 1.3.17 ) [CRAN]
+#8 5.761 polyCub      (NA    -> 0.9.2  ) [CRAN]
+#8 5.765 Installing 5 packages: jsonlite, spatstat.univar, sm, rgl, polyCub
+#8 6.203 trying URL 'https://cloud.r-project.org/src/contrib/jsonlite_1.9.1.tar.gz'
+#8 6.663 Content type 'application/x-gzip' length 1055503 bytes (1.0 MB)
+#8 6.666 ==================================================
+#8 6.937 downloaded 1.0 MB
+#8 6.937 
+#8 6.941 trying URL 'https://cloud.r-project.org/src/contrib/spatstat.univar_3.1-2.tar.gz'
+#8 7.345 Content type 'application/x-gzip' length 69453 bytes (67 KB)
+#8 7.345 ==================================================
+#8 7.368 downloaded 67 KB
+#8 7.368 
+#8 7.372 trying URL 'https://cloud.r-project.org/src/contrib/sm_2.2-6.0.tar.gz'
+#8 7.786 Content type 'application/x-gzip' length 258042 bytes (251 KB)
+#8 7.786 ==================================================
+#8 7.891 downloaded 251 KB
+#8 7.891 
+#8 7.895 trying URL 'https://cloud.r-project.org/src/contrib/rgl_1.3.17.tar.gz'
+#8 8.393 Content type 'application/x-gzip' length 4120342 bytes (3.9 MB)
+#8 8.449 ==================================================
+#8 9.583 downloaded 3.9 MB
+#8 9.583 
+#8 9.587 trying URL 'https://cloud.r-project.org/src/contrib/polyCub_0.9.2.tar.gz'
+#8 10.06 Content type 'application/x-gzip' length 123550 bytes (120 KB)
+#8 10.06 ==================================================
+#8 10.19 downloaded 120 KB
+#8 10.19 
+#8 10.67 * installing *source* package ‘jsonlite’ ...
+#8 10.68 ** package ‘jsonlite’ successfully unpacked and MD5 sums checked
+#8 10.71 ** using staged installation
+#8 10.73 ** libs
+#8 10.75 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#8 10.75 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c base64.c -o base64.o
+#8 10.86 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c collapse_array.c -o collapse_array.o
+#8 10.93 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c collapse_object.c -o collapse_object.o
+#8 11.01 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c collapse_pretty.c -o collapse_pretty.o
+#8 11.15 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c escape_chars.c -o escape_chars.o
+#8 11.24 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c integer64_to_na.c -o integer64_to_na.o
+#8 11.29 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c is_datelist.c -o is_datelist.o
+#8 11.35 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c is_recordlist.c -o is_recordlist.o
+#8 11.41 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c is_scalarlist.c -o is_scalarlist.o
+#8 11.47 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c modp_numtoa.c -o modp_numtoa.o
+#8 11.69 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c null_to_na.c -o null_to_na.o
+#8 11.76 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c num_to_char.c -o num_to_char.o
+#8 11.88 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c parse.c -o parse.o
+#8 11.97 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c prettify.c -o prettify.o
+#8 12.06 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c push_parser.c -o push_parser.o
+#8 12.13 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c r-base64.c -o r-base64.o
+#8 12.20 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c register.c -o register.o
+#8 12.25 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c row_collapse.c -o row_collapse.o
+#8 12.33 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c transpose_list.c -o transpose_list.o
+#8 12.39 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c validate.c -o validate.o
+#8 12.44 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c yajl/yajl.c -o yajl/yajl.o
+#8 12.54 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c yajl/yajl_alloc.c -o yajl/yajl_alloc.o
+#8 12.57 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c yajl/yajl_buf.c -o yajl/yajl_buf.o
+#8 12.65 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c yajl/yajl_encode.c -o yajl/yajl_encode.o
+#8 12.80 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c yajl/yajl_gen.c -o yajl/yajl_gen.o
+#8 13.14 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c yajl/yajl_lex.c -o yajl/yajl_lex.o
+#8 13.52 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c yajl/yajl_parser.c -o yajl/yajl_parser.o
+#8 13.75 gcc -I"/R-4.4.0/include" -DNDEBUG -Iyajl/api  -I/usr/local/include   -fvisibility=hidden  -fpic  -g -O2  -c yajl/yajl_tree.c -o yajl/yajl_tree.o
+#8 13.98 ar rcs yajl/libstatyajl.a yajl/yajl.o yajl/yajl_alloc.o yajl/yajl_buf.o yajl/yajl_encode.o yajl/yajl_gen.o yajl/yajl_lex.o yajl/yajl_parser.o yajl/yajl_tree.o
+#8 13.99 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o jsonlite.so base64.o collapse_array.o collapse_object.o collapse_pretty.o escape_chars.o integer64_to_na.o is_datelist.o is_recordlist.o is_scalarlist.o modp_numtoa.o null_to_na.o num_to_char.o parse.o prettify.o push_parser.o r-base64.o register.o row_collapse.o transpose_list.o validate.o -Lyajl -lstatyajl -L/R-4.4.0/lib -lR
+#8 14.02 installing to /R-4.4.0/library/00LOCK-jsonlite/00new/jsonlite/libs
+#8 14.02 ** R
+#8 14.04 ** inst
+#8 14.04 ** byte-compile and prepare package for lazy loading
+#8 15.09 in method for ‘asJSON’ with signature ‘"AsIs"’: no definition for class “AsIs”
+#8 15.09 in method for ‘asJSON’ with signature ‘"ITime"’: no definition for class “ITime”
+#8 15.09 in method for ‘asJSON’ with signature ‘"hms"’: no definition for class “hms”
+#8 15.09 in method for ‘asJSON’ with signature ‘"json"’: no definition for class “json”
+#8 15.09 in method for ‘asJSON’ with signature ‘"integer64"’: no definition for class “integer64”
+#8 15.09 in method for ‘asJSON’ with signature ‘"pairlist"’: no definition for class “pairlist”
+#8 15.09 in method for ‘asJSON’ with signature ‘"blob"’: no definition for class “blob”
+#8 15.09 in method for ‘asJSON’ with signature ‘"scalar"’: no definition for class “scalar”
+#8 15.09 in method for ‘asJSON’ with signature ‘"sf"’: no definition for class “sf”
+#8 15.09 in method for ‘asJSON’ with signature ‘"sfc"’: no definition for class “sfc”
+#8 15.09 in method for ‘asJSON’ with signature ‘"vctrs_vctr"’: no definition for class “vctrs_vctr”
+#8 15.09 ** help
+#8 15.13 *** installing help indices
+#8 15.17 ** building package indices
+#8 15.40 ** installing vignettes
+#8 15.41 ** testing if installed package can be loaded from temporary location
+#8 15.63 ** checking absolute paths in shared objects and dynamic libraries
+#8 15.63 ** testing if installed package can be loaded from final location
+#8 15.87 ** testing if installed package keeps a record of temporary installation path
+#8 15.87 * DONE (jsonlite)
+#8 16.16 * installing *source* package ‘spatstat.univar’ ...
+#8 16.17 ** package ‘spatstat.univar’ successfully unpacked and MD5 sums checked
+#8 16.21 ** using staged installation
+#8 16.23 ** libs
+#8 16.24 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#8 16.25 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c access.c -o access.o
+#8 16.35 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c adaptive.c -o adaptive.o
+#8 16.74 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c colonel.c -o colonel.o
+#8 17.39 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c hotrod.c -o hotrod.o
+#8 17.46 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#8 17.50 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c kernels.c -o kernels.o
+#8 17.83 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c tabnum.c -o tabnum.o
+#8 17.89 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c taylorboot.c -o taylorboot.o
+#8 17.95 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c whist.c -o whist.o
+#8 18.02 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o spatstat.univar.so access.o adaptive.o colonel.o hotrod.o init.o kernels.o tabnum.o taylorboot.o whist.o -L/R-4.4.0/lib -lR
+#8 18.04 installing to /R-4.4.0/library/00LOCK-spatstat.univar/00new/spatstat.univar/libs
+#8 18.04 ** R
+#8 18.05 ** inst
+#8 18.05 ** byte-compile and prepare package for lazy loading
+#8 19.53 ** help
+#8 19.70 *** installing help indices
+#8 19.79 ** building package indices
+#8 20.09 ** testing if installed package can be loaded from temporary location
+#8 20.31 ** checking absolute paths in shared objects and dynamic libraries
+#8 20.37 ** testing if installed package can be loaded from final location
+#8 20.63 ** testing if installed package keeps a record of temporary installation path
+#8 20.63 * DONE (spatstat.univar)
+#8 21.04 * installing *source* package ‘sm’ ...
+#8 21.05 ** package ‘sm’ successfully unpacked and MD5 sums checked
+#8 21.05 ** using staged installation
+#8 21.07 ** libs
+#8 21.08 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#8 21.09 using Fortran compiler: ‘GNU Fortran (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#8 21.09 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c fgamma.c -o fgamma.o
+#8 21.12 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#8 21.16 gfortran  -fpic  -g -O2  -c  variogram.f90 -o variogram.o
+#8 22.47 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o sm.so fgamma.o init.o variogram.o -lgfortran -lm -lssp_nonshared -lquadmath -L/R-4.4.0/lib -lR
+#8 22.49 installing to /R-4.4.0/library/00LOCK-sm/00new/sm/libs
+#8 22.49 ** R
+#8 22.53 ** data
+#8 22.54 *** moving datasets to lazyload DB
+#8 22.60 ** inst
+#8 22.62 ** byte-compile and prepare package for lazy loading
+#8 28.89 ** help
+#8 29.11 *** installing help indices
+#8 29.26 ** building package indices
+#8 29.59 ** testing if installed package can be loaded from temporary location
+#8 29.79 ** checking absolute paths in shared objects and dynamic libraries
+#8 29.80 ** testing if installed package can be loaded from final location
+#8 30.13 ** testing if installed package keeps a record of temporary installation path
+#8 30.14 * DONE (sm)
+#8 30.42 * installing *source* package ‘polyCub’ ...
+#8 30.43 ** package ‘polyCub’ successfully unpacked and MD5 sums checked
+#8 30.43 ** using staged installation
+#8 30.45 ** libs
+#8 30.46 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#8 30.46 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#8 30.50 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c polyCub.SV.c -o polyCub.SV.o
+#8 30.57 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c polyCub.iso.c -o polyCub.iso.o
+#8 30.65 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o polyCub.so init.o polyCub.SV.o polyCub.iso.o -L/R-4.4.0/lib -lR
+#8 30.67 installing to /R-4.4.0/library/00LOCK-polyCub/00new/polyCub/libs
+#8 30.67 ** R
+#8 30.68 ** inst
+#8 30.68 ** byte-compile and prepare package for lazy loading
+#8 31.83 ** help
+#8 31.93 *** installing help indices
+#8 31.98 *** copying figures
+#8 31.98 ** building package indices
+#8 32.24 ** installing vignettes
+#8 32.25 ** testing if installed package can be loaded from temporary location
+#8 32.65 ** checking absolute paths in shared objects and dynamic libraries
+#8 32.66 ** testing if installed package can be loaded from final location
+#8 33.08 ** testing if installed package keeps a record of temporary installation path
+#8 33.08 * DONE (polyCub)
+#8 34.26 * installing *source* package ‘rgl’ ...
+#8 34.29 ** package ‘rgl’ successfully unpacked and MD5 sums checked
+#8 34.29 ** using staged installation
+#8 34.79 checking for gcc... gcc
+#8 34.82 checking whether the C compiler works... yes
+#8 34.85 checking for C compiler default output file name... a.out
+#8 34.85 checking for suffix of executables... 
+#8 34.89 checking whether we are cross compiling... no
+#8 34.94 checking for suffix of object files... o
+#8 34.97 checking whether the compiler supports GNU C... yes
+#8 35.00 checking whether gcc accepts -g... yes
+#8 35.02 checking for gcc option to enable C11 features... none needed
+#8 35.10 checking how to run the C preprocessor... gcc -E
+#8 35.16 checking for gcc... (cached) gcc
+#8 35.18 checking whether the compiler supports GNU C... (cached) yes
+#8 35.18 checking whether gcc accepts -g... (cached) yes
+#8 35.18 checking for gcc option to enable C11 features... (cached) none needed
+#8 35.18 checking for libpng-config... yes
+#8 35.19 configure: using libpng-config
+#8 35.19 configure: using libpng dynamic linkage
+#8 35.19 checking for X... libraries , headers 
+#8 35.27 checking for XAllocClassHint... yes
+#8 35.31 checking for GL/gl.h... no
+#8 35.33 checking for GL/glu.h... configure: WARNING: missing required header GL/gl.h
+#8 35.35 configure: WARNING: missing required header GL/glu.h
+#8 35.35 no
+#8 35.35 configure: compiling without OpenGL support
+#8 35.37 configure: creating ./config.status
+#8 35.41 config.status: creating R/noOpenGL.R
+#8 35.42 config.status: creating src/useNULL/Makevars
+#8 35.44 config.status: creating src/Makevars
+#8 35.51 ** libs
+#8 35.52 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#8 35.52 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#8 35.52 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ABCLineSet.cpp -o ABCLineSet.o
+#8 36.28 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c BBoxDeco.cpp -o BBoxDeco.o
+#8 37.63 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Background.cpp -o Background.o
+#8 38.35 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ClipPlane.cpp -o ClipPlane.o
+#8 39.03 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Color.cpp -o Color.o
+#8 39.23 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Disposable.cpp -o Disposable.o
+#8 39.60 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Light.cpp -o Light.o
+#8 40.08 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c LineSet.cpp -o LineSet.o
+#8 40.64 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c LineStripSet.cpp -o LineStripSet.o
+#8 41.19 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Material.cpp -o Material.o
+#8 41.64 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c NULLgui.cpp -o NULLgui.o
+#8 42.36 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c PlaneSet.cpp -o PlaneSet.o
+#8 43.30 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c PointSet.cpp -o PointSet.o
+#8 43.87 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c PrimitiveSet.cpp -o PrimitiveSet.o
+#8 44.72 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c R.cpp -o R.o
+#8 45.11 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c RenderContext.cpp -o RenderContext.o
+#8 45.41 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Shape.cpp -o Shape.o
+#8 46.13 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c SphereMesh.cpp -o SphereMesh.o
+#8 46.67 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c SphereSet.cpp -o SphereSet.o
+#8 47.43 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c SpriteSet.cpp -o SpriteSet.o
+#8 48.40 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Surface.cpp -o Surface.o
+#8 49.13 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c TextSet.cpp -o TextSet.o
+#8 50.02 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Texture.cpp -o Texture.o
+#8 50.47 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Viewpoint.cpp -o Viewpoint.o
+#8 51.14 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c api.cpp -o api.o
+#8 52.67 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c assert.cpp -o assert.o
+#8 53.07 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c callbacks.cpp -o callbacks.o
+#8 53.76 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c device.cpp -o device.o
+#8 54.37 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c devicemanager.cpp -o devicemanager.o
+#8 55.16 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c earcut.cpp -o earcut.o
+#8 56.86 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c fps.cpp -o fps.o
+#8 57.33 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ftgl.cpp -o ftgl.o
+#8 57.35 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c geom.cpp -o geom.o
+#8 57.84 gcc -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c gl.c -o gl.o
+#8 57.86 gcc -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c gl2ps.c -o gl2ps.o
+#8 57.88 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c glErrors.cpp -o glErrors.o
+#8 58.25 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c glgui.cpp -o glgui.o
+#8 58.77 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c gui.cpp -o gui.o
+#8 59.43 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c init.cpp -o init.o
+#8 60.02 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c par3d.cpp -o par3d.o
+#8 60.86 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c pixmap.cpp -o pixmap.o
+#8 61.12 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c platform.cpp -o platform.o
+#8 61.15 gcc -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c pretty.c -o pretty.o
+#8 61.24 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c render.cpp -o render.o
+#8 61.72 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c rglmath.cpp -o rglmath.o
+#8 62.33 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c rglview.cpp -o rglview.o
+#8 63.24 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c scene.cpp -o scene.o
+#8 64.34 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c select.cpp -o select.o
+#8 64.85 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c subscene.cpp -o subscene.o
+#8 67.22 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c win32gui.cpp -o win32gui.o
+#8 67.23 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c win32lib.cpp -o win32lib.o
+#8 67.25 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c x11gui.cpp -o x11gui.o
+#8 67.26 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I/usr/local/include -DHAVE_PNG_H -I/usr/include/libpng16 -DRGL_NO_OPENGL -DR_NO_REMAP -Iext/earcut  -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c x11lib.cpp -o x11lib.o
+#8 67.28 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o rgl.so ABCLineSet.o BBoxDeco.o Background.o ClipPlane.o Color.o Disposable.o Light.o LineSet.o LineStripSet.o Material.o NULLgui.o PlaneSet.o PointSet.o PrimitiveSet.o R.o RenderContext.o Shape.o SphereMesh.o SphereSet.o SpriteSet.o Surface.o TextSet.o Texture.o Viewpoint.o api.o assert.o callbacks.o device.o devicemanager.o earcut.o fps.o ftgl.o geom.o gl.o gl2ps.o glErrors.o glgui.o gui.o init.o par3d.o pixmap.o platform.o pretty.o render.o rglmath.o rglview.o scene.o select.o subscene.o win32gui.o win32lib.o x11gui.o x11lib.o -L/usr/lib -lpng16 -L/R-4.4.0/lib -lR
+#8 67.40 installing to /R-4.4.0/library/00LOCK-rgl/00new/rgl/libs
+#8 67.41 ** R
+#8 67.45 ** demo
+#8 67.46 ** inst
+#8 67.48 ** byte-compile and prepare package for lazy loading
+#8 76.83 ** help
+#8 77.49 *** installing help indices
+#8 77.79 *** copying figures
+#8 77.79 ** building package indices
+#8 78.37 ** installing vignettes
+#8 78.38 ** testing if installed package can be loaded from temporary location
+#8 78.81 ** checking absolute paths in shared objects and dynamic libraries
+#8 78.82 ** testing if installed package can be loaded from final location
+#8 79.51 ** testing if installed package keeps a record of temporary installation path
+#8 79.52 * DONE (rgl)
+#8 79.54 
+#8 79.54 The downloaded source packages are in
+#8 79.54 	‘/tmp/RtmpocNebI/downloaded_packages’
+#8 79.54 Updating HTML index of packages in '.Library'
+#8 79.55 Making 'packages.html' ... done
+#8 79.88 ── R CMD build ─────────────────────────────────────────────────────────────────
+#8 80.10 * checking for file ‘/tmp/RtmpocNebI/remotes13bbb0608/ignacioq-rase-dda1359/DESCRIPTION’ ... OK
+#8 80.11 * preparing ‘rase’:
+#8 80.11 * checking DESCRIPTION meta-information ... OK
+#8 80.38 * checking for LF line-endings in source and make files and shell scripts
+#8 80.38 * checking for empty or unneeded directories
+#8 80.38 * looking to see if a ‘data/datalist’ file should be added
+#8 80.38 * building ‘rase_0.3-3.tar.gz’
+#8 80.41 
+#8 80.69 * installing *source* package ‘rase’ ...
+#8 80.69 ** using staged installation
+#8 80.71 ** R
+#8 80.72 ** data
+#8 80.72 ** inst
+#8 80.72 ** byte-compile and prepare package for lazy loading
+#8 83.76 ** help
+#8 83.85 *** installing help indices
+#8 83.90 ** building package indices
+#8 84.17 ** testing if installed package can be loaded from temporary location
+#8 86.17 ** testing if installed package can be loaded from final location
+#8 88.17 ** testing if installed package keeps a record of temporary installation path
+#8 88.17 * DONE (rase)
+#8 88.18 > 
+#8 88.18 > 
+#8 DONE 88.2s
+
+#9 [ 5/15] RUN R -e "install.packages('treebalance',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#9 0.263 
+#9 0.263 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+#9 0.263 Copyright (C) 2024 The R Foundation for Statistical Computing
+#9 0.263 Platform: x86_64-pc-linux-musl
+#9 0.263 
+#9 0.263 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#9 0.263 You are welcome to redistribute it under certain conditions.
+#9 0.263 Type 'license()' or 'licence()' for distribution details.
+#9 0.263 
+#9 0.263 R is a collaborative project with many contributors.
+#9 0.263 Type 'contributors()' for more information and
+#9 0.263 'citation()' on how to cite R or R packages in publications.
+#9 0.263 
+#9 0.263 Type 'demo()' for some demos, 'help()' for on-line help, or
+#9 0.263 'help.start()' for an HTML browser interface to help.
+#9 0.263 Type 'q()' to quit R.
+#9 0.263 
+#9 0.375 > install.packages('treebalance',dependencies=TRUE,repos='http://cran.rstudio.com/')
+#9 1.720 trying URL 'http://cran.rstudio.com/src/contrib/treebalance_1.2.0.tar.gz'
+#9 2.131 Content type 'application/x-gzip' length 52890 bytes (51 KB)
+#9 2.131 ==================================================
+#9 2.139 downloaded 51 KB
+#9 2.139 
+#9 2.416 * installing *source* package ‘treebalance’ ...
+#9 2.419 ** package ‘treebalance’ successfully unpacked and MD5 sums checked
+#9 2.419 ** using staged installation
+#9 2.440 ** R
+#9 2.455 ** data
+#9 2.455 *** moving datasets to lazyload DB
+#9 2.464 ** inst
+#9 2.466 ** byte-compile and prepare package for lazy loading
+#9 3.725 ** help
+#9 3.847 *** installing help indices
+#9 3.917 ** building package indices
+#9 4.210 ** testing if installed package can be loaded from temporary location
+#9 4.623 ** testing if installed package can be loaded from final location
+#9 4.985 ** testing if installed package keeps a record of temporary installation path
+#9 4.988 * DONE (treebalance)
+#9 4.996 
+#9 4.996 The downloaded source packages are in
+#9 4.996 	‘/tmp/RtmplnGFoO/downloaded_packages’
+#9 4.996 Updating HTML index of packages in '.Library'
+#9 5.001 Making 'packages.html' ...> 
+#9 5.151 > 
+#9 5.151  done
+#9 DONE 5.2s
+
+#10 [ 6/15] RUN R -e "install.packages('rlist',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#10 0.278 
+#10 0.278 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+#10 0.278 Copyright (C) 2024 The R Foundation for Statistical Computing
+#10 0.278 Platform: x86_64-pc-linux-musl
+#10 0.278 
+#10 0.278 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#10 0.278 You are welcome to redistribute it under certain conditions.
+#10 0.278 Type 'license()' or 'licence()' for distribution details.
+#10 0.278 
+#10 0.278 R is a collaborative project with many contributors.
+#10 0.278 Type 'contributors()' for more information and
+#10 0.278 'citation()' on how to cite R or R packages in publications.
+#10 0.278 
+#10 0.278 Type 'demo()' for some demos, 'help()' for on-line help, or
+#10 0.278 'help.start()' for an HTML browser interface to help.
+#10 0.278 Type 'q()' to quit R.
+#10 0.278 
+#10 0.396 > install.packages('rlist',dependencies=TRUE,repos='http://cran.rstudio.com/')
+#10 1.950 trying URL 'http://cran.rstudio.com/src/contrib/rlist_0.4.6.2.tar.gz'
+#10 2.360 Content type 'application/x-gzip' length 72870 bytes (71 KB)
+#10 2.360 ==================================================
+#10 2.360 downloaded 71 KB
+#10 2.360 
+#10 2.686 * installing *source* package ‘rlist’ ...
+#10 2.690 ** package ‘rlist’ successfully unpacked and MD5 sums checked
+#10 2.690 ** using staged installation
+#10 2.708 ** R
+#10 2.722 ** data
+#10 2.723 *** moving datasets to lazyload DB
+#10 2.829 ** byte-compile and prepare package for lazy loading
+#10 3.690 ** help
+#10 3.850 *** installing help indices
+#10 3.962 ** building package indices
+#10 4.298 ** testing if installed package can be loaded from temporary location
+#10 4.557 ** testing if installed package can be loaded from final location
+#10 4.824 ** testing if installed package keeps a record of temporary installation path
+#10 4.826 * DONE (rlist)
+#10 4.834 
+#10 4.834 The downloaded source packages are in
+#10 4.834 	‘/tmp/RtmplmPPog/downloaded_packages’
+#10 4.834 Updating HTML index of packages in '.Library'
+#10 4.842 Making 'packages.html' ...> 
+#10 4.982 > 
+#10 4.982  done
+#10 DONE 5.0s
+
+#11 [ 7/15] RUN R -e "install.packages('poweRbal',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#11 0.291 
+#11 0.291 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+#11 0.291 Copyright (C) 2024 The R Foundation for Statistical Computing
+#11 0.291 Platform: x86_64-pc-linux-musl
+#11 0.291 
+#11 0.291 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#11 0.291 You are welcome to redistribute it under certain conditions.
+#11 0.291 Type 'license()' or 'licence()' for distribution details.
+#11 0.291 
+#11 0.291 R is a collaborative project with many contributors.
+#11 0.291 Type 'contributors()' for more information and
+#11 0.291 'citation()' on how to cite R or R packages in publications.
+#11 0.291 
+#11 0.291 Type 'demo()' for some demos, 'help()' for on-line help, or
+#11 0.291 'help.start()' for an HTML browser interface to help.
+#11 0.291 Type 'q()' to quit R.
+#11 0.291 
+#11 0.402 > install.packages('poweRbal',dependencies=TRUE,repos='http://cran.rstudio.com/')
+#11 1.848 trying URL 'http://cran.rstudio.com/src/contrib/poweRbal_0.0.1.1.tar.gz'
+#11 2.258 Content type 'application/x-gzip' length 52623 bytes (51 KB)
+#11 2.258 ==================================================
+#11 2.305 downloaded 51 KB
+#11 2.305 
+#11 2.582 * installing *source* package ‘poweRbal’ ...
+#11 2.584 ** package ‘poweRbal’ successfully unpacked and MD5 sums checked
+#11 2.585 ** using staged installation
+#11 2.607 ** R
+#11 2.625 ** inst
+#11 2.627 ** byte-compile and prepare package for lazy loading
+#11 4.339 ** help
+#11 4.440 *** installing help indices
+#11 4.498 ** building package indices
+#11 4.831 ** testing if installed package can be loaded from temporary location
+#11 5.173 ** testing if installed package can be loaded from final location
+#11 5.557 ** testing if installed package keeps a record of temporary installation path
+#11 5.560 * DONE (poweRbal)
+#11 5.567 
+#11 5.567 The downloaded source packages are in
+#11 5.567 	‘/tmp/RtmpdNohhh/downloaded_packages’
+#11 5.569 Updating HTML index of packages in '.Library'
+#11 5.575 Making 'packages.html' ... done
+#11 5.720 > 
+#11 5.720 > 
+#11 DONE 5.7s
+
+#12 [ 8/15] RUN R -e "install.packages('treestats',dependencies=TRUE,repos='http://cran.rstudio.com/')"
+#12 0.242 
+#12 0.242 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+#12 0.242 Copyright (C) 2024 The R Foundation for Statistical Computing
+#12 0.242 Platform: x86_64-pc-linux-musl
+#12 0.242 
+#12 0.242 R is free software and comes with ABSOLUTELY NO WARRANTY.
+#12 0.242 You are welcome to redistribute it under certain conditions.
+#12 0.242 Type 'license()' or 'licence()' for distribution details.
+#12 0.242 
+#12 0.242 R is a collaborative project with many contributors.
+#12 0.242 Type 'contributors()' for more information and
+#12 0.242 'citation()' on how to cite R or R packages in publications.
+#12 0.242 
+#12 0.242 Type 'demo()' for some demos, 'help()' for on-line help, or
+#12 0.242 'help.start()' for an HTML browser interface to help.
+#12 0.242 Type 'q()' to quit R.
+#12 0.242 
+#12 0.356 > install.packages('treestats',dependencies=TRUE,repos='http://cran.rstudio.com/')
+#12 1.635 also installing the dependencies ‘rbibutils’, ‘Deriv’, ‘modelr’, ‘Rdpack’, ‘doBy’, ‘MatrixModels’, ‘reformulas’, ‘carData’, ‘Formula’, ‘pbkrtest’, ‘quantreg’, ‘lme4’, ‘segmented’, ‘car’, ‘rncl’, ‘pixmap’, ‘seqinr’, ‘NHPoisson’, ‘phylobase’, ‘SparseM’, ‘BH’, ‘testit’, ‘ade4’, ‘adegenet’, ‘ranger’, ‘phyloTop’, ‘DDD’, ‘nLTT’, ‘adephylo’, ‘abcrf’, ‘pheatmap’
+#12 1.635 
+#12 1.637 trying URL 'http://cran.rstudio.com/src/contrib/rbibutils_2.3.tar.gz'
+#12 2.047 Content type 'application/x-gzip' length 1132601 bytes (1.1 MB)
+#12 2.047 ==================================================
+#12 2.343 downloaded 1.1 MB
+#12 2.343 
+#12 2.345 trying URL 'http://cran.rstudio.com/src/contrib/Deriv_4.1.6.tar.gz'
+#12 2.753 Content type 'application/x-gzip' length 37831 bytes (36 KB)
+#12 2.753 ==================================================
+#12 2.753 downloaded 36 KB
+#12 2.753 
+#12 2.758 trying URL 'http://cran.rstudio.com/src/contrib/modelr_0.1.11.tar.gz'
+#12 3.166 Content type 'application/x-gzip' length 121480 bytes (118 KB)
+#12 3.166 ==================================================
+#12 3.232 downloaded 118 KB
+#12 3.232 
+#12 3.235 trying URL 'http://cran.rstudio.com/src/contrib/Rdpack_2.6.2.tar.gz'
+#12 3.644 Content type 'application/x-gzip' length 503888 bytes (492 KB)
+#12 3.644 ==================================================
+#12 3.737 downloaded 492 KB
+#12 3.737 
+#12 3.740 trying URL 'http://cran.rstudio.com/src/contrib/doBy_4.6.25.tar.gz'
+#12 4.149 Content type 'application/x-gzip' length 4556919 bytes (4.3 MB)
+#12 4.157 ==================================================
+#12 5.113 downloaded 4.3 MB
+#12 5.113 
+#12 5.115 trying URL 'http://cran.rstudio.com/src/contrib/MatrixModels_0.5-3.tar.gz'
+#12 5.524 Content type 'application/x-gzip' length 24822 bytes (24 KB)
+#12 5.524 ==================================================
+#12 5.524 downloaded 24 KB
+#12 5.524 
+#12 5.528 trying URL 'http://cran.rstudio.com/src/contrib/reformulas_0.4.0.tar.gz'
+#12 5.936 Content type 'application/x-gzip' length 32012 bytes (31 KB)
+#12 5.936 ==================================================
+#12 5.936 downloaded 31 KB
+#12 5.936 
+#12 5.941 trying URL 'http://cran.rstudio.com/src/contrib/carData_3.0-5.tar.gz'
+#12 6.349 Content type 'application/x-gzip' length 1004201 bytes (980 KB)
+#12 6.349 ==================================================
+#12 6.574 downloaded 980 KB
+#12 6.574 
+#12 6.576 trying URL 'http://cran.rstudio.com/src/contrib/Formula_1.2-5.tar.gz'
+#12 6.983 Content type 'application/x-gzip' length 128259 bytes (125 KB)
+#12 6.983 ==================================================
+#12 6.993 downloaded 125 KB
+#12 6.993 
+#12 6.996 trying URL 'http://cran.rstudio.com/src/contrib/pbkrtest_0.5.3.tar.gz'
+#12 7.407 Content type 'application/x-gzip' length 59013 bytes (57 KB)
+#12 7.407 ==================================================
+#12 7.413 downloaded 57 KB
+#12 7.413 
+#12 7.416 trying URL 'http://cran.rstudio.com/src/contrib/quantreg_6.1.tar.gz'
+#12 7.837 Content type 'application/x-gzip' length 925163 bytes (903 KB)
+#12 7.837 ==================================================
+#12 8.180 downloaded 903 KB
+#12 8.180 
+#12 8.183 trying URL 'http://cran.rstudio.com/src/contrib/lme4_1.1-36.tar.gz'
+#12 8.593 Content type 'application/x-gzip' length 3294834 bytes (3.1 MB)
+#12 8.641 ==================================================
+#12 9.858 downloaded 3.1 MB
+#12 9.858 
+#12 9.860 trying URL 'http://cran.rstudio.com/src/contrib/segmented_2.1-4.tar.gz'
+#12 10.27 Content type 'application/x-gzip' length 311459 bytes (304 KB)
+#12 10.27 ==================================================
+#12 10.47 downloaded 304 KB
+#12 10.47 
+#12 10.47 trying URL 'http://cran.rstudio.com/src/contrib/car_3.1-3.tar.gz'
+#12 10.88 Content type 'application/x-gzip' length 384407 bytes (375 KB)
+#12 10.88 ==================================================
+#12 11.04 downloaded 375 KB
+#12 11.04 
+#12 11.04 trying URL 'http://cran.rstudio.com/src/contrib/rncl_0.8.7.tar.gz'
+#12 11.45 Content type 'application/x-gzip' length 272952 bytes (266 KB)
+#12 11.45 ==================================================
+#12 11.53 downloaded 266 KB
+#12 11.53 
+#12 11.54 trying URL 'http://cran.rstudio.com/src/contrib/pixmap_0.4-13.tar.gz'
+#12 11.94 Content type 'application/x-gzip' length 34980 bytes (34 KB)
+#12 11.94 ==================================================
+#12 11.94 downloaded 34 KB
+#12 11.94 
+#12 11.95 trying URL 'http://cran.rstudio.com/src/contrib/seqinr_4.2-36.tar.gz'
+#12 12.36 Content type 'application/x-gzip' length 3539927 bytes (3.4 MB)
+#12 12.37 ==================================================
+#12 13.06 downloaded 3.4 MB
+#12 13.06 
+#12 13.06 trying URL 'http://cran.rstudio.com/src/contrib/NHPoisson_3.3.tar.gz'
+#12 13.50 Content type 'application/x-gzip' length 258089 bytes (252 KB)
+#12 13.50 ==================================================
+#12 13.52 downloaded 252 KB
+#12 13.52 
+#12 13.52 trying URL 'http://cran.rstudio.com/src/contrib/phylobase_0.8.12.tar.gz'
+#12 13.93 Content type 'application/x-gzip' length 236932 bytes (231 KB)
+#12 13.93 ==================================================
+#12 13.99 downloaded 231 KB
+#12 13.99 
+#12 14.00 trying URL 'http://cran.rstudio.com/src/contrib/SparseM_1.84-2.tar.gz'
+#12 14.41 Content type 'application/x-gzip' length 553080 bytes (540 KB)
+#12 14.41 ==================================================
+#12 14.69 downloaded 540 KB
+#12 14.69 
+#12 14.69 trying URL 'http://cran.rstudio.com/src/contrib/BH_1.87.0-1.tar.gz'
+#12 15.10 Content type 'application/x-gzip' length 14335542 bytes (13.7 MB)
+#12 15.19 ==================================================
+#12 19.50 downloaded 13.7 MB
+#12 19.50 
+#12 19.50 trying URL 'http://cran.rstudio.com/src/contrib/testit_0.13.tar.gz'
+#12 19.91 Content type 'application/x-gzip' length 8493 bytes
+#12 19.91 ==================================================
+#12 19.91 downloaded 8493 bytes
+#12 19.91 
+#12 19.91 trying URL 'http://cran.rstudio.com/src/contrib/ade4_1.7-23.tar.gz'
+#12 20.32 Content type 'application/x-gzip' length 3372316 bytes (3.2 MB)
+#12 20.39 ==================================================
+#12 21.82 downloaded 3.2 MB
+#12 21.82 
+#12 21.82 trying URL 'http://cran.rstudio.com/src/contrib/adegenet_2.1.11.tar.gz'
+#12 22.23 Content type 'application/x-gzip' length 1700796 bytes (1.6 MB)
+#12 22.23 ==================================================
+#12 22.58 downloaded 1.6 MB
+#12 22.58 
+#12 22.58 trying URL 'http://cran.rstudio.com/src/contrib/ranger_0.17.0.tar.gz'
+#12 22.99 Content type 'application/x-gzip' length 178529 bytes (174 KB)
+#12 22.99 ==================================================
+#12 23.32 downloaded 174 KB
+#12 23.32 
+#12 23.32 trying URL 'http://cran.rstudio.com/src/contrib/phyloTop_2.1.2.tar.gz'
+#12 23.73 Content type 'application/x-gzip' length 26259 bytes (25 KB)
+#12 23.73 ==================================================
+#12 23.73 downloaded 25 KB
+#12 23.73 
+#12 23.74 trying URL 'http://cran.rstudio.com/src/contrib/DDD_5.2.2.tar.gz'
+#12 24.14 Content type 'application/x-gzip' length 93099 bytes (90 KB)
+#12 24.14 ==================================================
+#12 24.18 downloaded 90 KB
+#12 24.18 
+#12 24.19 trying URL 'http://cran.rstudio.com/src/contrib/nLTT_1.4.9.tar.gz'
+#12 24.65 Content type 'application/x-gzip' length 873590 bytes (853 KB)
+#12 24.65 ==================================================
+#12 24.82 downloaded 853 KB
+#12 24.82 
+#12 24.82 trying URL 'http://cran.rstudio.com/src/contrib/adephylo_1.1-17.tar.gz'
+#12 25.23 Content type 'application/x-gzip' length 522815 bytes (510 KB)
+#12 25.23 ==================================================
+#12 25.34 downloaded 510 KB
+#12 25.34 
+#12 25.34 trying URL 'http://cran.rstudio.com/src/contrib/abcrf_1.9.tar.gz'
+#12 25.75 Content type 'application/x-gzip' length 1843592 bytes (1.8 MB)
+#12 25.76 ==================================================
+#12 26.39 downloaded 1.8 MB
+#12 26.39 
+#12 26.39 trying URL 'http://cran.rstudio.com/src/contrib/pheatmap_1.0.12.tar.gz'
+#12 26.80 Content type 'application/x-gzip' length 15071 bytes (14 KB)
+#12 26.80 ==================================================
+#12 26.80 downloaded 14 KB
+#12 26.80 
+#12 26.80 trying URL 'http://cran.rstudio.com/src/contrib/treestats_1.70.5.tar.gz'
+#12 27.21 Content type 'application/x-gzip' length 2381085 bytes (2.3 MB)
+#12 27.21 ==================================================
+#12 28.52 downloaded 2.3 MB
+#12 28.52 
+#12 29.08 * installing *source* package ‘rbibutils’ ...
+#12 29.09 ** package ‘rbibutils’ successfully unpacked and MD5 sums checked
+#12 29.09 ** using staged installation
+#12 29.12 ** libs
+#12 29.13 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 29.14 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c adsout.c -o adsout.o
+#12 29.44 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c any2xml.c -o any2xml.o
+#12 29.50 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c args.c -o args.o
+#12 29.61 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bib2be.c -o bib2be.o
+#12 29.70 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibcore.c -o bibcore.o
+#12 30.13 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibentrydirectout.c -o bibentrydirectout.o
+#12 30.29 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibentryout.c -o bibentryout.o
+#12 30.44 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibl.c -o bibl.o
+#12 30.52 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c biblatexin.c -o biblatexin.o
+#12 30.86 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c biblatexout.c -o biblatexout.o
+#12 30.96 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibprog.c -o bibprog.o
+#12 31.02 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibtexdirectin.c -o bibtexdirectin.o
+#12 31.11 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibtexin.c -o bibtexin.o
+#12 31.33 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibtexout.c -o bibtexout.o
+#12 31.43 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibtextypes.c -o bibtextypes.o
+#12 31.48 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bibutils.c -o bibutils.o
+#12 31.53 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bltypes.c -o bltypes.o
+#12 31.59 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c bu_auth.c -o bu_auth.o
+#12 31.63 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c charsets.c -o charsets.o
+#12 31.88 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c common_be_bed.c -o common_be_bed.o
+#12 31.99 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c common_bt_blt_btd_out.c -o common_bt_blt_btd_out.o
+#12 32.24 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c common_bt_btd.c -o common_bt_btd.o
+#12 32.38 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c common_bt_btd_blt.c -o common_bt_btd_blt.o
+#12 32.66 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c common_bt_btd_out.c -o common_bt_btd_out.o
+#12 32.78 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c copacin.c -o copacin.o
+#12 32.94 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c copactypes.c -o copactypes.o
+#12 32.98 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c ebiin.c -o ebiin.o
+#12 33.27 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c endin.c -o endin.o
+#12 33.56 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c endout.c -o endout.o
+#12 33.93 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c endtypes.c -o endtypes.o
+#12 33.99 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c endxmlin.c -o endxmlin.o
+#12 34.24 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c entities.c -o entities.o
+#12 34.31 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c fields.c -o fields.o
+#12 34.69 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c gb18030.c -o gb18030.o
+#12 35.24 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c generic.c -o generic.o
+#12 35.33 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#12 35.36 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c intlist.c -o intlist.o
+#12 35.59 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c is_ws.c -o is_ws.o
+#12 35.64 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c isiin.c -o isiin.o
+#12 35.85 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c isiout.c -o isiout.o
+#12 36.05 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c isitypes.c -o isitypes.o
+#12 36.09 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c iso639_1.c -o iso639_1.o
+#12 36.13 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c iso639_2.c -o iso639_2.o
+#12 36.19 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c iso639_3.c -o iso639_3.o
+#12 36.36 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c latex.c -o latex.o
+#12 36.51 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c latex_parse.c -o latex_parse.o
+#12 36.67 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c marc_auth.c -o marc_auth.o
+#12 36.73 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c medin.c -o medin.o
+#12 37.03 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c modsin.c -o modsin.o
+#12 37.53 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c modsout.c -o modsout.o
+#12 38.13 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c modstypes.c -o modstypes.o
+#12 38.18 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c name.c -o name.o
+#12 38.49 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c nbibin.c -o nbibin.o
+#12 38.79 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c nbibout.c -o nbibout.o
+#12 39.06 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c nbibtypes.c -o nbibtypes.o
+#12 39.09 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c notes.c -o notes.o
+#12 39.16 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c pages.c -o pages.o
+#12 39.23 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c reftypes.c -o reftypes.o
+#12 39.29 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c risin.c -o risin.o
+#12 39.60 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c risout.c -o risout.o
+#12 39.93 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c ristypes.c -o ristypes.o
+#12 39.98 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c serialno.c -o serialno.o
+#12 40.05 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c slist.c -o slist.o
+#12 40.48 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c str.c -o str.o
+#12 41.11 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c str_conv.c -o str_conv.o
+#12 41.23 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c strsearch.c -o strsearch.o
+#12 41.28 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c title.c -o title.o
+#12 41.36 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c tomods.c -o tomods.o
+#12 41.48 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c type.c -o type.o
+#12 41.54 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c unicode.c -o unicode.o
+#12 41.60 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c url.c -o url.o
+#12 41.76 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c utf8.c -o utf8.o
+#12 41.90 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c vplist.c -o vplist.o
+#12 42.08 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c wordin.c -o wordin.o
+#12 42.24 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c wordout.c -o wordout.o
+#12 42.53 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c xml.c -o xml.o
+#12 42.79 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c xml2any.c -o xml2any.o
+#12 42.98 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c xml_encoding.c -o xml_encoding.o
+#12 43.04 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o rbibutils.so adsout.o any2xml.o args.o bib2be.o bibcore.o bibentrydirectout.o bibentryout.o bibl.o biblatexin.o biblatexout.o bibprog.o bibtexdirectin.o bibtexin.o bibtexout.o bibtextypes.o bibutils.o bltypes.o bu_auth.o charsets.o common_be_bed.o common_bt_blt_btd_out.o common_bt_btd.o common_bt_btd_blt.o common_bt_btd_out.o copacin.o copactypes.o ebiin.o endin.o endout.o endtypes.o endxmlin.o entities.o fields.o gb18030.o generic.o init.o intlist.o is_ws.o isiin.o isiout.o isitypes.o iso639_1.o iso639_2.o iso639_3.o latex.o latex_parse.o marc_auth.o medin.o modsin.o modsout.o modstypes.o name.o nbibin.o nbibout.o nbibtypes.o notes.o pages.o reftypes.o risin.o risout.o ristypes.o serialno.o slist.o str.o str_conv.o strsearch.o title.o tomods.o type.o unicode.o url.o utf8.o vplist.o wordin.o wordout.o xml.o xml2any.o xml_encoding.o -L/R-4.4.0/lib -lR
+#12 43.15 installing to /R-4.4.0/library/00LOCK-rbibutils/00new/rbibutils/libs
+#12 43.15 ** R
+#12 43.19 ** inst
+#12 43.20 ** byte-compile and prepare package for lazy loading
+#12 43.94 ** help
+#12 44.03 *** installing help indices
+#12 44.07 ** building package indices
+#12 44.32 ** installing vignettes
+#12 44.33 ** testing if installed package can be loaded from temporary location
+#12 44.54 ** checking absolute paths in shared objects and dynamic libraries
+#12 44.55 ** testing if installed package can be loaded from final location
+#12 44.76 ** testing if installed package keeps a record of temporary installation path
+#12 44.76 * DONE (rbibutils)
+#12 45.00 * installing *source* package ‘Deriv’ ...
+#12 45.00 ** package ‘Deriv’ successfully unpacked and MD5 sums checked
+#12 45.00 ** using staged installation
+#12 45.03 ** R
+#12 45.03 ** inst
+#12 45.03 ** byte-compile and prepare package for lazy loading
+#12 46.74 ** help
+#12 46.76 *** installing help indices
+#12 46.79 ** building package indices
+#12 47.00 ** testing if installed package can be loaded from temporary location
+#12 47.21 ** testing if installed package can be loaded from final location
+#12 47.43 ** testing if installed package keeps a record of temporary installation path
+#12 47.43 * DONE (Deriv)
+#12 47.79 * installing *source* package ‘modelr’ ...
+#12 47.79 ** package ‘modelr’ successfully unpacked and MD5 sums checked
+#12 47.80 ** using staged installation
+#12 47.82 ** R
+#12 47.83 ** data
+#12 47.83 *** moving datasets to lazyload DB
+#12 47.89 ** byte-compile and prepare package for lazy loading
+#12 48.97 ** help
+#12 49.04 *** installing help indices
+#12 49.08 *** copying figures
+#12 49.08 ** building package indices
+#12 49.34 ** testing if installed package can be loaded from temporary location
+#12 50.00 ** testing if installed package can be loaded from final location
+#12 50.67 ** testing if installed package keeps a record of temporary installation path
+#12 50.67 * DONE (modelr)
+#12 50.90 * installing *source* package ‘MatrixModels’ ...
+#12 50.91 ** package ‘MatrixModels’ successfully unpacked and MD5 sums checked
+#12 50.91 ** using staged installation
+#12 50.93 ** R
+#12 50.94 ** byte-compile and prepare package for lazy loading
+#12 53.97 ** help
+#12 54.03 *** installing help indices
+#12 54.07 ** building package indices
+#12 54.31 ** testing if installed package can be loaded from temporary location
+#12 55.59 ** testing if installed package can be loaded from final location
+#12 56.96 ** testing if installed package keeps a record of temporary installation path
+#12 56.96 * DONE (MatrixModels)
+#12 57.30 * installing *source* package ‘carData’ ...
+#12 57.31 ** package ‘carData’ successfully unpacked and MD5 sums checked
+#12 57.31 ** using staged installation
+#12 57.33 ** data
+#12 57.33 *** moving datasets to lazyload DB
+#12 58.40 ** help
+#12 58.66 *** installing help indices
+#12 58.78 ** building package indices
+#12 59.09 ** testing if installed package can be loaded from temporary location
+#12 59.29 ** testing if installed package can be loaded from final location
+#12 59.50 ** testing if installed package keeps a record of temporary installation path
+#12 59.50 * DONE (carData)
+#12 59.75 * installing *source* package ‘Formula’ ...
+#12 59.75 ** package ‘Formula’ successfully unpacked and MD5 sums checked
+#12 59.75 ** using staged installation
+#12 59.77 ** R
+#12 59.77 ** inst
+#12 59.77 ** byte-compile and prepare package for lazy loading
+#12 60.20 ** help
+#12 60.24 *** installing help indices
+#12 60.26 ** building package indices
+#12 60.47 ** installing vignettes
+#12 60.48 ** testing if installed package can be loaded from temporary location
+#12 60.68 ** testing if installed package can be loaded from final location
+#12 60.88 ** testing if installed package keeps a record of temporary installation path
+#12 60.88 * DONE (Formula)
+#12 61.22 * installing *source* package ‘segmented’ ...
+#12 61.23 ** package ‘segmented’ successfully unpacked and MD5 sums checked
+#12 61.23 ** using staged installation
+#12 61.25 ** R
+#12 61.32 ** data
+#12 61.32 ** inst
+#12 61.32 ** byte-compile and prepare package for lazy loading
+#12 76.84 ** help
+#12 77.07 *** installing help indices
+#12 77.22 ** building package indices
+#12 77.54 ** testing if installed package can be loaded from temporary location
+#12 77.81 ** testing if installed package can be loaded from final location
+#12 78.74 ** testing if installed package keeps a record of temporary installation path
+#12 78.76 * DONE (segmented)
+#12 79.09 * installing *source* package ‘rncl’ ...
+#12 79.10 ** package ‘rncl’ successfully unpacked and MD5 sums checked
+#12 79.10 ** using staged installation
+#12 79.12 ** libs
+#12 79.13 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 79.13 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 79.13 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c GetNCL.cpp -o GetNCL.o
+#12 87.69 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c RcppExports.cpp -o RcppExports.o
+#12 90.91 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c collapse_singles.cpp -o collapse_singles.o
+#12 96.27 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsassumptionsblock.cpp -o nxsassumptionsblock.o
+#12 109.6 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsblock.cpp -o nxsblock.o
+#12 113.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxscharactersblock.cpp -o nxscharactersblock.o
+#12 133.4 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxscxxdiscretematrix.cpp -o nxscxxdiscretematrix.o
+#12 139.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsdatablock.cpp -o nxsdatablock.o
+#12 142.8 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsdistancedatum.cpp -o nxsdistancedatum.o
+#12 146.7 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsdistancesblock.cpp -o nxsdistancesblock.o
+#12 149.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsemptyblock.cpp -o nxsemptyblock.o
+#12 153.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsexception.cpp -o nxsexception.o
+#12 154.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsmultiformat.cpp -o nxsmultiformat.o
+#12 162.4 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxspublicblocks.cpp -o nxspublicblocks.o
+#12 171.4 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsreader.cpp -o nxsreader.o
+#12 180.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxssetreader.cpp -o nxssetreader.o
+#12 182.5 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsstring.cpp -o nxsstring.o
+#12 184.2 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxstaxaassociationblock.cpp -o nxstaxaassociationblock.o
+#12 187.0 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxstaxablock.cpp -o nxstaxablock.o
+#12 191.7 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxstoken.cpp -o nxstoken.o
+#12 196.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxstreesblock.cpp -o nxstreesblock.o
+#12 207.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c nxsunalignedblock.cpp -o nxsunalignedblock.o
+#12 212.9 gcc -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/progress/include' -I/usr/local/include    -fpic  -g -O2  -c rncl_init.c -o rncl_init.o
+#12 212.9 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o rncl.so GetNCL.o RcppExports.o collapse_singles.o nxsassumptionsblock.o nxsblock.o nxscharactersblock.o nxscxxdiscretematrix.o nxsdatablock.o nxsdistancedatum.o nxsdistancesblock.o nxsemptyblock.o nxsexception.o nxsmultiformat.o nxspublicblocks.o nxsreader.o nxssetreader.o nxsstring.o nxstaxaassociationblock.o nxstaxablock.o nxstoken.o nxstreesblock.o nxsunalignedblock.o rncl_init.o -L/R-4.4.0/lib -lR
+#12 213.5 installing to /R-4.4.0/library/00LOCK-rncl/00new/rncl/libs
+#12 213.5 ** R
+#12 213.5 ** inst
+#12 213.5 ** byte-compile and prepare package for lazy loading
+#12 214.2 ** help
+#12 214.2 *** installing help indices
+#12 214.2 ** building package indices
+#12 214.5 ** testing if installed package can be loaded from temporary location
+#12 214.9 ** checking absolute paths in shared objects and dynamic libraries
+#12 214.9 ** testing if installed package can be loaded from final location
+#12 215.4 ** testing if installed package keeps a record of temporary installation path
+#12 215.4 * DONE (rncl)
+#12 215.6 * installing *source* package ‘pixmap’ ...
+#12 215.6 ** package ‘pixmap’ successfully unpacked and MD5 sums checked
+#12 215.6 ** using staged installation
+#12 215.7 ** R
+#12 215.7 ** inst
+#12 215.7 ** byte-compile and prepare package for lazy loading
+#12 217.0 ** help
+#12 217.0 *** installing help indices
+#12 217.0 ** building package indices
+#12 217.3 ** testing if installed package can be loaded from temporary location
+#12 217.5 ** testing if installed package can be loaded from final location
+#12 217.8 ** testing if installed package keeps a record of temporary installation path
+#12 217.8 * DONE (pixmap)
+#12 218.1 * installing *source* package ‘SparseM’ ...
+#12 218.1 ** package ‘SparseM’ successfully unpacked and MD5 sums checked
+#12 218.1 ** using staged installation
+#12 218.2 ** libs
+#12 218.2 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 218.2 using Fortran compiler: ‘GNU Fortran (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 218.2 gfortran  -fpic  -g -O2  -c bckslv.f -o bckslv.o
+#12 218.3 gfortran  -fpic  -g -O2  -c chol.f -o chol.o
+#12 218.4 gfortran  -fpic  -g -O2  -c chol2csr.f -o chol2csr.o
+#12 218.4 gfortran  -fpic  -g -O2  -c cholesky.f -o cholesky.o
+#12 220.3 gfortran  -fpic  -g -O2  -c csr.f -o csr.o
+#12 220.4 gfortran  -fpic  -g -O2  -c extract.f -o extract.o
+#12 220.4 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#12 220.5 gfortran  -fpic  -g -O2  -c sparskit.f -o sparskit.o
+#12 221.6 gfortran  -fpic  -g -O2  -c subscr.f -o subscr.o
+#12 221.7 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o SparseM.so bckslv.o chol.o chol2csr.o cholesky.o csr.o extract.o init.o sparskit.o subscr.o -lgfortran -lm -lssp_nonshared -lquadmath -L/R-4.4.0/lib -lR
+#12 221.7 installing to /R-4.4.0/library/00LOCK-SparseM/00new/SparseM/libs
+#12 221.7 ** R
+#12 221.7 ** data
+#12 221.7 ** demo
+#12 221.7 ** inst
+#12 221.7 ** byte-compile and prepare package for lazy loading
+#12 225.1 Creating a generic function for ‘diag’ from package ‘base’ in package ‘SparseM’
+#12 225.1 Creating a generic function for ‘diag<-’ from package ‘base’ in package ‘SparseM’
+#12 225.1 Creating a generic function for ‘norm’ from package ‘base’ in package ‘SparseM’
+#12 225.1 Creating a generic function for ‘backsolve’ from package ‘base’ in package ‘SparseM’
+#12 225.1 Creating a generic function for ‘forwardsolve’ from package ‘base’ in package ‘SparseM’
+#12 225.1 Creating a generic function for ‘model.response’ from package ‘stats’ in package ‘SparseM’
+#12 225.1 ** help
+#12 225.2 *** installing help indices
+#12 225.3 ** building package indices
+#12 225.6 ** installing vignettes
+#12 225.6 ** testing if installed package can be loaded from temporary location
+#12 225.9 ** checking absolute paths in shared objects and dynamic libraries
+#12 225.9 ** testing if installed package can be loaded from final location
+#12 226.3 ** testing if installed package keeps a record of temporary installation path
+#12 226.3 * DONE (SparseM)
+#12 242.0 * installing *source* package ‘BH’ ...
+#12 242.5 ** package ‘BH’ successfully unpacked and MD5 sums checked
+#12 242.5 ** using staged installation
+#12 242.5 ** inst
+#12 244.2 ** help
+#12 244.2 *** installing help indices
+#12 244.3 ** building package indices
+#12 244.5 ** testing if installed package can be loaded from temporary location
+#12 244.8 ** testing if installed package can be loaded from final location
+#12 245.0 ** testing if installed package keeps a record of temporary installation path
+#12 245.1 * DONE (BH)
+#12 245.6 * installing *source* package ‘testit’ ...
+#12 245.6 ** package ‘testit’ successfully unpacked and MD5 sums checked
+#12 245.6 ** using staged installation
+#12 245.6 ** R
+#12 245.6 ** inst
+#12 245.6 ** byte-compile and prepare package for lazy loading
+#12 245.9 ** help
+#12 246.0 *** installing help indices
+#12 246.0 ** building package indices
+#12 246.2 ** testing if installed package can be loaded from temporary location
+#12 246.4 ** testing if installed package can be loaded from final location
+#12 246.6 ** testing if installed package keeps a record of temporary installation path
+#12 246.6 * DONE (testit)
+#12 246.9 * installing *source* package ‘ranger’ ...
+#12 246.9 ** package ‘ranger’ successfully unpacked and MD5 sums checked
+#12 246.9 ** using staged installation
+#12 246.9 ** libs
+#12 246.9 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 246.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c AAA_check_cpp14.cpp -o AAA_check_cpp14.o
+#12 246.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Data.cpp -o Data.o
+#12 250.0 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c DataSparse.cpp -o DataSparse.o
+#12 251.2 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:205,
+#12 251.2                  from /R-4.4.0/library/RcppEigen/include/Eigen/Dense:1,
+#12 251.2                  from /R-4.4.0/library/RcppEigen/include/RcppEigenForward.h:28,
+#12 251.2                  from /R-4.4.0/library/RcppEigen/include/RcppEigen.h:25,
+#12 251.2                  from DataSparse.h:31,
+#12 251.2                  from DataSparse.cpp:29:
+#12 251.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:46:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 251.2    46 | typedef eigen_packet_wrapper<__m128i, 0> Packet4i;
+#12 251.2       |                                        ^
+#12 251.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:47:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 251.2    47 | typedef eigen_packet_wrapper<__m128i, 1> Packet16b;
+#12 251.2       |                                        ^
+#12 251.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:49:39: warning: ignoring attributes on template argument '__m128' [-Wignored-attributes]
+#12 251.2    49 | template<> struct is_arithmetic<__m128>  { enum { value = true }; };
+#12 251.2       |                                       ^
+#12 251.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:50:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 251.2    50 | template<> struct is_arithmetic<__m128i> { enum { value = true }; };
+#12 251.2       |                                        ^
+#12 251.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:51:40: warning: ignoring attributes on template argument '__m128d' [-Wignored-attributes]
+#12 251.2    51 | template<> struct is_arithmetic<__m128d> { enum { value = true }; };
+#12 251.2       |                                        ^
+#12 251.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:222:43: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 251.2   222 | template<> struct unpacket_traits<Packet4f> {
+#12 251.2       |                                           ^
+#12 251.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:228:43: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 251.2   228 | template<> struct unpacket_traits<Packet2d> {
+#12 251.2       |                                           ^
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:1124:34: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 251.3  1124 | ptranspose(PacketBlock<Packet4f,4>& kernel) {
+#12 251.3       |                                  ^
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:1129:34: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 251.3  1129 | ptranspose(PacketBlock<Packet2d,2>& kernel) {
+#12 251.3       |                                  ^
+#12 251.3 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:174:
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:16:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 251.3    16 |   struct conj_helper<PACKET_REAL, PACKET_CPLX, false, false> {          \
+#12 251.3       |                                                            ^
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:173:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 251.3   173 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet2cf,Packet4f)
+#12 251.3       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:29:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 251.3    29 |   struct conj_helper<PACKET_CPLX, PACKET_REAL, false, false> {          \
+#12 251.3       |                                                            ^
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:173:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 251.3   173 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet2cf,Packet4f)
+#12 251.3       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:16:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 251.3    16 |   struct conj_helper<PACKET_REAL, PACKET_CPLX, false, false> {          \
+#12 251.3       |                                                            ^
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:298:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 251.3   298 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet1cd,Packet2d)
+#12 251.3       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:29:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 251.3    29 |   struct conj_helper<PACKET_CPLX, PACKET_REAL, false, false> {          \
+#12 251.3       |                                                            ^
+#12 251.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:298:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 251.3   298 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet1cd,Packet2d)
+#12 251.3       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 251.7 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:165:
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h: In instantiation of 'struct Eigen::internal::find_best_packet<float, 4>':
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:22:57:   required from 'struct Eigen::internal::traits<Eigen::Matrix<float, 4, 1> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:266:49:   required from 'struct Eigen::internal::traits<Eigen::Quaternion<float> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:24:46:   required from here
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:44: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 251.7   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 251.7       |                                       ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 251.7   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 251.7       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::unpacket_traits<__vector(4) float>::half' {aka '__m128'} [-Wignored-attributes]
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:208:88: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 251.7   208 |   typedef typename find_best_packet_helper<Size,typename packet_traits<T>::type>::type type;
+#12 251.7       |                                                                                        ^~~~
+#12 251.7 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:271:
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 0>':
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:302:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 1>'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:555:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 3>'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseBase.h:41:34:   required from 'class Eigen::DenseBase<Eigen::Matrix<float, 4, 1> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/MatrixBase.h:48:34:   required from 'class Eigen::MatrixBase<Eigen::Matrix<float, 4, 1> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/PlainObjectBase.h:98:7:   required from 'class Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:178:7:   required from 'class Eigen::Matrix<float, 4, 1>'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:46:50:   required from 'class Eigen::QuaternionBase<Eigen::Quaternion<float> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:273:7:   required from 'class Eigen::Quaternion<float>'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:27:3:   required from here
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 251.7    56 |                      >::type PacketReturnType;
+#12 251.7       |                              ^~~~~~~~~~~~~~~~
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h: In instantiation of 'struct Eigen::internal::find_best_packet<double, 4>':
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:22:57:   required from 'struct Eigen::internal::traits<Eigen::Matrix<double, 4, 1> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:266:49:   required from 'struct Eigen::internal::traits<Eigen::Quaternion<double> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:98:47:   required from here
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:44: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 251.7   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 251.7       |                                       ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 251.7   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 251.7       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::unpacket_traits<__vector(2) double>::half' {aka '__m128d'} [-Wignored-attributes]
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:208:88: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 251.7   208 |   typedef typename find_best_packet_helper<Size,typename packet_traits<T>::type>::type type;
+#12 251.7       |                                                                                        ^~~~
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 0>':
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:302:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 1>'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:555:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 3>'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseBase.h:41:34:   required from 'class Eigen::DenseBase<Eigen::Matrix<double, 4, 1> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/MatrixBase.h:48:34:   required from 'class Eigen::MatrixBase<Eigen::Matrix<double, 4, 1> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/PlainObjectBase.h:98:7:   required from 'class Eigen::PlainObjectBase<Eigen::Matrix<double, 4, 1> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:178:7:   required from 'class Eigen::Matrix<double, 4, 1>'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:46:50:   required from 'class Eigen::QuaternionBase<Eigen::Quaternion<double> >'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:273:7:   required from 'class Eigen::Quaternion<double>'
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:102:3:   required from here
+#12 251.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 251.7    56 |                      >::type PacketReturnType;
+#12 251.7       |                              ^~~~~~~~~~~~~~~~
+#12 251.9 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/SparseCore:37,
+#12 251.9                  from /R-4.4.0/library/RcppEigen/include/Eigen/Sparse:26,
+#12 251.9                  from /R-4.4.0/library/RcppEigen/include/RcppEigenForward.h:29:
+#12 251.9 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrixBase.h: In instantiation of 'class Eigen::SparseMatrixBase<Eigen::SparseMatrix<double, 0, int> >':
+#12 251.9 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseCompressedBase.h:36:7:   required from 'class Eigen::SparseCompressedBase<Eigen::SparseMatrix<double, 0, int> >'
+#12 251.9 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrix.h:96:7:   required from 'class Eigen::SparseMatrix<double, 0, int>'
+#12 251.9 /R-4.4.0/library/RcppEigen/include/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h:61:25:   required from here
+#12 251.9 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrixBase.h:47:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 251.9    47 |                      >::type PacketReturnType;
+#12 251.9       |                              ^~~~~~~~~~~~~~~~
+#12 254.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Forest.cpp -o Forest.o
+#12 260.5 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ForestClassification.cpp -o ForestClassification.o
+#12 264.2 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ForestProbability.cpp -o ForestProbability.o
+#12 268.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ForestRegression.cpp -o ForestRegression.o
+#12 271.0 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ForestSurvival.cpp -o ForestSurvival.o
+#12 275.2 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c RcppExports.cpp -o RcppExports.o
+#12 276.3 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:205,
+#12 276.3                  from /R-4.4.0/library/RcppEigen/include/Eigen/Dense:1,
+#12 276.3                  from /R-4.4.0/library/RcppEigen/include/RcppEigenForward.h:28,
+#12 276.3                  from /R-4.4.0/library/RcppEigen/include/RcppEigen.h:25,
+#12 276.3                  from RcppExports.cpp:5:
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:46:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 276.3    46 | typedef eigen_packet_wrapper<__m128i, 0> Packet4i;
+#12 276.3       |                                        ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:47:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 276.3    47 | typedef eigen_packet_wrapper<__m128i, 1> Packet16b;
+#12 276.3       |                                        ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:49:39: warning: ignoring attributes on template argument '__m128' [-Wignored-attributes]
+#12 276.3    49 | template<> struct is_arithmetic<__m128>  { enum { value = true }; };
+#12 276.3       |                                       ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:50:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 276.3    50 | template<> struct is_arithmetic<__m128i> { enum { value = true }; };
+#12 276.3       |                                        ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:51:40: warning: ignoring attributes on template argument '__m128d' [-Wignored-attributes]
+#12 276.3    51 | template<> struct is_arithmetic<__m128d> { enum { value = true }; };
+#12 276.3       |                                        ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:222:43: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 276.3   222 | template<> struct unpacket_traits<Packet4f> {
+#12 276.3       |                                           ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:228:43: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 276.3   228 | template<> struct unpacket_traits<Packet2d> {
+#12 276.3       |                                           ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:1124:34: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 276.3  1124 | ptranspose(PacketBlock<Packet4f,4>& kernel) {
+#12 276.3       |                                  ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:1129:34: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 276.3  1129 | ptranspose(PacketBlock<Packet2d,2>& kernel) {
+#12 276.3       |                                  ^
+#12 276.3 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:174:
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:16:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 276.3    16 |   struct conj_helper<PACKET_REAL, PACKET_CPLX, false, false> {          \
+#12 276.3       |                                                            ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:173:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 276.3   173 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet2cf,Packet4f)
+#12 276.3       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:29:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 276.3    29 |   struct conj_helper<PACKET_CPLX, PACKET_REAL, false, false> {          \
+#12 276.3       |                                                            ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:173:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 276.3   173 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet2cf,Packet4f)
+#12 276.3       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:16:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 276.3    16 |   struct conj_helper<PACKET_REAL, PACKET_CPLX, false, false> {          \
+#12 276.3       |                                                            ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:298:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 276.3   298 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet1cd,Packet2d)
+#12 276.3       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:29:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 276.3    29 |   struct conj_helper<PACKET_CPLX, PACKET_REAL, false, false> {          \
+#12 276.3       |                                                            ^
+#12 276.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:298:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 276.3   298 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet1cd,Packet2d)
+#12 276.3       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 276.7 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:165:
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h: In instantiation of 'struct Eigen::internal::find_best_packet<float, 4>':
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:22:57:   required from 'struct Eigen::internal::traits<Eigen::Matrix<float, 4, 1> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:266:49:   required from 'struct Eigen::internal::traits<Eigen::Quaternion<float> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:24:46:   required from here
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:44: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 276.7   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 276.7       |                                       ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 276.7   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 276.7       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::unpacket_traits<__vector(4) float>::half' {aka '__m128'} [-Wignored-attributes]
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:208:88: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 276.7   208 |   typedef typename find_best_packet_helper<Size,typename packet_traits<T>::type>::type type;
+#12 276.7       |                                                                                        ^~~~
+#12 276.7 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:271:
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 0>':
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:302:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 1>'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:555:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 3>'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseBase.h:41:34:   required from 'class Eigen::DenseBase<Eigen::Matrix<float, 4, 1> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/MatrixBase.h:48:34:   required from 'class Eigen::MatrixBase<Eigen::Matrix<float, 4, 1> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/PlainObjectBase.h:98:7:   required from 'class Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:178:7:   required from 'class Eigen::Matrix<float, 4, 1>'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:46:50:   required from 'class Eigen::QuaternionBase<Eigen::Quaternion<float> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:273:7:   required from 'class Eigen::Quaternion<float>'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:27:3:   required from here
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 276.7    56 |                      >::type PacketReturnType;
+#12 276.7       |                              ^~~~~~~~~~~~~~~~
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h: In instantiation of 'struct Eigen::internal::find_best_packet<double, 4>':
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:22:57:   required from 'struct Eigen::internal::traits<Eigen::Matrix<double, 4, 1> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:266:49:   required from 'struct Eigen::internal::traits<Eigen::Quaternion<double> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:98:47:   required from here
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:44: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 276.7   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 276.7       |                                       ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 276.7   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 276.7       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::unpacket_traits<__vector(2) double>::half' {aka '__m128d'} [-Wignored-attributes]
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:208:88: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 276.7   208 |   typedef typename find_best_packet_helper<Size,typename packet_traits<T>::type>::type type;
+#12 276.7       |                                                                                        ^~~~
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 0>':
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:302:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 1>'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:555:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 3>'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseBase.h:41:34:   required from 'class Eigen::DenseBase<Eigen::Matrix<double, 4, 1> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/MatrixBase.h:48:34:   required from 'class Eigen::MatrixBase<Eigen::Matrix<double, 4, 1> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/PlainObjectBase.h:98:7:   required from 'class Eigen::PlainObjectBase<Eigen::Matrix<double, 4, 1> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:178:7:   required from 'class Eigen::Matrix<double, 4, 1>'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:46:50:   required from 'class Eigen::QuaternionBase<Eigen::Quaternion<double> >'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:273:7:   required from 'class Eigen::Quaternion<double>'
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:102:3:   required from here
+#12 276.7 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 276.7    56 |                      >::type PacketReturnType;
+#12 276.7       |                              ^~~~~~~~~~~~~~~~
+#12 276.9 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/SparseCore:37,
+#12 276.9                  from /R-4.4.0/library/RcppEigen/include/Eigen/Sparse:26,
+#12 276.9                  from /R-4.4.0/library/RcppEigen/include/RcppEigenForward.h:29:
+#12 276.9 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrixBase.h: In instantiation of 'class Eigen::SparseMatrixBase<Eigen::SparseMatrix<double, 0, int> >':
+#12 276.9 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseCompressedBase.h:36:7:   required from 'class Eigen::SparseCompressedBase<Eigen::SparseMatrix<double, 0, int> >'
+#12 276.9 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrix.h:96:7:   required from 'class Eigen::SparseMatrix<double, 0, int>'
+#12 276.9 /R-4.4.0/library/RcppEigen/include/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h:61:25:   required from here
+#12 276.9 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrixBase.h:47:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 276.9    47 |                      >::type PacketReturnType;
+#12 276.9       |                              ^~~~~~~~~~~~~~~~
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::SparseMatrix<double, 0, int>, 0>':
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseCompressedBase.h:336:80:   required from 'struct Eigen::internal::evaluator<Eigen::SparseCompressedBase<Eigen::SparseMatrix<double, 0, int> > >'
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrix.h:1505:8:   required from 'struct Eigen::internal::evaluator<Eigen::SparseMatrix<double, 0, int> >'
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseAssign.h:77:20:   required from 'void Eigen::internal::assign_sparse_to_sparse(DstXprType&, const SrcXprType&) [with DstXprType = Eigen::SparseMatrix<double, 0, int>; SrcXprType = Eigen::SparseMatrix<double, 0, int>]'
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseAssign.h:132:28:   required from 'static void Eigen::internal::Assignment<DstXprType, SrcXprType, Functor, Eigen::internal::Sparse2Sparse>::run(DstXprType&, const SrcXprType&, const Eigen::internal::assign_op<typename DstXprType::Scalar, typename SrcXprType::Scalar>&) [with DstXprType = Eigen::SparseMatrix<double, 0, int>; SrcXprType = Eigen::SparseMatrix<double, 0, int>; Functor = Eigen::internal::assign_op<double, double>; typename DstXprType::Scalar = double; typename SrcXprType::Scalar = double]'
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/AssignEvaluator.h:890:49:   required from 'void Eigen::internal::call_assignment_no_alias(Dst&, const Src&, const Func&) [with Dst = Eigen::SparseMatrix<double, 0, int>; Src = Eigen::SparseMatrix<double, 0, int>; Func = assign_op<double, double>]'
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/AssignEvaluator.h:917:27:   [ skipping 3 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrix.h:713:13:   required from 'Eigen::SparseMatrix<_Scalar, _Flags, _StorageIndex>::SparseMatrix(const Eigen::SparseMatrix<_Scalar, _Flags, _StorageIndex>&) [with _Scalar = double; int _Options = 0; _StorageIndex = int]'
+#12 278.0 /R-4.4.0/library/RcppEigen/include/RcppEigenWrap.h:387:24:   required from 'Eigen::SparseMatrix<Scalar> Rcpp::traits::Exporter<Eigen::SparseMatrix<Scalar> >::get() [with T = double]'
+#12 278.0 /R-4.4.0/library/Rcpp/include/Rcpp/as.h:89:32:   required from 'T Rcpp::internal::as(SEXP, Rcpp::traits::r_type_generic_tag) [with T = Eigen::SparseMatrix<double, 0, int>; SEXP = SEXPREC*]'
+#12 278.0 /R-4.4.0/library/Rcpp/include/Rcpp/as.h:152:31:   required from 'T Rcpp::as(SEXP) [with T = Eigen::SparseMatrix<double, 0, int>; SEXP = SEXPREC*]'
+#12 278.0 /R-4.4.0/library/Rcpp/include/Rcpp/InputParameter.h:46:54:   required from 'Rcpp::ReferenceInputParameter<T>::ReferenceInputParameter(SEXP) [with T = Eigen::SparseMatrix<double, 0, int>; SEXP = SEXPREC*]'
+#12 278.0 RcppExports.cpp:59:94:   required from here
+#12 278.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 278.0    56 |                      >::type PacketReturnType;
+#12 278.0       |                              ^~~~~~~~~~~~~~~~
+#12 282.0 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c Tree.cpp -o Tree.o
+#12 284.4 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c TreeClassification.cpp -o TreeClassification.o
+#12 287.6 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c TreeProbability.cpp -o TreeProbability.o
+#12 291.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c TreeRegression.cpp -o TreeRegression.o
+#12 295.0 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c TreeSurvival.cpp -o TreeSurvival.o
+#12 298.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c rangerCpp.cpp -o rangerCpp.o
+#12 299.5 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:205,
+#12 299.5                  from /R-4.4.0/library/RcppEigen/include/Eigen/Dense:1,
+#12 299.5                  from /R-4.4.0/library/RcppEigen/include/RcppEigenForward.h:28,
+#12 299.5                  from /R-4.4.0/library/RcppEigen/include/RcppEigen.h:25,
+#12 299.5                  from rangerCpp.cpp:28:
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:46:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 299.5    46 | typedef eigen_packet_wrapper<__m128i, 0> Packet4i;
+#12 299.5       |                                        ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:47:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 299.5    47 | typedef eigen_packet_wrapper<__m128i, 1> Packet16b;
+#12 299.5       |                                        ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:49:39: warning: ignoring attributes on template argument '__m128' [-Wignored-attributes]
+#12 299.5    49 | template<> struct is_arithmetic<__m128>  { enum { value = true }; };
+#12 299.5       |                                       ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:50:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 299.5    50 | template<> struct is_arithmetic<__m128i> { enum { value = true }; };
+#12 299.5       |                                        ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:51:40: warning: ignoring attributes on template argument '__m128d' [-Wignored-attributes]
+#12 299.5    51 | template<> struct is_arithmetic<__m128d> { enum { value = true }; };
+#12 299.5       |                                        ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:222:43: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 299.5   222 | template<> struct unpacket_traits<Packet4f> {
+#12 299.5       |                                           ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:228:43: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 299.5   228 | template<> struct unpacket_traits<Packet2d> {
+#12 299.5       |                                           ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:1124:34: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 299.5  1124 | ptranspose(PacketBlock<Packet4f,4>& kernel) {
+#12 299.5       |                                  ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:1129:34: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 299.5  1129 | ptranspose(PacketBlock<Packet2d,2>& kernel) {
+#12 299.5       |                                  ^
+#12 299.5 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:174:
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:16:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 299.5    16 |   struct conj_helper<PACKET_REAL, PACKET_CPLX, false, false> {          \
+#12 299.5       |                                                            ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:173:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 299.5   173 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet2cf,Packet4f)
+#12 299.5       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:29:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 299.5    29 |   struct conj_helper<PACKET_CPLX, PACKET_REAL, false, false> {          \
+#12 299.5       |                                                            ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:173:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 299.5   173 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet2cf,Packet4f)
+#12 299.5       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:16:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 299.5    16 |   struct conj_helper<PACKET_REAL, PACKET_CPLX, false, false> {          \
+#12 299.5       |                                                            ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:298:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 299.5   298 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet1cd,Packet2d)
+#12 299.5       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:29:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 299.5    29 |   struct conj_helper<PACKET_CPLX, PACKET_REAL, false, false> {          \
+#12 299.5       |                                                            ^
+#12 299.5 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:298:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 299.5   298 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet1cd,Packet2d)
+#12 299.5       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 300.0 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:165:
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h: In instantiation of 'struct Eigen::internal::find_best_packet<float, 4>':
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:22:57:   required from 'struct Eigen::internal::traits<Eigen::Matrix<float, 4, 1> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:266:49:   required from 'struct Eigen::internal::traits<Eigen::Quaternion<float> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:24:46:   required from here
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:44: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 300.0   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 300.0       |                                       ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 300.0   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 300.0       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::unpacket_traits<__vector(4) float>::half' {aka '__m128'} [-Wignored-attributes]
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:208:88: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 300.0   208 |   typedef typename find_best_packet_helper<Size,typename packet_traits<T>::type>::type type;
+#12 300.0       |                                                                                        ^~~~
+#12 300.0 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:271:
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 0>':
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:302:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 1>'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:555:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 3>'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseBase.h:41:34:   required from 'class Eigen::DenseBase<Eigen::Matrix<float, 4, 1> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/MatrixBase.h:48:34:   required from 'class Eigen::MatrixBase<Eigen::Matrix<float, 4, 1> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/PlainObjectBase.h:98:7:   required from 'class Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:178:7:   required from 'class Eigen::Matrix<float, 4, 1>'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:46:50:   required from 'class Eigen::QuaternionBase<Eigen::Quaternion<float> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:273:7:   required from 'class Eigen::Quaternion<float>'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:27:3:   required from here
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 300.0    56 |                      >::type PacketReturnType;
+#12 300.0       |                              ^~~~~~~~~~~~~~~~
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h: In instantiation of 'struct Eigen::internal::find_best_packet<double, 4>':
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:22:57:   required from 'struct Eigen::internal::traits<Eigen::Matrix<double, 4, 1> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:266:49:   required from 'struct Eigen::internal::traits<Eigen::Quaternion<double> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:98:47:   required from here
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:44: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 300.0   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 300.0       |                                       ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 300.0   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 300.0       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::unpacket_traits<__vector(2) double>::half' {aka '__m128d'} [-Wignored-attributes]
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:208:88: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 300.0   208 |   typedef typename find_best_packet_helper<Size,typename packet_traits<T>::type>::type type;
+#12 300.0       |                                                                                        ^~~~
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 0>':
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:302:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 1>'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:555:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 3>'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseBase.h:41:34:   required from 'class Eigen::DenseBase<Eigen::Matrix<double, 4, 1> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/MatrixBase.h:48:34:   required from 'class Eigen::MatrixBase<Eigen::Matrix<double, 4, 1> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/PlainObjectBase.h:98:7:   required from 'class Eigen::PlainObjectBase<Eigen::Matrix<double, 4, 1> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:178:7:   required from 'class Eigen::Matrix<double, 4, 1>'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:46:50:   required from 'class Eigen::QuaternionBase<Eigen::Quaternion<double> >'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:273:7:   required from 'class Eigen::Quaternion<double>'
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:102:3:   required from here
+#12 300.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 300.0    56 |                      >::type PacketReturnType;
+#12 300.0       |                              ^~~~~~~~~~~~~~~~
+#12 300.2 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/SparseCore:37,
+#12 300.2                  from /R-4.4.0/library/RcppEigen/include/Eigen/Sparse:26,
+#12 300.2                  from /R-4.4.0/library/RcppEigen/include/RcppEigenForward.h:29:
+#12 300.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrixBase.h: In instantiation of 'class Eigen::SparseMatrixBase<Eigen::SparseMatrix<double, 0, int> >':
+#12 300.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseCompressedBase.h:36:7:   required from 'class Eigen::SparseCompressedBase<Eigen::SparseMatrix<double, 0, int> >'
+#12 300.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrix.h:96:7:   required from 'class Eigen::SparseMatrix<double, 0, int>'
+#12 300.2 /R-4.4.0/library/RcppEigen/include/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h:61:25:   required from here
+#12 300.2 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrixBase.h:47:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 300.2    47 |                      >::type PacketReturnType;
+#12 300.2       |                              ^~~~~~~~~~~~~~~~
+#12 307.2 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c utility.cpp -o utility.o
+#12 310.7 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -DR_BUILD -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c utilityRcpp.cpp -o utilityRcpp.o
+#12 315.3 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o ranger.so AAA_check_cpp14.o Data.o DataSparse.o Forest.o ForestClassification.o ForestProbability.o ForestRegression.o ForestSurvival.o RcppExports.o Tree.o TreeClassification.o TreeProbability.o TreeRegression.o TreeSurvival.o rangerCpp.o utility.o utilityRcpp.o -L/R-4.4.0/lib -lR
+#12 315.5 installing to /R-4.4.0/library/00LOCK-ranger/00new/ranger/libs
+#12 315.5 ** R
+#12 315.5 ** inst
+#12 315.5 ** byte-compile and prepare package for lazy loading
+#12 317.9 ** help
+#12 318.1 *** installing help indices
+#12 318.1 ** building package indices
+#12 318.4 ** testing if installed package can be loaded from temporary location
+#12 319.6 ** checking absolute paths in shared objects and dynamic libraries
+#12 319.6 ** testing if installed package can be loaded from final location
+#12 320.9 ** testing if installed package keeps a record of temporary installation path
+#12 320.9 * DONE (ranger)
+#12 321.1 * installing *source* package ‘pheatmap’ ...
+#12 321.1 ** package ‘pheatmap’ successfully unpacked and MD5 sums checked
+#12 321.1 ** using staged installation
+#12 321.2 ** R
+#12 321.2 ** byte-compile and prepare package for lazy loading
+#12 322.3 ** help
+#12 322.3 *** installing help indices
+#12 322.4 ** building package indices
+#12 322.6 ** testing if installed package can be loaded from temporary location
+#12 323.0 ** testing if installed package can be loaded from final location
+#12 323.5 ** testing if installed package keeps a record of temporary installation path
+#12 323.5 * DONE (pheatmap)
+#12 324.0 * installing *source* package ‘treestats’ ...
+#12 324.0 ** package ‘treestats’ successfully unpacked and MD5 sums checked
+#12 324.0 ** using staged installation
+#12 324.1 ** libs
+#12 324.1 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 324.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c RcppExports.cpp -o RcppExports.o
+#12 331.8 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c beta.cpp -o beta.o
+#12 336.5 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c brts.cpp -o brts.o
+#12 342.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c centralities.cpp -o centralities.o
+#12 345.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c colless.cpp -o colless.o
+#12 349.2 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c depth.cpp -o depth.o
+#12 353.4 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ladder.cpp -o ladder.o
+#12 355.7 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c laplacian.cpp -o laplacian.o
+#12 359.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c mpd.cpp -o mpd.o
+#12 362.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c phylo.cpp -o phylo.o
+#12 369.5 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/nloptr/include' -I/usr/local/include   -I../inst/include -I. -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c sackin.cpp -o sackin.o
+#12 372.7 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o treestats.so RcppExports.o beta.o brts.o centralities.o colless.o depth.o ladder.o laplacian.o mpd.o phylo.o sackin.o -L/R-4.4.0/lib -lR
+#12 372.9 installing to /R-4.4.0/library/00LOCK-treestats/00new/treestats/libs
+#12 372.9 ** R
+#12 372.9 ** inst
+#12 372.9 ** byte-compile and prepare package for lazy loading
+#12 374.5 ** help
+#12 374.7 *** installing help indices
+#12 374.7 ** building package indices
+#12 375.1 ** installing vignettes
+#12 375.1 ** testing if installed package can be loaded from temporary location
+#12 375.4 ** checking absolute paths in shared objects and dynamic libraries
+#12 375.4 ** testing if installed package can be loaded from final location
+#12 375.7 ** testing if installed package keeps a record of temporary installation path
+#12 375.7 * DONE (treestats)
+#12 376.2 * installing *source* package ‘Rdpack’ ...
+#12 376.2 ** package ‘Rdpack’ successfully unpacked and MD5 sums checked
+#12 376.2 ** using staged installation
+#12 376.2 ** R
+#12 376.2 ** inst
+#12 376.2 ** byte-compile and prepare package for lazy loading
+#12 378.1 ** help
+#12 378.4 *** installing help indices
+#12 378.5 ** building package indices
+#12 378.9 ** installing vignettes
+#12 378.9 ** testing if installed package can be loaded from temporary location
+#12 379.1 ** testing if installed package can be loaded from final location
+#12 379.3 ** testing if installed package keeps a record of temporary installation path
+#12 379.3 * DONE (Rdpack)
+#12 379.9 * installing *source* package ‘doBy’ ...
+#12 379.9 ** package ‘doBy’ successfully unpacked and MD5 sums checked
+#12 379.9 ** using staged installation
+#12 379.9 ** R
+#12 379.9 ** data
+#12 379.9 *** moving datasets to lazyload DB
+#12 387.7 ** inst
+#12 387.7 ** byte-compile and prepare package for lazy loading
+#12 391.5 Note: ... may be used in an incorrect context 
+#12 391.5 Note: ... may be used in an incorrect context 
+#12 391.5 ** help
+#12 391.7 *** installing help indices
+#12 391.8 ** building package indices
+#12 392.1 ** installing vignettes
+#12 392.1 ** testing if installed package can be loaded from temporary location
+#12 394.1 ** testing if installed package can be loaded from final location
+#12 396.2 ** testing if installed package keeps a record of temporary installation path
+#12 396.2 * DONE (doBy)
+#12 396.6 * installing *source* package ‘quantreg’ ...
+#12 396.7 ** package ‘quantreg’ successfully unpacked and MD5 sums checked
+#12 396.7 ** using staged installation
+#12 396.7 ** libs
+#12 396.7 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 396.7 using Fortran compiler: ‘GNU Fortran (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 396.7 gfortran  -fpic  -g -O2  -c akj.f -o akj.o
+#12 396.8 gfortran  -fpic  -g -O2  -c boot.f -o boot.o
+#12 396.9 gfortran  -fpic  -g -O2  -c bound.f -o bound.o
+#12 397.0 gfortran  -fpic  -g -O2  -c boundc.f -o boundc.o
+#12 397.0 gfortran  -fpic  -g -O2  -c brute.f -o brute.o
+#12 397.1 gfortran  -fpic  -g -O2  -c chlfct.f -o chlfct.o
+#12 397.2 gfortran  -fpic  -g -O2  -c cholesky.f -o cholesky.o
+#12 399.1 gfortran  -fpic  -g -O2  -c combos.f -o combos.o
+#12 399.1 gfortran  -fpic  -g -O2  -c crqf.f -o crqf.o
+#12 399.7 gfortran  -fpic  -g -O2  -c crqfnb.f -o crqfnb.o
+#12 399.8 gfortran  -fpic  -g -O2  -c dsel05.f -o dsel05.o
+#12 399.8 gfortran  -fpic  -g -O2  -c extract.f -o extract.o
+#12 399.9 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c frand.c -o frand.o
+#12 399.9 gfortran  -fpic  -g -O2  -c grexp.f -o grexp.o
+#12 400.0 gfortran  -fpic  -g -O2  -c idmin.f -o idmin.o
+#12 400.0 gfortran  -fpic  -g -O2  -c iswap.f -o iswap.o
+#12 400.1 gfortran  -fpic  -g -O2  -c kuantile.f -o kuantile.o
+#12 400.1 gfortran  -fpic  -g -O2  -c kuantiles.f -o kuantiles.o
+#12 400.1 gfortran  -fpic  -g -O2  -c linpack.f -o linpack.o
+#12 400.4 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c mcmb.c -o mcmb.o
+#12 400.6 gfortran  -fpic  -g -O2  -c penalty.f -o penalty.o
+#12 400.7 gfortran  -fpic  -g -O2  -c pfnb.f -o pfnb.o
+#12 400.8 gfortran  -fpic  -g -O2  -c powell.f -o powell.o
+#12 401.0 gfortran  -fpic  -g -O2  -c profnb.f -o profnb.o
+#12 401.1 gfortran  -fpic  -g -O2  -c pwxy.f -o pwxy.o
+#12 401.2 gfortran  -fpic  -g -O2  -c qfnb.f -o qfnb.o
+#12 401.3 gfortran  -fpic  -g -O2  -c qselect.f -o qselect.o
+#12 401.3 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c quantreg_init.c -o quantreg_init.o
+#12 401.4 gfortran  -fpic  -g -O2  -c rls.f -o rls.o
+#12 401.4 gfortran  -fpic  -g -O2  -c rq0.f -o rq0.o
+#12 401.8 gfortran  -fpic  -g -O2  -c rq1.f -o rq1.o
+#12 402.1 gfortran  -fpic  -g -O2  -c rqbr.f -o rqbr.o
+#12 402.9 gfortran  -fpic  -g -O2  -c rqfn.f -o rqfn.o
+#12 403.2 gfortran  -fpic  -g -O2  -c rqfnb.f -o rqfnb.o
+#12 403.4 gfortran  -fpic  -g -O2  -c rqfnc.f -o rqfnc.o
+#12 403.7 gfortran  -fpic  -g -O2  -c rqs.f -o rqs.o
+#12 403.7 gfortran  -fpic  -g -O2  -c sakj.f -o sakj.o
+#12 403.9 gfortran  -fpic  -g -O2  -c sparskit2.f -o sparskit2.o
+#12 404.1 gfortran  -fpic  -g -O2  -c srqfn.f -o srqfn.o
+#12 404.3 gfortran  -fpic  -g -O2  -c srqfnc.f -o srqfnc.o
+#12 404.7 gfortran  -fpic  -g -O2  -c srtpai.f -o srtpai.o
+#12 404.8 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o quantreg.so akj.o boot.o bound.o boundc.o brute.o chlfct.o cholesky.o combos.o crqf.o crqfnb.o dsel05.o extract.o frand.o grexp.o idmin.o iswap.o kuantile.o kuantiles.o linpack.o mcmb.o penalty.o pfnb.o powell.o profnb.o pwxy.o qfnb.o qselect.o quantreg_init.o rls.o rq0.o rq1.o rqbr.o rqfn.o rqfnb.o rqfnc.o rqs.o sakj.o sparskit2.o srqfn.o srqfnc.o srtpai.o -L/R-4.4.0/lib -lRlapack -L/R-4.4.0/lib -lRblas -lgfortran -lm -lssp_nonshared -lquadmath -lgfortran -lm -lssp_nonshared -lquadmath -L/R-4.4.0/lib -lR
+#12 404.8 installing to /R-4.4.0/library/00LOCK-quantreg/00new/quantreg/libs
+#12 404.8 ** R
+#12 404.8 ** data
+#12 404.9 ** demo
+#12 404.9 ** inst
+#12 404.9 ** byte-compile and prepare package for lazy loading
+#12 410.6 ** help
+#12 410.9 *** installing help indices
+#12 411.1 ** building package indices
+#12 411.4 ** installing vignettes
+#12 411.5 ** testing if installed package can be loaded from temporary location
+#12 412.9 ** checking absolute paths in shared objects and dynamic libraries
+#12 412.9 ** testing if installed package can be loaded from final location
+#12 414.4 ** testing if installed package keeps a record of temporary installation path
+#12 414.4 * DONE (quantreg)
+#12 415.3 * installing *source* package ‘ade4’ ...
+#12 415.3 ** package ‘ade4’ successfully unpacked and MD5 sums checked
+#12 415.3 ** using staged installation
+#12 415.3 ** libs
+#12 415.3 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 415.3 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 415.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c RcppExports.cpp -o RcppExports.o
+#12 422.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c ade4libCpp.cpp -o ade4libCpp.o
+#12 428.3 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c adesub.c -o adesub.o
+#12 429.2 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c divsub.c -o divsub.o
+#12 429.8 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c fourthcorner.c -o fourthcorner.o
+#12 431.7 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#12 431.7 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c phylog.c -o phylog.o
+#12 432.1 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c testamova.c -o testamova.o
+#12 432.4 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c testdim.c -o testdim.o
+#12 432.7 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c testrlq.c -o testrlq.o
+#12 432.9 gcc -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include    -fpic  -g -O2  -c tests.c -o tests.o
+#12 433.9 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I../inst/include -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c testsCpp.cpp -o testsCpp.o
+#12 443.2 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o ade4.so RcppExports.o ade4libCpp.o adesub.o divsub.o fourthcorner.o init.o phylog.o testamova.o testdim.o testrlq.o tests.o testsCpp.o -L/R-4.4.0/lib -lRlapack -L/R-4.4.0/lib -lRblas -lgfortran -lm -lssp_nonshared -lquadmath -L/R-4.4.0/lib -lR
+#12 443.3 installing to /R-4.4.0/library/00LOCK-ade4/00new/ade4/libs
+#12 443.3 ** R
+#12 443.4 ** data
+#12 443.4 ** inst
+#12 443.4 ** byte-compile and prepare package for lazy loading
+#12 461.1 ** help
+#12 462.2 *** installing help indices
+#12 462.7 *** copying figures
+#12 462.7 ** building package indices
+#12 463.6 ** installing vignettes
+#12 463.6 ** testing if installed package can be loaded from temporary location
+#12 463.9 ** checking absolute paths in shared objects and dynamic libraries
+#12 463.9 ** testing if installed package can be loaded from final location
+#12 464.8 ** testing if installed package keeps a record of temporary installation path
+#12 464.8 * DONE (ade4)
+#12 465.1 * installing *source* package ‘DDD’ ...
+#12 465.1 ** package ‘DDD’ successfully unpacked and MD5 sums checked
+#12 465.1 ** using staged installation
+#12 465.1 ** libs
+#12 465.2 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 465.2 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/BH/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c RcppExports.cpp -o RcppExports.o
+#12 466.3 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:205,
+#12 466.3                  from /R-4.4.0/library/RcppEigen/include/Eigen/Dense:1,
+#12 466.3                  from /R-4.4.0/library/RcppEigen/include/RcppEigenForward.h:28,
+#12 466.3                  from /R-4.4.0/library/RcppEigen/include/RcppEigen.h:25,
+#12 466.3                  from RcppExports.cpp:4:
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:46:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 466.3    46 | typedef eigen_packet_wrapper<__m128i, 0> Packet4i;
+#12 466.3       |                                        ^
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:47:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 466.3    47 | typedef eigen_packet_wrapper<__m128i, 1> Packet16b;
+#12 466.3       |                                        ^
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:49:39: warning: ignoring attributes on template argument '__m128' [-Wignored-attributes]
+#12 466.3    49 | template<> struct is_arithmetic<__m128>  { enum { value = true }; };
+#12 466.3       |                                       ^
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:50:40: warning: ignoring attributes on template argument '__m128i' [-Wignored-attributes]
+#12 466.3    50 | template<> struct is_arithmetic<__m128i> { enum { value = true }; };
+#12 466.3       |                                        ^
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:51:40: warning: ignoring attributes on template argument '__m128d' [-Wignored-attributes]
+#12 466.3    51 | template<> struct is_arithmetic<__m128d> { enum { value = true }; };
+#12 466.3       |                                        ^
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:222:43: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 466.3   222 | template<> struct unpacket_traits<Packet4f> {
+#12 466.3       |                                           ^
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:228:43: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 466.3   228 | template<> struct unpacket_traits<Packet2d> {
+#12 466.3       |                                           ^
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:1124:34: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 466.3  1124 | ptranspose(PacketBlock<Packet4f,4>& kernel) {
+#12 466.3       |                                  ^
+#12 466.3 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/PacketMath.h:1129:34: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 466.3  1129 | ptranspose(PacketBlock<Packet2d,2>& kernel) {
+#12 466.3       |                                  ^
+#12 466.4 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:174:
+#12 466.4 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:16:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 466.4    16 |   struct conj_helper<PACKET_REAL, PACKET_CPLX, false, false> {          \
+#12 466.4       |                                                            ^
+#12 466.4 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:173:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 466.4   173 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet2cf,Packet4f)
+#12 466.4       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 466.4 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:29:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet4f' {aka '__m128'} [-Wignored-attributes]
+#12 466.4    29 |   struct conj_helper<PACKET_CPLX, PACKET_REAL, false, false> {          \
+#12 466.4       |                                                            ^
+#12 466.4 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:173:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 466.4   173 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet2cf,Packet4f)
+#12 466.4       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 466.4 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:16:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 466.4    16 |   struct conj_helper<PACKET_REAL, PACKET_CPLX, false, false> {          \
+#12 466.4       |                                                            ^
+#12 466.4 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:298:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 466.4   298 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet1cd,Packet2d)
+#12 466.4       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 466.4 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/Default/ConjHelper.h:29:60: warning: ignoring attributes on template argument 'Eigen::internal::Packet2d' {aka '__m128d'} [-Wignored-attributes]
+#12 466.4    29 |   struct conj_helper<PACKET_CPLX, PACKET_REAL, false, false> {          \
+#12 466.4       |                                                            ^
+#12 466.4 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/arch/SSE/Complex.h:298:1: note: in expansion of macro 'EIGEN_MAKE_CONJ_HELPER_CPLX_REAL'
+#12 466.4   298 | EIGEN_MAKE_CONJ_HELPER_CPLX_REAL(Packet1cd,Packet2d)
+#12 466.4       | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 466.8 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:165:
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h: In instantiation of 'struct Eigen::internal::find_best_packet<float, 4>':
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:22:57:   required from 'struct Eigen::internal::traits<Eigen::Matrix<float, 4, 1> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:266:49:   required from 'struct Eigen::internal::traits<Eigen::Quaternion<float> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:24:46:   required from here
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:44: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 466.8   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 466.8       |                                       ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 466.8   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 466.8       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::unpacket_traits<__vector(4) float>::half' {aka '__m128'} [-Wignored-attributes]
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:208:88: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 466.8   208 |   typedef typename find_best_packet_helper<Size,typename packet_traits<T>::type>::type type;
+#12 466.8       |                                                                                        ^~~~
+#12 466.8 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/Core:271:
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 0>':
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:302:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 1>'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:555:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<float, 4, 1>, 3>'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseBase.h:41:34:   required from 'class Eigen::DenseBase<Eigen::Matrix<float, 4, 1> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/MatrixBase.h:48:34:   required from 'class Eigen::MatrixBase<Eigen::Matrix<float, 4, 1> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/PlainObjectBase.h:98:7:   required from 'class Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:178:7:   required from 'class Eigen::Matrix<float, 4, 1>'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:46:50:   required from 'class Eigen::QuaternionBase<Eigen::Quaternion<float> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:273:7:   required from 'class Eigen::Quaternion<float>'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:27:3:   required from here
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<float>::type' {aka '__m128'} [-Wignored-attributes]
+#12 466.8    56 |                      >::type PacketReturnType;
+#12 466.8       |                              ^~~~~~~~~~~~~~~~
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h: In instantiation of 'struct Eigen::internal::find_best_packet<double, 4>':
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:22:57:   required from 'struct Eigen::internal::traits<Eigen::Matrix<double, 4, 1> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:266:49:   required from 'struct Eigen::internal::traits<Eigen::Quaternion<double> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:98:47:   required from here
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:44: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 466.8   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 466.8       |                                       ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 466.8   190 |          bool Stop = Size==Dynamic || (Size%unpacket_traits<PacketType>::size)==0 || is_same<PacketType,typename unpacket_traits<PacketType>::half>::value>
+#12 466.8       |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:190:83: warning: ignoring attributes on template argument 'Eigen::internal::unpacket_traits<__vector(2) double>::half' {aka '__m128d'} [-Wignored-attributes]
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/util/XprHelper.h:208:88: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 466.8   208 |   typedef typename find_best_packet_helper<Size,typename packet_traits<T>::type>::type type;
+#12 466.8       |                                                                                        ^~~~
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h: In instantiation of 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 0>':
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:302:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 1>'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:555:7:   required from 'class Eigen::DenseCoeffsBase<Eigen::Matrix<double, 4, 1>, 3>'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseBase.h:41:34:   required from 'class Eigen::DenseBase<Eigen::Matrix<double, 4, 1> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/MatrixBase.h:48:34:   required from 'class Eigen::MatrixBase<Eigen::Matrix<double, 4, 1> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/PlainObjectBase.h:98:7:   required from 'class Eigen::PlainObjectBase<Eigen::Matrix<double, 4, 1> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/Matrix.h:178:7:   required from 'class Eigen::Matrix<double, 4, 1>'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:46:50:   required from 'class Eigen::QuaternionBase<Eigen::Quaternion<double> >'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/Quaternion.h:273:7:   required from 'class Eigen::Quaternion<double>'
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Geometry/arch/Geometry_SIMD.h:102:3:   required from here
+#12 466.8 /R-4.4.0/library/RcppEigen/include/Eigen/src/Core/DenseCoeffsBase.h:56:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 466.8    56 |                      >::type PacketReturnType;
+#12 466.8       |                              ^~~~~~~~~~~~~~~~
+#12 467.0 In file included from /R-4.4.0/library/RcppEigen/include/Eigen/SparseCore:37,
+#12 467.0                  from /R-4.4.0/library/RcppEigen/include/Eigen/Sparse:26,
+#12 467.0                  from /R-4.4.0/library/RcppEigen/include/RcppEigenForward.h:29:
+#12 467.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrixBase.h: In instantiation of 'class Eigen::SparseMatrixBase<Eigen::SparseMatrix<double, 0, int> >':
+#12 467.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseCompressedBase.h:36:7:   required from 'class Eigen::SparseCompressedBase<Eigen::SparseMatrix<double, 0, int> >'
+#12 467.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrix.h:96:7:   required from 'class Eigen::SparseMatrix<double, 0, int>'
+#12 467.0 /R-4.4.0/library/RcppEigen/include/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h:61:25:   required from here
+#12 467.0 /R-4.4.0/library/RcppEigen/include/Eigen/src/SparseCore/SparseMatrixBase.h:47:30: warning: ignoring attributes on template argument 'Eigen::internal::packet_traits<double>::type' {aka '__m128d'} [-Wignored-attributes]
+#12 467.0    47 |                      >::type PacketReturnType;
+#12 467.0       |                              ^~~~~~~~~~~~~~~~
+#12 470.4 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/BH/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c dd_integrate_bw_odeint.cpp -o dd_integrate_bw_odeint.o
+#12 483.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/BH/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c dd_integrate_odeint.cpp -o dd_integrate_odeint.o
+#12 496.6 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/BH/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c dd_integrate_td_odeint.cpp -o dd_integrate_td_odeint.o
+#12 511.6 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/BH/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c dd_logliknorm_odeint.cpp -o dd_logliknorm_odeint.o
+#12 528.9 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o DDD.so RcppExports.o dd_integrate_bw_odeint.o dd_integrate_odeint.o dd_integrate_td_odeint.o dd_logliknorm_odeint.o -L/R-4.4.0/lib -lR
+#12 529.1 installing to /R-4.4.0/library/00LOCK-DDD/00new/DDD/libs
+#12 529.1 ** R
+#12 529.2 ** byte-compile and prepare package for lazy loading
+#12 534.1 ** help
+#12 534.2 *** installing help indices
+#12 534.3 ** building package indices
+#12 534.6 ** testing if installed package can be loaded from temporary location
+#12 534.9 ** checking absolute paths in shared objects and dynamic libraries
+#12 534.9 ** testing if installed package can be loaded from final location
+#12 535.3 ** testing if installed package keeps a record of temporary installation path
+#12 535.3 * DONE (DDD)
+#12 535.6 * installing *source* package ‘nLTT’ ...
+#12 535.6 ** package ‘nLTT’ successfully unpacked and MD5 sums checked
+#12 535.6 ** using staged installation
+#12 535.7 ** R
+#12 535.7 ** data
+#12 535.7 ** inst
+#12 535.7 ** byte-compile and prepare package for lazy loading
+#12 536.3 ** help
+#12 536.4 *** installing help indices
+#12 536.5 ** building package indices
+#12 536.8 ** installing vignettes
+#12 536.8 ** testing if installed package can be loaded from temporary location
+#12 537.0 ** testing if installed package can be loaded from final location
+#12 537.2 ** testing if installed package keeps a record of temporary installation path
+#12 537.2 * DONE (nLTT)
+#12 537.5 * installing *source* package ‘abcrf’ ...
+#12 537.5 ** package ‘abcrf’ successfully unpacked and MD5 sums checked
+#12 537.5 ** using staged installation
+#12 537.6 ** libs
+#12 537.6 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 537.6 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c RcppExports.cpp -o RcppExports.o
+#12 544.2 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c computeNeighbours.cpp -o computeNeighbours.o
+#12 546.8 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c findweights.cpp -o findweights.o
+#12 549.4 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c findweights_train.cpp -o findweights_train.o
+#12 553.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c oobErrors.cpp -o oobErrors.o
+#12 561.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c oobErrorsReg.cpp -o oobErrorsReg.o
+#12 566.2 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppArmadillo/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c predictOob_cpp.cpp -o predictOob_cpp.o
+#12 569.8 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o abcrf.so RcppExports.o computeNeighbours.o findweights.o findweights_train.o oobErrors.o oobErrorsReg.o predictOob_cpp.o -L/R-4.4.0/lib -lR
+#12 569.9 installing to /R-4.4.0/library/00LOCK-abcrf/00new/abcrf/libs
+#12 570.0 ** R
+#12 570.0 ** data
+#12 570.0 *** moving datasets to lazyload DB
+#12 570.8 ** byte-compile and prepare package for lazy loading
+#12 573.5 ** help
+#12 573.6 *** installing help indices
+#12 573.7 ** building package indices
+#12 573.9 ** testing if installed package can be loaded from temporary location
+#12 575.7 ** checking absolute paths in shared objects and dynamic libraries
+#12 575.7 ** testing if installed package can be loaded from final location
+#12 577.5 ** testing if installed package keeps a record of temporary installation path
+#12 577.5 * DONE (abcrf)
+#12 577.7 * installing *source* package ‘reformulas’ ...
+#12 577.7 ** package ‘reformulas’ successfully unpacked and MD5 sums checked
+#12 577.7 ** using staged installation
+#12 577.7 ** R
+#12 577.7 ** inst
+#12 577.8 ** byte-compile and prepare package for lazy loading
+#12 579.4 ** help
+#12 579.5 *** installing help indices
+#12 579.5 ** building package indices
+#12 579.7 ** testing if installed package can be loaded from temporary location
+#12 580.9 ** testing if installed package can be loaded from final location
+#12 582.2 ** testing if installed package keeps a record of temporary installation path
+#12 582.2 * DONE (reformulas)
+#12 582.9 * installing *source* package ‘seqinr’ ...
+#12 582.9 ** package ‘seqinr’ successfully unpacked and MD5 sums checked
+#12 582.9 ** using staged installation
+#12 582.9 ** libs
+#12 583.0 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 583.0 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include   -DUSE_TYPE_CHECKING_STRICT -fpic  -g -O2  -c alignment.c -o alignment.o
+#12 583.5 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include   -DUSE_TYPE_CHECKING_STRICT -fpic  -g -O2  -c fastacc.c -o fastacc.o
+#12 583.6 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include   -DUSE_TYPE_CHECKING_STRICT -fpic  -g -O2  -c getzlibsock.c -o getzlibsock.o
+#12 583.7 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include   -DUSE_TYPE_CHECKING_STRICT -fpic  -g -O2  -c kaks.c -o kaks.o
+#12 584.6 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include   -DUSE_TYPE_CHECKING_STRICT -fpic  -g -O2  -c packagename_init.c -o packagename_init.o
+#12 584.6 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include   -DUSE_TYPE_CHECKING_STRICT -fpic  -g -O2  -c util.c -o util.o
+#12 584.7 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include   -DUSE_TYPE_CHECKING_STRICT -fpic  -g -O2  -c zsockr.c -o zsockr.o
+#12 584.8 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o seqinr.so alignment.o fastacc.o getzlibsock.o kaks.o packagename_init.o util.o zsockr.o -lz -L/R-4.4.0/lib -lR
+#12 584.8 installing to /R-4.4.0/library/00LOCK-seqinr/00new/seqinr/libs
+#12 584.8 ** R
+#12 584.8 ** data
+#12 584.8 ** inst
+#12 584.8 ** byte-compile and prepare package for lazy loading
+#12 588.9 ** help
+#12 589.5 *** installing help indices
+#12 589.7 *** copying figures
+#12 589.7 ** building package indices
+#12 590.2 ** testing if installed package can be loaded from temporary location
+#12 590.5 ** checking absolute paths in shared objects and dynamic libraries
+#12 590.5 ** testing if installed package can be loaded from final location
+#12 590.9 ** testing if installed package keeps a record of temporary installation path
+#12 590.9 * DONE (seqinr)
+#12 591.3 * installing *source* package ‘phylobase’ ...
+#12 591.3 ** package ‘phylobase’ successfully unpacked and MD5 sums checked
+#12 591.3 ** using staged installation
+#12 591.3 ** libs
+#12 591.3 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 591.3 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 591.3 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c RcppExports.cpp -o RcppExports.o
+#12 595.7 gcc -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I/usr/local/include    -fpic  -g -O2  -c ancestors.c -o ancestors.o
+#12 595.8 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I/usr/local/include   -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c checkPhylo4.cpp -o checkPhylo4.o
+#12 602.1 gcc -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I/usr/local/include    -fpic  -g -O2  -c descendants.c -o descendants.o
+#12 602.1 gcc -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I/usr/local/include    -fpic  -g -O2  -c phyloXX.c -o phyloXX.o
+#12 602.2 gcc -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I/usr/local/include    -fpic  -g -O2  -c phylobase_init.c -o phylobase_init.o
+#12 602.2 gcc -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I/usr/local/include    -fpic  -g -O2  -c reorderBinary.c -o reorderBinary.o
+#12 602.3 gcc -I"/R-4.4.0/include" -DNDEBUG -I. -DHAVE_INTTYPES_H -DASSERTS_TO_EXCEPTIONS -I'/R-4.4.0/library/Rcpp/include' -I/usr/local/include    -fpic  -g -O2  -c reorderRobust.c -o reorderRobust.o
+#12 602.4 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o phylobase.so RcppExports.o ancestors.o checkPhylo4.o descendants.o phyloXX.o phylobase_init.o reorderBinary.o reorderRobust.o -L/R-4.4.0/lib -lR
+#12 602.4 installing to /R-4.4.0/library/00LOCK-phylobase/00new/phylobase/libs
+#12 602.4 ** R
+#12 602.5 ** data
+#12 602.5 *** moving datasets to lazyload DB
+#12 602.5 ** inst
+#12 602.5 ** byte-compile and prepare package for lazy loading
+#12 608.9 Creating a new generic function for ‘edges’ in package ‘phylobase’
+#12 608.9 ** help
+#12 609.1 *** installing help indices
+#12 609.2 ** building package indices
+#12 609.6 ** installing vignettes
+#12 609.6 ** testing if installed package can be loaded from temporary location
+#12 611.4 ** checking absolute paths in shared objects and dynamic libraries
+#12 611.4 ** testing if installed package can be loaded from final location
+#12 613.5 ** testing if installed package keeps a record of temporary installation path
+#12 613.5 * DONE (phylobase)
+#12 614.4 * installing *source* package ‘lme4’ ...
+#12 614.4 ** package ‘lme4’ successfully unpacked and MD5 sums checked
+#12 614.4 ** using staged installation
+#12 614.4 ** libs
+#12 614.4 using C++ compiler: ‘g++ (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 614.5 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/Matrix/include' -I/usr/local/include   -DNDEBUG -DEIGEN_DONT_VECTORIZE -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c external.cpp -o external.o
+#12 631.6 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/Matrix/include' -I/usr/local/include   -DNDEBUG -DEIGEN_DONT_VECTORIZE -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c glmFamily.cpp -o glmFamily.o
+#12 643.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/Matrix/include' -I/usr/local/include   -DNDEBUG -DEIGEN_DONT_VECTORIZE -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c optimizer.cpp -o optimizer.o
+#12 651.0 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/Matrix/include' -I/usr/local/include   -DNDEBUG -DEIGEN_DONT_VECTORIZE -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c predModule.cpp -o predModule.o
+#12 669.1 g++ -std=gnu++17 -I"/R-4.4.0/include" -DNDEBUG  -I'/R-4.4.0/library/Rcpp/include' -I'/R-4.4.0/library/RcppEigen/include' -I'/R-4.4.0/library/Matrix/include' -I/usr/local/include   -DNDEBUG -DEIGEN_DONT_VECTORIZE -D__MUSL__ -fpic  -g -O2  -D__MUSL__  -c respModule.cpp -o respModule.o
+#12 675.1 g++ -std=gnu++17 -shared -L/R-4.4.0/lib -L/usr/local/lib -o lme4.so external.o glmFamily.o optimizer.o predModule.o respModule.o -L/R-4.4.0/lib -lR
+#12 675.6 installing to /R-4.4.0/library/00LOCK-lme4/00new/lme4/libs
+#12 675.6 ** R
+#12 675.8 ** data
+#12 675.8 *** moving datasets to lazyload DB
+#12 676.0 ** inst
+#12 676.0 ** byte-compile and prepare package for lazy loading
+#12 684.0 ** help
+#12 684.5 *** installing help indices
+#12 684.7 ** building package indices
+#12 685.1 ** installing vignettes
+#12 685.1 ** testing if installed package can be loaded from temporary location
+#12 686.6 ** checking absolute paths in shared objects and dynamic libraries
+#12 686.6 ** testing if installed package can be loaded from final location
+#12 688.2 ** testing if installed package keeps a record of temporary installation path
+#12 688.2 * DONE (lme4)
+#12 688.8 * installing *source* package ‘adegenet’ ...
+#12 688.8 ** package ‘adegenet’ successfully unpacked and MD5 sums checked
+#12 688.8 ** using staged installation
+#12 688.8 ** libs
+#12 688.8 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 688.8 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c GLfunctions.c -o GLfunctions.o
+#12 689.0 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c adesub.c -o adesub.o
+#12 689.7 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#12 689.7 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c monmonier-utils.c -o monmonier-utils.o
+#12 689.8 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c sharedAll.c -o sharedAll.o
+#12 689.9 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c snpbin.c -o snpbin.o
+#12 690.1 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o adegenet.so GLfunctions.o adesub.o init.o monmonier-utils.o sharedAll.o snpbin.o -L/R-4.4.0/lib -lR
+#12 690.2 installing to /R-4.4.0/library/00LOCK-adegenet/00new/adegenet/libs
+#12 690.2 ** R
+#12 690.2 ** data
+#12 690.2 ** inst
+#12 690.2 ** byte-compile and prepare package for lazy loading
+#12 700.6 ** help
+#12 701.0 *** installing help indices
+#12 701.2 ** building package indices
+#12 701.7 ** testing if installed package can be loaded from temporary location
+#12 703.8 ** checking absolute paths in shared objects and dynamic libraries
+#12 703.8 ** testing if installed package can be loaded from final location
+#12 706.4 ** testing if installed package keeps a record of temporary installation path
+#12 706.4 * DONE (adegenet)
+#12 706.7 * installing *source* package ‘pbkrtest’ ...
+#12 706.7 ** package ‘pbkrtest’ successfully unpacked and MD5 sums checked
+#12 706.7 ** using staged installation
+#12 706.7 ** R
+#12 706.7 ** data
+#12 706.7 *** moving datasets to lazyload DB
+#12 706.8 ** inst
+#12 706.8 ** byte-compile and prepare package for lazy loading
+#12 709.8 ** help
+#12 709.8 *** installing help indices
+#12 709.9 ** building package indices
+#12 710.1 ** installing vignettes
+#12 710.1 ** testing if installed package can be loaded from temporary location
+#12 712.0 ** testing if installed package can be loaded from final location
+#12 714.0 ** testing if installed package keeps a record of temporary installation path
+#12 714.0 * DONE (pbkrtest)
+#12 714.3 * installing *source* package ‘adephylo’ ...
+#12 714.3 ** package ‘adephylo’ successfully unpacked and MD5 sums checked
+#12 714.3 ** using staged installation
+#12 714.3 ** libs
+#12 714.4 using C compiler: ‘gcc (Alpine 13.2.1_git20231014) 13.2.1 20231014’
+#12 714.4 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c adesub.c -o adesub.o
+#12 715.0 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c distPhylo.c -o distPhylo.o
+#12 715.1 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
+#12 715.1 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c misc.c -o misc.o
+#12 715.2 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c phylog.c -o phylog.o
+#12 715.6 gcc -I"/R-4.4.0/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c sptips.c -o sptips.o
+#12 715.8 gcc -shared -L/R-4.4.0/lib -L/usr/local/lib -o adephylo.so adesub.o distPhylo.o init.o misc.o phylog.o sptips.o -L/R-4.4.0/lib -lR
+#12 715.8 installing to /R-4.4.0/library/00LOCK-adephylo/00new/adephylo/libs
+#12 715.8 ** R
+#12 715.8 ** data
+#12 715.8 ** inst
+#12 715.8 ** byte-compile and prepare package for lazy loading
+#12 719.7 ** help
+#12 719.8 *** installing help indices
+#12 719.9 ** building package indices
+#12 720.1 ** installing vignettes
+#12 720.2 ** testing if installed package can be loaded from temporary location
+#12 723.5 ** checking absolute paths in shared objects and dynamic libraries
+#12 723.5 ** testing if installed package can be loaded from final location
+#12 727.2 ** testing if installed package keeps a record of temporary installation path
+#12 727.2 * DONE (adephylo)
+#12 727.6 * installing *source* package ‘car’ ...
+#12 727.6 ** package ‘car’ successfully unpacked and MD5 sums checked
+#12 727.6 ** using staged installation
+#12 727.6 ** R
+#12 727.7 ** inst
+#12 727.7 ** byte-compile and prepare package for lazy loading
+#12 737.1 ** help
+#12 737.6 *** installing help indices
+#12 737.7 ** building package indices
+#12 738.1 ** installing vignettes
+#12 738.1 ** testing if installed package can be loaded from temporary location
+#12 738.5 ** testing if installed package can be loaded from final location
+#12 739.0 ** testing if installed package keeps a record of temporary installation path
+#12 739.0 * DONE (car)
+#12 739.3 * installing *source* package ‘NHPoisson’ ...
+#12 739.3 ** package ‘NHPoisson’ successfully unpacked and MD5 sums checked
+#12 739.3 ** using staged installation
+#12 739.3 ** R
+#12 739.3 ** data
+#12 739.3 ** byte-compile and prepare package for lazy loading
+#12 741.0 ** help
+#12 741.1 *** installing help indices
+#12 741.2 ** building package indices
+#12 741.5 ** testing if installed package can be loaded from temporary location
+#12 741.8 ** testing if installed package can be loaded from final location
+#12 742.1 ** testing if installed package keeps a record of temporary installation path
+#12 742.1 * DONE (NHPoisson)
+#12 742.3 * installing *source* package ‘phyloTop’ ...
+#12 742.3 ** package ‘phyloTop’ successfully unpacked and MD5 sums checked
+#12 742.3 ** using staged installation
+#12 742.3 ** R
+#12 742.4 ** byte-compile and prepare package for lazy loading
+#12 744.6 ** help
+#12 744.7 *** installing help indices
+#12 744.7 ** building package indices
+#12 745.0 ** testing if installed package can be loaded from temporary location
+#12 746.8 ** testing if installed package can be loaded from final location
+#12 748.7 ** testing if installed package keeps a record of temporary installation path
+#12 748.7 * DONE (phyloTop)
+#12 748.7 
+#12 748.7 The downloaded source packages are in
+#12 748.7 	‘/tmp/RtmpHKOfaM/downloaded_packages’
+#12 748.7 Updating HTML index of packages in '.Library'
+#12 748.7 Making 'packages.html' ...> 
+#12 749.0 > 
+#12 749.0  done
+#12 DONE 749.2s
+
+#13 [ 9/15] COPY dockerfile_packagetest_amd64.txt /dockerfile_packagetest_amd64.txt
+#13 DONE 0.1s
+
+#14 [10/15] COPY test.sh /test.sh
+#14 DONE 0.0s
+
+#15 [11/15] COPY start.sh /start.sh
+#15 DONE 0.0s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 2.6s done
+#16 writing image sha256:0a38aa9dbd11b3fef362bc99411e7fd7510e68c98e773c032d8ff1a9ee99fdab done
+#16 naming to docker.io/sswiston/phylo_docker:packagetest_amd64 done
+#16 DONE 2.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/n58vm8nn2u1b7vos7onof2dpf
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 30)
